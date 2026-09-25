@@ -63,3 +63,5 @@ export default async (request) => {
 };
 
 const formMarkup = `<form method="post"><label>Password<br><input name="password" type="password" required autofocus style="box-sizing:border-box;width:100%;padding:12px;margin:12px 0"></label><button style="background:#591e30;color:white;border:0;padding:12px 18px">Continue</button></form>`;
+
+export const config = { path: ["/admin", "/admin.html"] };

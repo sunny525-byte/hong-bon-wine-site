@@ -6,7 +6,3 @@
   from = "/admin"
   to = "/admin.html"
   status = 200
-
-[[edge_functions]]
-  function = "admin-gate"
-  path = "/admin*"
