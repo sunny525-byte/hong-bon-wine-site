@@ -1,0 +1,12 @@
+[build]
+  publish = "."
+  edge_functions = "netlify/edge-functions"
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin.html"
+  status = 200
+
+[[edge_functions]]
+  function = "admin-gate"
+  path = "/admin*"
