@@ -253,7 +253,8 @@
       "active": true,
       "type": "red",
       "id": "product-17",
-      "imageStatus": "label-match"
+      "imageStatus": "label-match",
+      "featured": true
     },
     {
       "image_name": "5d300a17-7eca-4679-b584-eb6ec7acde74",
