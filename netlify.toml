@@ -1,4 +1,5 @@
 [build]
+  command = "node generate.mjs"
   publish = "."
   edge_functions = "netlify/edge-functions"
 

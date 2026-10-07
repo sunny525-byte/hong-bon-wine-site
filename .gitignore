@@ -7,3 +7,6 @@
 # Local env
 .env
 .env.*
+
+# Generated at build time by generate.mjs
+build-probe.txt
