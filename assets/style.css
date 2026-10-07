@@ -77,3 +77,19 @@
 .breadcrumb a{text-decoration:underline;text-underline-offset:3px}
 .breadcrumb span{padding:0 7px}
 @media(max-width:800px){.page-head{padding:24px 5% 2px}.page-head h1{margin:8px 0}}
+
+/* Card image/title link wrapper. .product-art is a fixed-height box and the img
+   uses height:100%, so the anchor has to be a block filling it. */
+.product-link{display:block;height:100%}
+
+/* Wine detail page (generated) */
+.wine-page-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:36px;align-items:start;margin-top:16px}
+.wine-page-art img{width:100%;height:auto;display:block;background:var(--paper);border:1px solid var(--line)}
+.wine-page-info h1{font:400 clamp(23px,2.6vw,34px)/1.4 'Noto Serif TC',serif;margin:10px 0 14px;color:var(--ink);letter-spacing:.03em}
+.wine-page-info .tastes{margin-bottom:12px}
+.wine-page-desc{margin:16px 0 22px;font-size:15px;line-height:2;color:var(--muted);max-width:44em}
+.wine-page-info .add{margin-bottom:12px}
+@media(max-width:800px){
+ .wine-page-grid{grid-template-columns:1fr;gap:20px}
+ .wine-page-info .add{width:100%}
+}

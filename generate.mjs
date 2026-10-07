@@ -61,12 +61,15 @@ const flavorChips = w => {
 function card(w, index) {
   const n = String(index + 1).padStart(2, '0');
   const name = esc(t(w.name));
+  const href = w.slug ? `/wine/${w.slug}/` : null;   // no slug -> no link, never a 404
+  const open = href ? `<a class="product-link" href="${href}">` : '<span>';
+  const close = href ? '</a>' : '</span>';
   return `<article class="product${w.featured ? ' featured' : ''}">`
-    + `<div class="product-art"><img src="${esc(w.image)}" alt="${name}商品參考圖" style="object-position:50% center" loading="lazy">`
+    + `<div class="product-art">${open}<img src="${esc(w.image)}" alt="${name}商品參考圖" style="object-position:50% center" loading="lazy">${close}`
     + `<span class="tag">${n}</span>${w.featured ? '<span class="featured-ribbon">本月推薦</span>' : ''}</div>`
     + `<div class="product-body">`
     + `<span class="type mobile-summary" id="wine-type-${w.id}">${esc(t(w.en))}</span>`
-    + `<h3 class="mobile-summary" id="wine-name-${w.id}">${name}</h3>`
+    + `<h3 class="mobile-summary" id="wine-name-${w.id}">${href ? `<a href="${href}">${name}</a>` : name}</h3>`
     + `<p class="mobile-summary" id="wine-desc-${w.id}">${esc(t(w.desc))}</p>`
     + `<div class="tastes mobile-summary" id="wine-taste-${w.id}">${esc(t(w.taste))}</div>`
     + flavorChips(w)
@@ -116,42 +119,89 @@ function pageHead(cat) {
     + `</section>`;
 }
 
-function jsonld({ title, canonical, cat }) {
+function jsonld({ title, canonical, cat, wine }) {
   const org = {
     '@type': 'LiquorStore', name: `${t(catalog.brand)} HONG BON`, url: `${BASE_URL}/`,
     telephone: catalog.phone,
     sameAs: [catalog.lineUrl, catalog.social?.instagram, catalog.social?.facebook].filter(Boolean),
   };
-  const graph = cat
-    ? [org,
-      { '@type': 'CollectionPage', name: title, url: canonical },
+  const crumbs = list => ({ '@type': 'BreadcrumbList', itemListElement: list });
+
+  let graph;
+  if (wine) {
+    graph = [
       {
-        '@type': 'BreadcrumbList', itemListElement: [
-          { '@type': 'ListItem', position: 1, name: '首頁', item: `${BASE_URL}/` },
-          { '@type': 'ListItem', position: 2, name: t(cat.label), item: canonical }],
-      }]
-    : [org, { '@type': 'WebPage', name: title, url: canonical }];
+        '@type': 'Product',
+        name: t(wine.name),
+        image: `${BASE_URL}${wine.image}`,
+        description: t(wine.desc),
+        sku: wine.id,
+        category: t(cat.label),
+        brand: { '@type': 'Brand', name: `${t(catalog.brand)} HONG BON` },
+        url: canonical,
+        // deliberately no `offers`: this site shows no prices and takes no orders
+      },
+      crumbs([
+        { '@type': 'ListItem', position: 1, name: '首頁', item: `${BASE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: t(cat.label), item: `${BASE_URL}/${cat.slug}/` },
+        { '@type': 'ListItem', position: 3, name: t(wine.name), item: canonical },
+      ]),
+      org,
+    ];
+  } else if (cat) {
+    graph = [org,
+      { '@type': 'CollectionPage', name: title, url: canonical },
+      crumbs([
+        { '@type': 'ListItem', position: 1, name: '首頁', item: `${BASE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: t(cat.label), item: canonical },
+      ])];
+  } else {
+    graph = [org, { '@type': 'WebPage', name: title, url: canonical }];
+  }
   return `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })}</script>`;
 }
 
+// wine detail block, rendered into {{PAGE_HEAD}}
+function winePage(w, cat) {
+  const name = esc(t(w.name));
+  return `<section class="page-head wine-page">`
+    + `<nav class="breadcrumb" aria-label="breadcrumb"><a href="/">首頁</a><span aria-hidden="true">/</span>`
+    + `<a href="/${cat.slug}/">${esc(t(cat.label))}</a><span aria-hidden="true">/</span><span>${name}</span></nav>`
+    + `<div class="wine-page-grid">`
+    + `<div class="wine-page-art"><img src="${esc(w.image)}" alt="${name}"></div>`
+    + `<div class="wine-page-info">`
+    + `<span class="eyebrow">${esc(t(w.en))}</span>`
+    + `<h1>${name}</h1>`
+    + `<div class="tastes">${esc(t(w.taste))}</div>`
+    + flavorChips(w)
+    + `<p class="wine-page-desc">${esc(t(w.desc))}</p>`
+    + `<button class="add" data-add="${w.id}" aria-label="將${name}加入詢價">＋ 加入詢價</button>`
+    + `<p class="small">＊此為詢價服務，正式訂購以專人確認後為準。</p>`
+    + `</div></div></section>`;
+}
+
 // ---------------------------------------------------------------- render
-function render({ canonical, title, description, ogDescription, cat, wines, hero }) {
+function render({ kind, canonical, title, description, ogDescription, ogImage, cat, wine, wines }) {
+  const isHome = kind === 'home';
+  const collectionHead = isHome
+    ? '<div class="section-head"><div><span class="eyebrow">CURATED FOR YOU</span><h2>一瓶酒，一種心情</h2></div><p>價格與供貨依專人確認為準</p></div>'
+    : (kind === 'wine'
+      ? `<div class="section-head"><div><span class="eyebrow">MORE SELECTIONS</span><h2>其他${esc(t(cat.label))}</h2></div><p>同系列的酒款，也值得看看</p></div>`
+      : '');
   const values = {
     LANG: 'zh-Hant',
     TITLE: esc(title),
     DESCRIPTION: esc(description),
     OG_DESCRIPTION: esc(ogDescription || description),
     CANONICAL: canonical,
-    OG_IMAGE: `${BASE_URL}/assets/og-image.jpg`,
-    BODY_ATTRS: hero ? ' class="lock"' : '',
-    PAGE_HEAD: hero ? '' : pageHead(cat),
-    COLLECTION_HEAD: hero
-      ? '<div class="section-head"><div><span class="eyebrow">CURATED FOR YOU</span><h2>一瓶酒，一種心情</h2></div><p>價格與供貨依專人確認為準</p></div>'
-      : '',
+    OG_IMAGE: ogImage || `${BASE_URL}/assets/og-image.jpg`,
+    BODY_ATTRS: isHome ? ' class="lock"' : '',
+    PAGE_HEAD: isHome ? '' : (kind === 'wine' ? winePage(wine, cat) : pageHead(cat)),
+    COLLECTION_HEAD: collectionHead,
     FILTERS: filters(cat ? cat.type : 'all'),
     GRID: wines.map((w, i) => card(w, i)).join(''),
-    EXTRA_SCRIPTS: hero ? '<script src="/assets/hero.js"></script>' : '',
-    JSONLD: jsonld({ title, canonical, cat }),
+    EXTRA_SCRIPTS: isHome ? '<script src="/assets/hero.js"></script>' : '',
+    JSONLD: jsonld({ title, canonical, cat, wine }),
   };
   let out = template;
   for (const [k, v] of Object.entries(values)) out = out.split(`{{${k}}}`).join(v);
@@ -165,7 +215,7 @@ function render({ canonical, title, description, ogDescription, cat, wines, hero
   const end = out.indexOf(END);
   if (start !== -1 && end !== -1) {
     const heroHtml = out.slice(start + START.length, end);
-    out = out.slice(0, start) + (hero ? heroHtml : slimHeader()) + out.slice(end + END.length);
+    out = out.slice(0, start) + (isHome ? heroHtml : slimHeader()) + out.slice(end + END.length);
   }
 
   const left = out.match(/\{\{[A-Z_]+\}\}/g);
@@ -188,7 +238,7 @@ write('index.html', render({
   description: `${t(catalog.brand)} HONG BON 專屬選酒：依照口味與場合挑選紅酒、白酒、粉紅酒與氣泡酒，整理專屬詢價清單，透過 LINE 或 Email 與我們確認價格與供貨。`,
   // the site used a shorter, punchier line for social previews — preserved as-is
   ogDescription: '依照口味與場合，挑選屬於你的酒款，整理專屬詢價清單。',
-  cat: null, wines: all, hero: true,
+  kind: 'home', cat: null, wines: all,
 }));
 
 // ---------------------------------------------------------------- categories
@@ -199,8 +249,30 @@ for (const cat of cats) {
     canonical: `${BASE_URL}/${cat.slug}/`,
     title: `${t(cat.label)}｜${t(catalog.brand)} HONG BON`,
     description: `${t(catalog.brand)} ${t(cat.label)}精選，共 ${wines.length} 款。點選酒款加入詢價清單，透過 LINE 與我們確認價格與供貨。`,
-    cat, wines, hero: false,
+    kind: 'category', cat, wines,
   }));
+}
+
+// ---------------------------------------------------------------- wine pages
+let wineCount = 0;
+for (const w of all) {
+  // no slug -> no page; the cards skip the link too, so nothing 404s
+  if (!w.slug) continue;
+  const cat = cats.find(c => c.type === w.type);
+  if (!cat) continue;
+  const siblings = all.filter(x => x.type === w.type && x.id !== w.id);
+  // a one-wine category would leave the grid empty, so fall back to any others
+  const related = siblings.length ? siblings : all.filter(x => x.id !== w.id).slice(0, 4);
+  write(join('wine', w.slug, 'index.html'), render({
+    kind: 'wine',
+    canonical: `${BASE_URL}/wine/${w.slug}/`,
+    title: `${t(w.name)}｜${t(catalog.brand)} HONG BON`,
+    description: `${t(w.name)}。${t(w.taste)}`.slice(0, 155),
+    ogDescription: `${t(w.name)} — ${t(w.en)}`,
+    ogImage: w.image && w.image.startsWith('/') ? `${BASE_URL}${w.image}` : undefined,
+    cat, wine: w, wines: related,
+  }));
+  wineCount++;
 }
 
 // ---------------------------------------------------------------- sitemap
@@ -208,6 +280,7 @@ const policies = ['privacy', 'terms', 'shipping', 'quality'];
 const urls = [
   { loc: `${BASE_URL}/`, cf: 'weekly', pr: '1.0' },
   ...cats.map(c => ({ loc: `${BASE_URL}/${c.slug}/`, cf: 'weekly', pr: '0.8' })),
+  ...all.filter(w => w.slug).map(w => ({ loc: `${BASE_URL}/wine/${w.slug}/`, cf: 'monthly', pr: '0.6' })),
   ...policies.map(p => ({ loc: `${BASE_URL}/${p}.html`, cf: 'yearly', pr: '0.3' })),
 ];
 write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -215,4 +288,4 @@ write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n'
   + urls.map(u => `  <url>\n    <loc>${u.loc}</loc>\n    <changefreq>${u.cf}</changefreq>\n    <priority>${u.pr}</priority>\n  </url>`).join('\n')
   + '\n</urlset>\n');
 
-console.log(`\ngenerate.mjs done — ${all.length} wines, ${cats.length} categories`);
+console.log(`\ngenerate.mjs done — ${all.length} wines, ${cats.length} categories, ${wineCount} wine pages`);

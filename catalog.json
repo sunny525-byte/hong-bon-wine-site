@@ -74,7 +74,8 @@
       "active": true,
       "type": "red",
       "id": "product-1",
-      "imageStatus": "unconfirmed"
+      "imageStatus": "unconfirmed",
+      "slug": "red-wild-elegant"
     },
     {
       "image_name": "d89b214e-928e-49ac-af4b-01762adc679c.webp",
@@ -100,7 +101,8 @@
       "active": true,
       "type": "white",
       "id": "product-2",
-      "imageStatus": "label-match"
+      "imageStatus": "label-match",
+      "slug": "2023-dhroner-hofberg"
     },
     {
       "image_name": "3e32bbb2-cc0b-49e1-a891-23009e99035f.webp",
@@ -126,7 +128,8 @@
       "active": true,
       "type": "white",
       "id": "product-3",
-      "imageStatus": "label-match"
+      "imageStatus": "label-match",
+      "slug": "2024-steep-slope-kabinett"
     },
     {
       "image_name": "19a738ec-2e08-4760-953e-03030f9fce8f.webp",
@@ -152,7 +155,8 @@
       "active": true,
       "type": "white",
       "id": "product-4",
-      "imageStatus": "label-match"
+      "imageStatus": "label-match",
+      "slug": "2021-hamburg"
     },
     {
       "image_name": "c8ce37e7-ee82-4580-abad-079129a73888.webp",
@@ -178,7 +182,8 @@
       "active": true,
       "type": "white",
       "id": "product-5",
-      "imageStatus": "label-match"
+      "imageStatus": "label-match",
+      "slug": "2023-feinherb"
     },
     {
       "image_name": "d6e79733-07fa-4d43-a190-f1d4ca427cb8.webp",
@@ -204,7 +209,8 @@
       "active": true,
       "type": "white",
       "id": "product-6",
-      "imageStatus": "label-match"
+      "imageStatus": "label-match",
+      "slug": "2022-neumagener-rosengartchen"
     },
     {
       "image_name": "11361319-8858-45d2-9b13-452bbd99ccad.webp",
@@ -230,7 +236,8 @@
       "active": true,
       "type": "sparkling",
       "id": "product-7",
-      "imageStatus": "label-match"
+      "imageStatus": "label-match",
+      "slug": "2021-guts-sekt-trocken"
     },
     {
       "image_name": "77f5c6d0-9550-48f0-bbe9-b561cb622950.webp",
@@ -256,7 +263,8 @@
       "active": true,
       "type": "sparkling",
       "id": "product-8",
-      "imageStatus": "label-match"
+      "imageStatus": "label-match",
+      "slug": "2021-guts-sekt-brut"
     },
     {
       "image_name": "b87bafda-2443-42d4-8f44-50d9244d963f.webp",
@@ -282,7 +290,8 @@
       "active": true,
       "type": "red",
       "id": "product-9",
-      "imageStatus": "unconfirmed"
+      "imageStatus": "unconfirmed",
+      "slug": "red-classic-reserve"
     },
     {
       "image_name": "105379f4-8c8a-46ac-91ae-a69afff3ab83.webp",
@@ -308,7 +317,8 @@
       "active": true,
       "type": "red",
       "id": "product-10",
-      "imageStatus": "unconfirmed"
+      "imageStatus": "unconfirmed",
+      "slug": "red-rare-reserve"
     },
     {
       "image_name": "ccb55fba-d50c-4583-8875-761a3948ec46.webp",
@@ -334,7 +344,8 @@
       "active": true,
       "type": "red",
       "id": "product-11",
-      "imageStatus": "unconfirmed"
+      "imageStatus": "unconfirmed",
+      "slug": "red-oak-aged-velvety"
     },
     {
       "image_name": "fa43e564-907e-4067-9754-7d35d93928e0.webp",
@@ -360,7 +371,8 @@
       "active": true,
       "type": "white",
       "id": "product-12",
-      "imageStatus": "unconfirmed"
+      "imageStatus": "unconfirmed",
+      "slug": "white-stone-fruit-mineral"
     },
     {
       "image_name": "a4c70396-f29d-4dab-a757-36a148f6410d.webp",
@@ -386,7 +398,8 @@
       "active": true,
       "type": "rose",
       "id": "product-13",
-      "imageStatus": "label-match"
+      "imageStatus": "label-match",
+      "slug": "2022-de-la-joie"
     },
     {
       "image_name": "e03e7286-e0db-4a03-9c46-747e93361ab8.webp",
@@ -412,7 +425,8 @@
       "active": true,
       "type": "red",
       "id": "product-14",
-      "imageStatus": "label-match"
+      "imageStatus": "label-match",
+      "slug": "2021-gratitude-shiraz"
     },
     {
       "image_name": "ceebe50c-25ec-44b9-86f4-a713c26bf95a.webp",
@@ -438,7 +452,8 @@
       "active": true,
       "type": "red",
       "id": "product-15",
-      "imageStatus": "label-match"
+      "imageStatus": "label-match",
+      "slug": "2020-the-schiller-shiraz"
     },
     {
       "image_name": "449cbe56-b5c2-4d65-9779-64f89e509c17.webp",
@@ -464,7 +479,8 @@
       "active": true,
       "type": "red",
       "id": "product-16",
-      "imageStatus": "label-match"
+      "imageStatus": "label-match",
+      "slug": "2023-the-grower-gsm"
     },
     {
       "image_name": "15157533-a4c8-4538-a1e8-197c304188ef.webp",
@@ -491,7 +507,8 @@
       "type": "red",
       "id": "product-17",
       "imageStatus": "label-match",
-      "featured": true
+      "featured": true,
+      "slug": "2022-meta-grenache"
     },
     {
       "image_name": "5d300a17-7eca-4679-b584-eb6ec7acde74.webp",
@@ -517,7 +534,8 @@
       "active": true,
       "type": "red",
       "id": "product-18",
-      "imageStatus": "label-match"
+      "imageStatus": "label-match",
+      "slug": "2022-meta-shiraz"
     },
     {
       "image_name": "80e41337-b236-497e-b184-d8408965c54b.webp",
@@ -543,7 +561,8 @@
       "active": true,
       "type": "white",
       "id": "product-19",
-      "imageStatus": "label-match"
+      "imageStatus": "label-match",
+      "slug": "2023-meta-grenache-blanc"
     },
     {
       "image_name": "c6eddd1f-50ee-4d82-97a2-c08a09e3b3a9.webp",
@@ -569,7 +588,8 @@
       "active": true,
       "type": "white",
       "id": "product-20",
-      "imageStatus": "label-match"
+      "imageStatus": "label-match",
+      "slug": "2023-chenin-blanc"
     }
   ],
   "heroSlides": [
