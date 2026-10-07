@@ -93,3 +93,8 @@
  .wine-page-grid{grid-template-columns:1fr;gap:20px}
  .wine-page-info .add{width:100%}
 }
+
+/* Language switcher (links to the counterpart page in the other locale) */
+.lang-switch{display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:40px;padding:0 13px;border:1px solid var(--line);border-radius:999px;font-size:13px;letter-spacing:.1em;color:var(--wine);white-space:nowrap;transition:background .3s,color .3s,border-color .3s}
+.lang-switch:hover{background:var(--wine);color:#fff;border-color:var(--wine)}
+@media(max-width:520px){.lang-switch{min-width:40px;height:36px;padding:0 10px;font-size:12px}}

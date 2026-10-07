@@ -18,7 +18,16 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const BASE_URL = 'https://hongbon.tw';
-const LOCALE = 'zh';           // English pages arrive with the /en/ milestone
+// Locale is module-level state set per render pass. This is a sequential
+// build script, so mutating it is simpler than threading a locale argument
+// through every helper (t, card, filters, pageHead, winePage, jsonld).
+let LOCALE = 'zh';
+let CURRENT_PATH = '/';
+
+const LOCALES = [
+  { code: 'zh', lang: 'zh-Hant', prefix: '',    switchLabel: '中文' },
+  { code: 'en', lang: 'en',      prefix: '/en', switchLabel: 'EN' },
+];
 
 const catalog = JSON.parse(readFileSync(join(ROOT, 'catalog.json'), 'utf8'));
 const template = readFileSync(join(ROOT, '_templates', 'page.html'), 'utf8');
@@ -65,16 +74,16 @@ function card(w, index) {
   const open = href ? `<a class="product-link" href="${href}">` : '<span>';
   const close = href ? '</a>' : '</span>';
   return `<article class="product${w.featured ? ' featured' : ''}">`
-    + `<div class="product-art">${open}<img src="${esc(w.image)}" alt="${name}商品參考圖" style="object-position:50% center" loading="lazy">${close}`
-    + `<span class="tag">${n}</span>${w.featured ? '<span class="featured-ribbon">本月推薦</span>' : ''}</div>`
+    + `<div class="product-art">${open}<img src="${esc(w.image)}" alt="${name}${esc(t(ui('imageAltSuffix')))}" style="object-position:50% center" loading="lazy">${close}`
+    + `<span class="tag">${n}</span>${w.featured ? `<span class="featured-ribbon">${esc(t(ui('featuredBadge')))}</span>` : ''}</div>`
     + `<div class="product-body">`
     + `<span class="type mobile-summary" id="wine-type-${w.id}">${esc(t(w.en))}</span>`
     + `<h3 class="mobile-summary" id="wine-name-${w.id}">${href ? `<a href="${href}">${name}</a>` : name}</h3>`
     + `<p class="mobile-summary" id="wine-desc-${w.id}">${esc(t(w.desc))}</p>`
     + `<div class="tastes mobile-summary" id="wine-taste-${w.id}">${esc(t(w.taste))}</div>`
     + flavorChips(w)
-    + `<button type="button" class="wine-expand" data-expand aria-expanded="false" aria-controls="wine-type-${w.id} wine-name-${w.id} wine-desc-${w.id} wine-taste-${w.id}" aria-label="展開${name}的更多資訊" hidden>展開更多 ＋</button>`
-    + `<div class="product-bottom"><span>專屬詢價</span><button class="add" data-add="${w.id}" aria-label="將${name}加入詢價">＋ 加入詢價</button></div>`
+    + `<button type="button" class="wine-expand" data-expand aria-expanded="false" aria-controls="wine-type-${w.id} wine-name-${w.id} wine-desc-${w.id} wine-taste-${w.id}" aria-label="${esc(fill(t(ui('ariaExpandWine')), { name: t(w.name) }))}" hidden>${esc(t(ui('expandMore')))}</button>`
+    + `<div class="product-bottom"><span>${esc(t(ui('cardCtaLabel')))}</span><button class="add" data-add="${w.id}" aria-label="${esc(fill(t(ui('ariaAddToInquiry')), { name: t(w.name) }))}">${esc(t(ui('addToInquiry')))}</button></div>`
     + `</div></article>`;
 }
 
@@ -86,14 +95,48 @@ const glass = type => `<svg class="glass glass-${type}" viewBox="0 0 24 24" aria
 // The {{FILTERS}} token replaces the whole toolbar block, so this must emit the
 // .toolbar wrapper too — it is the element the position:sticky rule targets.
 function filters(activeType) {
-  const items = [{ type: 'all', href: '/', label: '全部酒款' }]
+  const items = [{ type: 'all', href: '/', label: t(ui('allWines')) }]
     .concat((catalog.categories || []).map(c => ({ type: c.type, href: `/${c.slug}/`, label: t(c.label) })));
-  return `<div class="toolbar"><div class="filters" role="group" aria-label="酒款分類">`
+  return `<div class="toolbar"><div class="filters" role="group" aria-label="${esc(t(ui('ariaFilters')))}">`
     + items.map(it => {
       const on = it.type === activeType;
       return `<a class="${on ? 'active' : ''}" href="${it.href}"${on ? ' aria-current="page"' : ''}>${glass(it.type)}${esc(it.label)}</a>`;
     }).join('')
     + `</div></div>`;
+}
+
+const ui = k => (catalog.ui || {})[k];
+
+// `path` is locale-independent ('/', '/red-wine/', '/wine/<slug>/'), so the
+// canonical and the alternates are all derived from it.
+const urlFor = (loc, path) => `${BASE_URL}${loc.prefix}${path}`;
+const other = () => LOCALES.find(l => l.code !== LOCALE);
+
+function hreflang(path) {
+  return LOCALES.map(l => `<link rel="alternate" hreflang="${l.lang}" href="${urlFor(l, path)}">`).join('')
+    + `<link rel="alternate" hreflang="x-default" href="${urlFor(LOCALES[0], path)}">`;
+}
+
+function langSwitch(path) {
+  const o = other();
+  return `<a class="lang-switch" href="${urlFor(o, path)}" hreflang="${o.lang}" lang="${o.lang}"`
+    + ` aria-label="${o.code === 'en' ? 'English' : '中文'}">${o.switchLabel}</a>`;
+}
+
+
+
+// The marquee duplicates its set so the loop is seamless. Category words come
+// from categories[] so they can never drift from the filter labels.
+function ticker() {
+  const cell = v => `<span>${esc(v)}</span>`;
+  const set = [
+    cell(t(ui('tickerLine'))),
+    `<span class="en">${esc(t(ui('tickerEn')))}</span>`,
+    cell(t(ui('tickerSelection'))),
+    ...(catalog.categories || []).map(c => cell(t(c.label))),
+    cell(t(ui('taglinePlain'))),
+  ].join('');
+  return `\n      ${set}\n      ${set}\n    `;
 }
 
 const visible = () => (catalog.wines || []).filter(w => w.status !== 'hidden' && w.active !== false);
@@ -103,25 +146,25 @@ function slimHeader() {
   const brand = esc(t(catalog.brand));
   return `<div class="hb-hero"><header class="top">`
     + `<a class="logo brand" href="/" aria-label="${brand}"><img src="/assets/logo.png" alt="${brand}"><span class="wm">Hong Bon</span></a>`
-    + `<div class="top-actions">`
-    + `<button class="cart" id="openCart" type="button" aria-label="詢價清單">詢價清單 <b id="count">0</b></button>`
-    + `<button class="menu-toggle" id="menuToggle" type="button" aria-label="開啟選單" aria-expanded="false" aria-controls="mobileMenu">☰</button>`
+    + `<div class="top-actions">${langSwitch(CURRENT_PATH)}`
+    + `<button class="cart" id="openCart" type="button" aria-label="${esc(t(ui('cartLabel')))}">${esc(t(ui('cartLabel')))} <b id="count">0</b></button>`
+    + `<button class="menu-toggle" id="menuToggle" type="button" aria-label="${esc(t(ui('ariaMenu')))}" aria-expanded="false" aria-controls="mobileMenu">☰</button>`
     + `</div></header></div>`;
 }
 
 function pageHead(cat) {
   const n = visible().filter(w => w.type === cat.type).length;
   return `<section class="page-head">`
-    + `<nav class="breadcrumb" aria-label="breadcrumb"><a href="/">首頁</a><span aria-hidden="true">/</span><span>${esc(t(cat.label))}</span></nav>`
-    + `<span class="eyebrow">WINE SELECTION</span>`
+    + `<nav class="breadcrumb" aria-label="breadcrumb"><a href="/">${esc(t(ui('homeLabel')))}</a><span aria-hidden="true">/</span><span>${esc(t(cat.label))}</span></nav>`
+    + `<span class="eyebrow">${esc(t(ui('wineEyebrow')))}</span>`
     + `<h1>${esc(t(cat.label))}</h1>`
-    + `<p>${esc(t(cat.intro)) || `${esc(t(catalog.brand))} 精選${esc(t(cat.label))}，共 ${n} 款。點選酒款加入詢價清單，透過 LINE 與我們確認價格與供貨。`}</p>`
+    + `<p>${esc(t(cat.intro)) || fill(t(ui('catFallback')), { brand: t(ui('brandFull')), label: t(cat.label), n })}</p>`
     + `</section>`;
 }
 
 function jsonld({ title, canonical, cat, wine }) {
   const org = {
-    '@type': 'LiquorStore', name: `${t(catalog.brand)} HONG BON`, url: `${BASE_URL}/`,
+    '@type': 'LiquorStore', name: `${t(ui('brandFull'))}`, url: `${BASE_URL}/`,
     telephone: catalog.phone,
     sameAs: [catalog.lineUrl, catalog.social?.instagram, catalog.social?.facebook].filter(Boolean),
   };
@@ -137,12 +180,12 @@ function jsonld({ title, canonical, cat, wine }) {
         description: t(wine.desc),
         sku: wine.id,
         category: t(cat.label),
-        brand: { '@type': 'Brand', name: `${t(catalog.brand)} HONG BON` },
+        brand: { '@type': 'Brand', name: `${t(ui('brandFull'))}` },
         url: canonical,
         // deliberately no `offers`: this site shows no prices and takes no orders
       },
       crumbs([
-        { '@type': 'ListItem', position: 1, name: '首頁', item: `${BASE_URL}/` },
+        { '@type': 'ListItem', position: 1, name: t(ui('homeLabel')), item: `${BASE_URL}/` },
         { '@type': 'ListItem', position: 2, name: t(cat.label), item: `${BASE_URL}/${cat.slug}/` },
         { '@type': 'ListItem', position: 3, name: t(wine.name), item: canonical },
       ]),
@@ -152,7 +195,7 @@ function jsonld({ title, canonical, cat, wine }) {
     graph = [org,
       { '@type': 'CollectionPage', name: title, url: canonical },
       crumbs([
-        { '@type': 'ListItem', position: 1, name: '首頁', item: `${BASE_URL}/` },
+        { '@type': 'ListItem', position: 1, name: t(ui('homeLabel')), item: `${BASE_URL}/` },
         { '@type': 'ListItem', position: 2, name: t(cat.label), item: canonical },
       ])];
   } else {
@@ -165,7 +208,7 @@ function jsonld({ title, canonical, cat, wine }) {
 function winePage(w, cat) {
   const name = esc(t(w.name));
   return `<section class="page-head wine-page">`
-    + `<nav class="breadcrumb" aria-label="breadcrumb"><a href="/">首頁</a><span aria-hidden="true">/</span>`
+    + `<nav class="breadcrumb" aria-label="breadcrumb"><a href="/">${esc(t(ui('homeLabel')))}</a><span aria-hidden="true">/</span>`
     + `<a href="/${cat.slug}/">${esc(t(cat.label))}</a><span aria-hidden="true">/</span><span>${name}</span></nav>`
     + `<div class="wine-page-grid">`
     + `<div class="wine-page-art"><img src="${esc(w.image)}" alt="${name}"></div>`
@@ -175,25 +218,33 @@ function winePage(w, cat) {
     + `<div class="tastes">${esc(t(w.taste))}</div>`
     + flavorChips(w)
     + `<p class="wine-page-desc">${esc(t(w.desc))}</p>`
-    + `<button class="add" data-add="${w.id}" aria-label="將${name}加入詢價">＋ 加入詢價</button>`
-    + `<p class="small">＊此為詢價服務，正式訂購以專人確認後為準。</p>`
+    + `<button class="add" data-add="${w.id}" aria-label="${esc(fill(t(ui('ariaAddToInquiry')), { name: t(w.name) }))}">${esc(t(ui('addToInquiry')))}</button>`
+    + `<p class="small">${esc(t(ui('heroNote')))}</p>`
     + `</div></div></section>`;
 }
 
 // ---------------------------------------------------------------- render
-function render({ kind, canonical, title, description, ogDescription, ogImage, cat, wine, wines }) {
+function render({ kind, path, title, description, ogDescription, ogImage, cat, wine, wines }) {
   const isHome = kind === 'home';
+  CURRENT_PATH = path;             // slimHeader() needs it for the switcher
+  const loc = LOCALES.find(l => l.code === LOCALE);
+  const canonical = urlFor(loc, path);
   const collectionHead = isHome
-    ? '<div class="section-head"><div><span class="eyebrow">CURATED FOR YOU</span><h2>一瓶酒，一種心情</h2></div><p>價格與供貨依專人確認為準</p></div>'
+    ? `<div class="section-head"><div><span class="eyebrow">${esc(t(ui('collectionEyebrow')))}</span>`
+      + `<h2>${esc(t(ui('collectionTitle')))}</h2></div><p>${esc(t(ui('collectionNote')))}</p></div>`
     : (kind === 'wine'
-      ? `<div class="section-head"><div><span class="eyebrow">MORE SELECTIONS</span><h2>其他${esc(t(cat.label))}</h2></div><p>同系列的酒款，也值得看看</p></div>`
+      ? `<div class="section-head"><div><span class="eyebrow">${esc(t(ui('wineMoreEyebrow')))}</span>`
+        + `<h2>${esc(fill(t(ui('wineMoreTitle')), { label: t(cat.label) }))}</h2></div>`
+        + `<p>${esc(t(ui('wineMoreNote')))}</p></div>`
       : '');
   const values = {
-    LANG: 'zh-Hant',
+    LANG: loc.lang,
     TITLE: esc(title),
     DESCRIPTION: esc(description),
     OG_DESCRIPTION: esc(ogDescription || description),
     CANONICAL: canonical,
+    HREFLANG: hreflang(path),
+    LANG_SWITCH: langSwitch(path),
     OG_IMAGE: ogImage || `${BASE_URL}/assets/og-image.jpg`,
     BODY_ATTRS: isHome ? ' class="lock"' : '',
     PAGE_HEAD: isHome ? '' : (kind === 'wine' ? winePage(wine, cat) : pageHead(cat)),
@@ -202,7 +253,18 @@ function render({ kind, canonical, title, description, ogDescription, ogImage, c
     GRID: wines.map((w, i) => card(w, i)).join(''),
     EXTRA_SCRIPTS: isHome ? '<script src="/assets/hero.js"></script>' : '',
     JSONLD: jsonld({ title, canonical, cat, wine }),
+    // derived from the catalog rather than duplicated as new strings
+    BRAND: esc(t(catalog.brand)),
+    BRAND_FULL: esc(t(ui('brandFull'))),
+    ADDRESS_LINK: esc(t(catalog.address)) + ' ↗',
+    TICKER: ticker(),
   };
+  // UI chrome strings, localised per render. Keys in catalog.json's `ui` block
+  // map to {{UI_*}} tokens in the template.
+  for (const [k, v] of Object.entries(catalog.ui || {})) {
+    values['UI_' + k.replace(/[^A-Za-z0-9]/g, '_').toUpperCase()] = esc(t(v));
+  }
+
   let out = template;
   for (const [k, v] of Object.entries(values)) out = out.split(`{{${k}}}`).join(v);
 
@@ -230,62 +292,82 @@ function write(relPath, html) {
   console.log(`  wrote ${relPath}  (${html.length} bytes)`);
 }
 
-// ---------------------------------------------------------------- homepage
-const all = visible();
-write('index.html', render({
-  canonical: `${BASE_URL}/`,
-  title: '宏邦貿易 HONG BON｜專屬選酒',
-  description: `${t(catalog.brand)} HONG BON 專屬選酒：依照口味與場合挑選紅酒、白酒、粉紅酒與氣泡酒，整理專屬詢價清單，透過 LINE 或 Email 與我們確認價格與供貨。`,
-  // the site used a shorter, punchier line for social previews — preserved as-is
-  ogDescription: '依照口味與場合，挑選屬於你的酒款，整理專屬詢價清單。',
-  kind: 'home', cat: null, wines: all,
-}));
-
-// ---------------------------------------------------------------- categories
+// ---------------------------------------------------------------- pages
 const cats = catalog.categories || [];
-for (const cat of cats) {
-  const wines = all.filter(w => w.type === cat.type);
-  write(join(cat.slug, 'index.html'), render({
-    canonical: `${BASE_URL}/${cat.slug}/`,
-    title: `${t(cat.label)}｜${t(catalog.brand)} HONG BON`,
-    description: `${t(catalog.brand)} ${t(cat.label)}精選，共 ${wines.length} 款。點選酒款加入詢價清單，透過 LINE 與我們確認價格與供貨。`,
-    kind: 'category', cat, wines,
-  }));
-}
+const all = visible();
+const policies = ['privacy', 'terms', 'shipping', 'quality'];
+const fill = (tpl, vars) => String(tpl).replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? '');
 
-// ---------------------------------------------------------------- wine pages
-let wineCount = 0;
-for (const w of all) {
-  // no slug -> no page; the cards skip the link too, so nothing 404s
-  if (!w.slug) continue;
-  const cat = cats.find(c => c.type === w.type);
-  if (!cat) continue;
-  const siblings = all.filter(x => x.type === w.type && x.id !== w.id);
-  // a one-wine category would leave the grid empty, so fall back to any others
-  const related = siblings.length ? siblings : all.filter(x => x.id !== w.id).slice(0, 4);
-  write(join('wine', w.slug, 'index.html'), render({
-    kind: 'wine',
-    canonical: `${BASE_URL}/wine/${w.slug}/`,
-    title: `${t(w.name)}｜${t(catalog.brand)} HONG BON`,
-    description: `${t(w.name)}。${t(w.taste)}`.slice(0, 155),
-    ogDescription: `${t(w.name)} — ${t(w.en)}`,
-    ogImage: w.image && w.image.startsWith('/') ? `${BASE_URL}${w.image}` : undefined,
-    cat, wine: w, wines: related,
+// One entry per page path; `locales` limits a page to the locales it exists in
+// (the policy pages are Chinese-only until translations arrive).
+const entries = [{ path: '/', cf: 'weekly', pr: '1.0', locales: null }];
+for (const cat of cats) entries.push({ path: `/${cat.slug}/`, cf: 'weekly', pr: '0.8', locales: null });
+for (const w of all) if (w.slug) entries.push({ path: `/wine/${w.slug}/`, cf: 'monthly', pr: '0.6', locales: null });
+for (const p of policies) entries.push({ path: `/${p}.html`, cf: 'yearly', pr: '0.3', locales: ['zh'] });
+
+let pageCount = 0;
+for (const loc of LOCALES) {
+  LOCALE = loc.code;
+  const dir = loc.prefix ? loc.prefix.slice(1) : '';
+  const at = rel => (dir ? join(dir, rel) : rel);
+
+  write(at('index.html'), render({
+    kind: 'home', path: '/',
+    title: t(ui('homeTitle')),
+    description: t(ui('homeDescription')),
+    ogDescription: t(ui('homeOgDescription')),
+    cat: null, wines: all,
   }));
-  wineCount++;
+  pageCount++;
+
+  for (const cat of cats) {
+    const wines = all.filter(w => w.type === cat.type);
+    write(at(join(cat.slug, 'index.html')), render({
+      kind: 'category', path: `/${cat.slug}/`,
+      title: `${t(cat.label)}｜${t(ui('brandFull'))}`,
+      description: fill(t(ui('catDescription')), { brand: t(catalog.brand), label: t(cat.label), n: wines.length }),
+      cat, wines,
+    }));
+    pageCount++;
+  }
+
+  for (const w of all) {
+    // no slug -> no page; the cards skip the link too, so nothing 404s
+    if (!w.slug) continue;
+    const cat = cats.find(c => c.type === w.type);
+    if (!cat) continue;
+    const siblings = all.filter(x => x.type === w.type && x.id !== w.id);
+    // a one-wine category would leave the grid empty, so fall back to any others
+    const related = siblings.length ? siblings : all.filter(x => x.id !== w.id).slice(0, 4);
+    write(at(join('wine', w.slug, 'index.html')), render({
+      kind: 'wine', path: `/wine/${w.slug}/`,
+      title: `${t(w.name)}｜${t(ui('brandFull'))}`,
+      description: fill(t(ui('wineDescription')), { name: t(w.name), taste: t(w.taste) }).slice(0, 155),
+      ogDescription: `${t(w.name)} — ${t(w.en)}`,
+      ogImage: w.image && w.image.startsWith('/') ? `${BASE_URL}${w.image}` : undefined,
+      cat, wine: w, wines: related,
+    }));
+    pageCount++;
+  }
 }
 
 // ---------------------------------------------------------------- sitemap
-const policies = ['privacy', 'terms', 'shipping', 'quality'];
-const urls = [
-  { loc: `${BASE_URL}/`, cf: 'weekly', pr: '1.0' },
-  ...cats.map(c => ({ loc: `${BASE_URL}/${c.slug}/`, cf: 'weekly', pr: '0.8' })),
-  ...all.filter(w => w.slug).map(w => ({ loc: `${BASE_URL}/wine/${w.slug}/`, cf: 'monthly', pr: '0.6' })),
-  ...policies.map(p => ({ loc: `${BASE_URL}/${p}.html`, cf: 'yearly', pr: '0.3' })),
-];
+// Each locale gets its own <url> carrying every alternate, which is the
+// standard way to declare hreflang inside a sitemap.
+const rows = [];
+for (const e of entries) {
+  const locs = LOCALES.filter(l => !e.locales || e.locales.includes(l.code));
+  for (const l of locs) {
+    const alts = locs.length > 1
+      ? locs.map(a => `    <xhtml:link rel="alternate" hreflang="${a.lang}" href="${urlFor(a, e.path)}"/>`).join('\n') + '\n'
+      : '';
+    rows.push(`  <url>\n    <loc>${urlFor(l, e.path)}</loc>\n${alts}`
+      + `    <changefreq>${e.cf}</changefreq>\n    <priority>${e.pr}</priority>\n  </url>`);
+  }
+}
 write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n'
-  + '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-  + urls.map(u => `  <url>\n    <loc>${u.loc}</loc>\n    <changefreq>${u.cf}</changefreq>\n    <priority>${u.pr}</priority>\n  </url>`).join('\n')
-  + '\n</urlset>\n');
+  + '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+  + rows.join('\n') + '\n</urlset>\n');
 
-console.log(`\ngenerate.mjs done — ${all.length} wines, ${cats.length} categories, ${wineCount} wine pages`);
+console.log(`\ngenerate.mjs done — ${all.length} wines, ${cats.length} categories, `
+  + `${pageCount} pages across ${LOCALES.length} locales`);

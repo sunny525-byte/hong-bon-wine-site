@@ -1,7 +1,7 @@
 {
   "brand": {
     "zh": "宏邦貿易",
-    "en": ""
+    "en": "Hong Bon"
   },
   "english": {
     "zh": "HONG BON",
@@ -16,7 +16,7 @@
   },
   "address": {
     "zh": "高雄市橋頭區新興路 9 號",
-    "en": ""
+    "en": "No. 9, Xinxing Rd., Qiaotou Dist., Kaohsiung City, Taiwan"
   },
   "phone": "0932-811-678",
   "payments": [
@@ -664,5 +664,571 @@
         "en": ""
       }
     }
-  ]
+  ],
+  "ui": {
+    "tagline": {
+      "zh": "為每一次相聚，選一瓶好酒。",
+      "en": "A good bottle for every gathering."
+    },
+    "taglinePlain": {
+      "zh": "為每一次相聚，選一瓶好酒",
+      "en": "A good bottle for every gathering"
+    },
+    "skip": {
+      "zh": "跳過 SKIP",
+      "en": "SKIP"
+    },
+    "tickerLine": {
+      "zh": "LINE 詢價",
+      "en": "LINE ENQUIRY"
+    },
+    "heroEyebrow": {
+      "zh": "Experience the selection · 專屬選酒",
+      "en": "Experience the selection"
+    },
+    "heroScript": {
+      "zh": "Savour the moment",
+      "en": "Savour the moment"
+    },
+    "heroLine1": {
+      "zh": "風味之間，",
+      "en": "Between flavours,"
+    },
+    "heroLine2": {
+      "zh": "找到你的",
+      "en": "find the one"
+    },
+    "heroEm": {
+      "zh": "心之所選",
+      "en": "you love"
+    },
+    "heroLead": {
+      "zh": "從日常小酌到重要相聚，慢慢挑選喜歡的風味。選好酒款與數量送出後，我們會透過 LINE 與您確認價格、庫存與配送方式。",
+      "en": "From a quiet glass at home to a table full of friends — take your time choosing. Send us the wines and quantities you like, and we will confirm price, stock and delivery with you on LINE."
+    },
+    "heroCta": {
+      "zh": "探索酒款",
+      "en": "Explore the wines"
+    },
+    "heroLineCta": {
+      "zh": "LINE 諮詢選酒 ↗",
+      "en": "Ask us on LINE ↗"
+    },
+    "heroNote": {
+      "zh": "＊此為詢價服務，正式訂購以專人確認後為準。",
+      "en": "* This is an enquiry service. Orders are confirmed by our staff."
+    },
+    "carouselPause": {
+      "zh": "暫停",
+      "en": "Pause"
+    },
+    "heroFoot": {
+      "zh": "飲酒過量，有害健康 · 未滿十八歲請勿飲酒 · 酒後不開車",
+      "en": "Drink responsibly · Not for anyone under 18 · Never drink and drive"
+    },
+    "collectionEyebrow": {
+      "zh": "CURATED FOR YOU",
+      "en": "CURATED FOR YOU"
+    },
+    "collectionTitle": {
+      "zh": "一瓶酒，一種心情",
+      "en": "Every bottle, a mood"
+    },
+    "collectionNote": {
+      "zh": "價格與供貨依專人確認為準",
+      "en": "Price and availability confirmed by our staff"
+    },
+    "allWines": {
+      "zh": "全部酒款",
+      "en": "All wines"
+    },
+    "wineEyebrow": {
+      "zh": "WINE SELECTION",
+      "en": "WINE SELECTION"
+    },
+    "wineMoreEyebrow": {
+      "zh": "MORE SELECTIONS",
+      "en": "MORE SELECTIONS"
+    },
+    "wineMoreNote": {
+      "zh": "同系列的酒款，也值得看看",
+      "en": "More from the same range"
+    },
+    "bandEyebrow": {
+      "zh": "CONNECT WITH US",
+      "en": "CONNECT WITH US"
+    },
+    "bandTitle": {
+      "zh": "加入宏邦貿易官方 LINE",
+      "en": "Join our official LINE"
+    },
+    "bandBody": {
+      "zh": "選酒諮詢、庫存與價格確認，都在 LINE 上完成。",
+      "en": "Advice, stock checks and pricing are all handled on LINE."
+    },
+    "bandCta": {
+      "zh": "加入官方 LINE ↗",
+      "en": "Join us on LINE ↗"
+    },
+    "helpEyebrow": {
+      "zh": "A PERSONAL TOUCH",
+      "en": "A PERSONAL TOUCH"
+    },
+    "helpTitle": {
+      "zh": "還沒找到心儀的酒？",
+      "en": "Not found the right bottle yet?"
+    },
+    "helpBody": {
+      "zh": "告訴我們場合、喜歡的口味與預算，讓選酒更有方向。",
+      "en": "Tell us the occasion, the flavours you like and your budget."
+    },
+    "helpCta": {
+      "zh": "整理選酒需求",
+      "en": "Build a shortlist"
+    },
+    "footerBlurb": {
+      "zh": "選酒諮詢、供貨與售後服務，歡迎與我們聯繫。",
+      "en": "For advice, supply and after-sales service, please get in touch."
+    },
+    "footerContact": {
+      "zh": "聯絡我們",
+      "en": "Contact us"
+    },
+    "footerServices": {
+      "zh": "服務資訊",
+      "en": "Information"
+    },
+    "navPrivacy": {
+      "zh": "隱私權政策",
+      "en": "Privacy policy"
+    },
+    "navTerms": {
+      "zh": "服務條款",
+      "en": "Terms of service"
+    },
+    "navShipping": {
+      "zh": "配送資訊",
+      "en": "Delivery"
+    },
+    "navQuality": {
+      "zh": "品質保證",
+      "en": "Quality"
+    },
+    "navAdmin": {
+      "zh": "管理酒單",
+      "en": "Manage catalogue"
+    },
+    "footerWarning": {
+      "zh": "飲酒過量，有害健康。未滿十八歲請勿飲酒。酒後不開車。",
+      "en": "Drink responsibly. Not for anyone under 18. Never drink and drive."
+    },
+    "footerDisclaimer": {
+      "zh": "本網站提供酒款展示與諮詢，不提供線上交易。",
+      "en": "This site presents wines and takes enquiries. No online sales."
+    },
+    "payCash": {
+      "zh": "付款方式：現金、Visa 信用卡",
+      "en": "Payment: cash, Visa"
+    },
+    "payWallets": {
+      "zh": "LINE Pay、台灣 Pay、街口支付",
+      "en": "LINE Pay, Taiwan Pay, JKO Pay"
+    },
+    "payNote": {
+      "zh": "適用方式請洽門市確認。",
+      "en": "Please confirm accepted methods in store."
+    },
+    "mobileEmpty": {
+      "zh": "尚未選擇酒款",
+      "en": "No wines selected"
+    },
+    "mobileViewCart": {
+      "zh": "查看詢價清單 →",
+      "en": "View enquiry list →"
+    },
+    "ariaMenu": {
+      "zh": "開啟選單",
+      "en": "Open menu"
+    },
+    "ariaPrev": {
+      "zh": "上一張",
+      "en": "Previous"
+    },
+    "ariaNext": {
+      "zh": "下一張",
+      "en": "Next"
+    },
+    "ariaFilters": {
+      "zh": "酒款分類",
+      "en": "Wine categories"
+    },
+    "ariaContact": {
+      "zh": "聯絡方式",
+      "en": "Ways to contact us"
+    },
+    "ariaCarousel": {
+      "zh": "精選活動",
+      "en": "Featured"
+    },
+    "cartTitle": {
+      "zh": "我的詢價清單",
+      "en": "My enquiry list"
+    },
+    "cartHint": {
+      "zh": "確認酒款與數量，開啟官方 LINE，確認文字後按傳送。",
+      "en": "Check the wines and quantities, open LINE, then press send."
+    },
+    "cartEmpty": {
+      "zh": "清單還是空的。",
+      "en": "Your list is empty."
+    },
+    "cartEmptyHint": {
+      "zh": "先挑選一款喜歡的酒吧。",
+      "en": "Pick a wine you like first."
+    },
+    "cartNotes": {
+      "zh": "補充需求",
+      "en": "Notes"
+    },
+    "cartTotals": {
+      "zh": "共 0 款 / 0 瓶",
+      "en": "0 wines / 0 bottles"
+    },
+    "cartPriceNote": {
+      "zh": "優惠價格由專人確認",
+      "en": "Pricing confirmed by our staff"
+    },
+    "inquiryTitle": {
+      "zh": "送出詢價單",
+      "en": "Send an enquiry"
+    },
+    "inquiryHint": {
+      "zh": "將開啟宏邦貿易官方聊天室，詢價內容會帶入輸入欄，請確認後按傳送。",
+      "en": "LINE will open with your enquiry filled in. Please check it and press send."
+    },
+    "helpOccasion": {
+      "zh": "飲用場合",
+      "en": "Occasion"
+    },
+    "helpOcc1": {
+      "zh": "朋友聚餐",
+      "en": "Dinner with friends"
+    },
+    "helpOcc2": {
+      "zh": "日常小酌",
+      "en": "Everyday glass"
+    },
+    "helpOcc3": {
+      "zh": "送禮",
+      "en": "A gift"
+    },
+    "helpOcc4": {
+      "zh": "慶祝紀念日",
+      "en": "Celebration"
+    },
+    "helpBudget": {
+      "zh": "每瓶預算",
+      "en": "Budget per bottle"
+    },
+    "helpTaste": {
+      "zh": "口味與其他需求",
+      "en": "Taste and other notes"
+    },
+    "helpSubmit": {
+      "zh": "送到 LINE 諮詢",
+      "en": "Send to LINE"
+    },
+    "helpSubmitHint": {
+      "zh": "將開啟官方 LINE 並帶入需求，請確認後按傳送。",
+      "en": "LINE will open with your requirements. Please check and press send."
+    },
+    "formNote": {
+      "zh": "填寫 Email，我們將以 Email 回覆您的詢價。",
+      "en": "Enter your email and we will reply to your enquiry by email."
+    },
+    "formHoneypot": {
+      "zh": "此欄位請勿填寫",
+      "en": "Please leave this field empty"
+    },
+    "formName": {
+      "zh": "姓名",
+      "en": "Name"
+    },
+    "formContact": {
+      "zh": "LINE ID 或 手機",
+      "en": "LINE ID or mobile"
+    },
+    "formSubmit": {
+      "zh": "送出詢價",
+      "en": "Send enquiry"
+    },
+    "ariaPhone": {
+      "zh": "電話",
+      "en": "Phone"
+    },
+    "ariaMap": {
+      "zh": "地圖",
+      "en": "Map"
+    },
+    "ariaCloseCart": {
+      "zh": "關閉詢價清單",
+      "en": "Close enquiry list"
+    },
+    "ariaCloseHelp": {
+      "zh": "關閉選酒需求",
+      "en": "Close wine requirements"
+    },
+    "ariaCloseInquiry": {
+      "zh": "關閉詢價單",
+      "en": "Close enquiry form"
+    },
+    "ariaCopyInquiry": {
+      "zh": "詢價內容，請手動複製",
+      "en": "Enquiry text, copy manually"
+    },
+    "ariaCopyHelp": {
+      "zh": "選酒需求，請手動複製",
+      "en": "Wine requirements, copy manually"
+    },
+    "phNotes": {
+      "zh": "例如：週末聚餐 6 人、偏好不甜的酒款",
+      "en": "e.g. weekend dinner for 6, prefer dry wines"
+    },
+    "phBudget": {
+      "zh": "例如：NT$1,000–1,500",
+      "en": "e.g. NT$1,000–1,500"
+    },
+    "phTaste": {
+      "zh": "例如：喜歡果香、不甜，搭配牛排",
+      "en": "e.g. fruity and dry, to go with steak"
+    },
+    "phName": {
+      "zh": "您的稱呼（選填）",
+      "en": "Your name (optional)"
+    },
+    "phEmail": {
+      "zh": "我們將以此回覆您",
+      "en": "We will reply to this address"
+    },
+    "phContact": {
+      "zh": "（選填）",
+      "en": "(optional)"
+    },
+    "heroSlideAlt": {
+      "zh": "宏邦貿易酒款情境主視覺",
+      "en": "Hong Bon wine selection"
+    },
+    "tickerSelection": {
+      "zh": "專屬選酒",
+      "en": "Our selection"
+    },
+    "tickerEn": {
+      "zh": "THE WINE SELECTION",
+      "en": "THE WINE SELECTION"
+    },
+    "cartLabel": {
+      "zh": "詢價清單",
+      "en": "Enquiry list"
+    },
+    "homeLabel": {
+      "zh": "首頁",
+      "en": "Home"
+    },
+    "helpDialogTitle": {
+      "zh": "你的選酒需求",
+      "en": "Your wine requirements"
+    },
+    "cartSubmit": {
+      "zh": "送到 LINE 詢價",
+      "en": "Send on LINE"
+    },
+    "heroEnd": {
+      "zh": "。",
+      "en": "."
+    },
+    "homeTitle": {
+      "zh": "宏邦貿易 HONG BON｜專屬選酒",
+      "en": "Hong Bon | Wine Selection"
+    },
+    "homeDescription": {
+      "zh": "宏邦貿易 HONG BON 專屬選酒：依照口味與場合挑選紅酒、白酒、粉紅酒與氣泡酒，整理專屬詢價清單，透過 LINE 或 Email 與我們確認價格與供貨。",
+      "en": "Hong Bon wine selection — choose red, white, rosé and sparkling wines by taste and occasion, build an enquiry list, and confirm price and availability with us on LINE or by email."
+    },
+    "homeOgDescription": {
+      "zh": "依照口味與場合，挑選屬於你的酒款，整理專屬詢價清單。",
+      "en": "Choose wines by taste and occasion. Build your enquiry list."
+    },
+    "catDescription": {
+      "zh": "{brand} {label}精選，共 {n} 款。點選酒款加入詢價清單，透過 LINE 與我們確認價格與供貨。",
+      "en": "{brand} {label} — {n} wines. Add any bottle to your enquiry list and confirm price and availability with us on LINE."
+    },
+    "wineDescription": {
+      "zh": "{name}。{taste}",
+      "en": "{name}. {taste}"
+    },
+    "cartRowNote": {
+      "zh": "待確認酒款 · 專屬詢價",
+      "en": "Awaiting confirmation · enquiry"
+    },
+    "qtyDecrease": {
+      "zh": "減少{name}數量",
+      "en": "Remove one {name}"
+    },
+    "qtyIncrease": {
+      "zh": "增加{name}數量",
+      "en": "Add one {name}"
+    },
+    "addedToCart": {
+      "zh": "已加入詢價清單（共 {n} 瓶）· 查看詢價清單 →",
+      "en": "Added to your enquiry list ({n} bottles) · view list →"
+    },
+    "copied": {
+      "zh": "已複製，請貼到 LINE 聊天室",
+      "en": "Copied — paste it into the LINE chat"
+    },
+    "longPressCopy": {
+      "zh": "請長按下方文字複製",
+      "en": "Long-press the text below to copy"
+    },
+    "catalogNotLoaded": {
+      "zh": "酒單尚未載入，請稍後再試",
+      "en": "The list has not loaded yet — please try again shortly"
+    },
+    "lineIntro": {
+      "zh": "您好，我想詢問以下酒款：",
+      "en": "Hello, I would like to ask about the following wines:"
+    },
+    "bottleUnit": {
+      "zh": "瓶",
+      "en": "bottles"
+    },
+    "lineTotal": {
+      "zh": "共 {n} 瓶\\n請協助確認價格與供貨，謝謝。",
+      "en": "Total: {n} bottles\\nPlease confirm price and availability. Thank you."
+    },
+    "lineNotes": {
+      "zh": "補充需求：",
+      "en": "Notes:"
+    },
+    "sending": {
+      "zh": "送出中…",
+      "en": "Sending…"
+    },
+    "sent": {
+      "zh": "詢價已送出，我們會盡快以 Email 回覆。",
+      "en": "Enquiry sent — we will reply by email shortly."
+    },
+    "sendFailed": {
+      "zh": "送出失敗，請稍後再試，或改用 LINE。",
+      "en": "Sending failed. Please try again, or use LINE."
+    },
+    "helpHint": {
+      "zh": "將開啟 LINE 與我們確認；也可改用「送出詢價單」以 Email 聯繫。",
+      "en": "LINE will open so you can confirm with us, or use \"Send an enquiry\" to reach us by email."
+    },
+    "helpHintDesktop": {
+      "zh": "使用電腦網頁請選「送出詢價單」，我們以 Email 回覆；LINE 僅適用於手機。",
+      "en": "On a computer, choose \"Send an enquiry\" and we will reply by email. LINE is for phones."
+    },
+    "helpLineIntro": {
+      "zh": "您好，想請您協助挑選酒款。",
+      "en": "Hello, could you help me choose some wines?"
+    },
+    "helpOccasionLbl": {
+      "zh": "場合：",
+      "en": "Occasion:"
+    },
+    "helpBudgetLbl": {
+      "zh": "每瓶預算：",
+      "en": "Budget per bottle:"
+    },
+    "helpTasteLbl": {
+      "zh": "口味與需求：",
+      "en": "Taste and requirements:"
+    },
+    "helpRecommend": {
+      "zh": "想先了解建議",
+      "en": "What would you recommend?"
+    },
+    "helpRecommend2": {
+      "zh": "請協助推薦",
+      "en": "Please help me choose"
+    },
+    "collapseInfo": {
+      "zh": "收合資訊 −",
+      "en": "Less −"
+    },
+    "expandMore": {
+      "zh": "展開更多 ＋",
+      "en": "More ＋"
+    },
+    "collapse": {
+      "zh": "收合",
+      "en": "Less"
+    },
+    "expand": {
+      "zh": "展開",
+      "en": "More"
+    },
+    "moreInfo": {
+      "zh": "的更多資訊",
+      "en": " — more details"
+    },
+    "viewCart": {
+      "zh": "查看詢價清單 →",
+      "en": "View enquiry list →"
+    },
+    "mobileCount": {
+      "zh": "已選 {n} 款・共 {b} 瓶",
+      "en": "Wines: {n} · Bottles: {b}"
+    },
+    "cartTotalsLine": {
+      "zh": "共 {n} 款 / {b} 瓶",
+      "en": "Wines: {n} / Bottles: {b}"
+    },
+    "priceConfirmed": {
+      "zh": "優惠價格由專人確認",
+      "en": "Pricing confirmed by our staff"
+    },
+    "lineTitle": {
+      "zh": "我的詢價清單",
+      "en": "My enquiry list"
+    },
+    "brandFull": {
+      "zh": "宏邦貿易 HONG BON",
+      "en": "Hong Bon"
+    },
+    "imageAltSuffix": {
+      "zh": "商品參考圖",
+      "en": " — product image"
+    },
+    "featuredBadge": {
+      "zh": "本月推薦",
+      "en": "Featured"
+    },
+    "cardCtaLabel": {
+      "zh": "專屬詢價",
+      "en": "Enquire"
+    },
+    "addToInquiry": {
+      "zh": "＋ 加入詢價",
+      "en": "+ Add to enquiry"
+    },
+    "ariaAddToInquiry": {
+      "zh": "將{name}加入詢價",
+      "en": "Add {name} to your enquiry"
+    },
+    "ariaExpandWine": {
+      "zh": "展開{name}的更多資訊",
+      "en": "Show more about {name}"
+    },
+    "catFallback": {
+      "zh": "{brand} 精選{label}，共 {n} 款。點選酒款加入詢價清單，透過 LINE 與我們確認價格與供貨。",
+      "en": "{brand} {label} — {n} wines. Add any bottle to your enquiry list and confirm price and availability with us on LINE."
+    },
+    "wineMoreTitle": {
+      "zh": "其他{label}",
+      "en": "More {label}"
+    }
+  }
 }
