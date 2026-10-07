@@ -21,6 +21,7 @@ const CONFIG = {
   const mobile = matchMedia('(max-width:860px)').matches;
   const pad = n => String(n).padStart(2, '0');
   const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const t=v=>v&&typeof v==="object"?((document.documentElement.lang||"").toLowerCase().indexOf("en")===0?(v.en||v.zh||""):(v.zh||v.en||"")):(v==null?"":String(v));
   media.style.setProperty('--obj', CONFIG.objPosition);
 
   let handed = false;
@@ -94,7 +95,7 @@ const CONFIG = {
       if (!r.ok) throw new Error('catalog');
       const s = await r.json();
       const list = (s.heroSlides || [])
-        .map(x => ({ image: x.image, alt: x.alt || `${s.brand || ''}精選圖片` }))
+        .map(x => ({ image: x.image, alt: t(x.alt) || `${t(s.brand)}精選圖片` }))
         .filter(x => x.image);
       if (list.length) build(list);
     } catch (e) { /* keep the markup fallback */ }
