@@ -24,7 +24,9 @@ git clone https://github.com/sunny525-byte/hong-bon-wine-site.git
 cd hong-bon-wine-site
 node generate.mjs
 node scripts/serve.mjs        # http://127.0.0.1:8931  (zh at /, English at /en/)
-# one-time: link the clone to the Netlify site (required for `netlify build`)
+# optional: link the clone to the Netlify site (needed for `netlify build`).
+# Requires Netlify access to the site, which lives in the CLIENT's account —
+# if it errors "Project id … not found", skip it.
 netlify link --id a9c26139-fbe7-412e-8034-cc340b8f89e7
 ```
 

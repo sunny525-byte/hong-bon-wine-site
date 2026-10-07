@@ -100,8 +100,10 @@ cd hong-bon-wine-site
 # generate the pages, then serve them locally with caching disabled
 node generate.mjs
 node scripts/serve.mjs        # http://127.0.0.1:8931
-# one-time setup: link this clone to the Netlify site so `netlify build` works.
-# Without it, netlify build fails with "Could not find the project ID".
+# optional: link this clone to the Netlify site so `netlify build` works.
+# This requires your Netlify account to have access to the site — it lives in the
+# CLIENT's account. If it errors with "Project id … not found", you do not have
+# access; skip it. `node generate.mjs` is all you need for page work.
 netlify link --id a9c26139-fbe7-412e-8034-cc340b8f89e7
 ```
 
@@ -194,15 +196,22 @@ git commit -m "…"
 git push origin main
 ```
 
-Netlify builds and publishes automatically. Verify the deploy:
+Netlify builds and publishes automatically. **Allow ~1 minute, then check the live site**
+(an edge node can briefly serve the previous asset — use `?cb=$RANDOM` to bypass it):
+
+```bash
+curl -s -o /dev/null -w '%{http_code}\n' "https://hongbon.tw/?cb=$RANDOM"
+```
+
+If your Netlify account has access to the site you can also read the deploy record —
+this needs access, so it may return `Not Found`:
 
 ```bash
 netlify api listSiteDeploys \
   --data '{"site_id":"a9c26139-fbe7-412e-8034-cc340b8f89e7","per_page":1}'
 ```
 
-Then check the live site (allow ~1 minute; an edge node can briefly serve the previous asset —
-use `?cb=$RANDOM` to bypass it).
+Probing the live site is the check that always works, and the one that matters.
 
 | | |
 |---|---|
@@ -281,6 +290,7 @@ Wines without a `slug` are skipped rather than linked to a 404.
 │   └── admin-gate.js            password gate
 ├── scripts/
 │   └── serve.mjs                local dev server (caching disabled)
+├── robots.txt                   static (not generated)
 ├── assets/
 │   ├── app.js                   client behaviour
 │   ├── hero.js                  homepage intro + banner
@@ -292,7 +302,7 @@ Wines without a `slug` are skipped rather than linked to a 404.
 ├── docs/DEPLOYMENT.md           operational reference
 └── ── GENERATED (do not hand-edit) ──
     index.html · privacy.html · terms.html · shipping.html · quality.html
-    sitemap.xml · robots.txt
+    sitemap.xml
     red-wine/ · white-wine/ · rose-wine/ · sparkling-wine/
     wine/                        ← 20 wine detail pages
     en/                          ← the whole site again, in English

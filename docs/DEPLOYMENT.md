@@ -82,6 +82,15 @@ pages — but commit the regenerated files anyway so the repo matches what is de
 
 ### Verifying a deploy
 
+**Probe the live site** — this always works and is the check that matters:
+
+```bash
+curl -s -o /dev/null -w '%{http_code}\n' "https://hongbon.tw/?cb=$RANDOM"
+```
+
+If your Netlify account has access to the site, you can also read the deploy record
+(the CLI accounts here may not — it can return `Not Found`):
+
 ```bash
 # deploy state + the commit it built
 netlify api listSiteDeploys \
@@ -165,7 +174,8 @@ Only `main` builds. Pushing a branch creates **no** deploy preview — verify on
 possible. Use `netlify build` locally before pushing:
 
 ```bash
-# one-time per clone — without it: "Could not find the project ID"
+# optional — requires your Netlify account to have access to the site.
+# No access ⇒ "Project id … not found"; skip it and use `node generate.mjs`.
 netlify link --id a9c26139-fbe7-412e-8034-cc340b8f89e7
 netlify build      # runs the real build command and bundles the edge function
 ```

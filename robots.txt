@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# the catalogue editor is password-gated; keep it out of search results
+Disallow: /admin
+Disallow: /admin.html
+
 Sitemap: https://hongbon.tw/sitemap.xml
