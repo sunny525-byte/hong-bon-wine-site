@@ -6,3 +6,12 @@
   from = "/admin"
   to = "/admin.html"
   status = 200
+
+# Send the default *.netlify.app host to the canonical domain so search engines
+# don't see two copies of the site. Matches this host only, so deploy previews
+# (deploy-preview-N--hongbon.netlify.app) are unaffected.
+[[redirects]]
+  from = "https://hongbon.netlify.app/*"
+  to = "https://hongbon.tw/:splat"
+  status = 301
+  force = true
