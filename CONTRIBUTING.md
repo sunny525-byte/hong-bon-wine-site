@@ -24,6 +24,8 @@ git clone https://github.com/sunny525-byte/hong-bon-wine-site.git
 cd hong-bon-wine-site
 node generate.mjs
 node scripts/serve.mjs        # http://127.0.0.1:8931  (zh at /, English at /en/)
+# one-time: link the clone to the Netlify site (required for `netlify build`)
+netlify link --id a9c26139-fbe7-412e-8034-cc340b8f89e7
 ```
 
 > **Do not preview with `python -m http.server`.** It sends no `Cache-Control`, so browsers

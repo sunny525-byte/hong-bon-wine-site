@@ -100,6 +100,9 @@ cd hong-bon-wine-site
 # generate the pages, then serve them locally with caching disabled
 node generate.mjs
 node scripts/serve.mjs        # http://127.0.0.1:8931
+# one-time setup: link this clone to the Netlify site so `netlify build` works.
+# Without it, netlify build fails with "Could not find the project ID".
+netlify link --id a9c26139-fbe7-412e-8034-cc340b8f89e7
 ```
 
 > **Use `scripts/serve.mjs`, not `python -m http.server`.** The Python server sends
@@ -107,11 +110,15 @@ node scripts/serve.mjs        # http://127.0.0.1:8931
 > serve a stale `app.js` against a freshly-edited page — which looks like a code bug but isn't.
 > See [Gotchas](#gotchas-worth-knowing).
 
-To reproduce exactly what Netlify does, use the Netlify CLI (optional):
+To reproduce exactly what Netlify does — including bundling the admin Edge Function —
+use the Netlify CLI (optional). It needs the one-time `netlify link` above:
 
 ```bash
-netlify build      # runs the configured build command, does not deploy
+netlify build      # runs the configured build command and bundles the edge function
 ```
+
+`node generate.mjs` alone is enough for page work; `netlify build` additionally
+validates the edge function and the publish configuration.
 
 ---
 

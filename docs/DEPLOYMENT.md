@@ -165,7 +165,9 @@ Only `main` builds. Pushing a branch creates **no** deploy preview — verify on
 possible. Use `netlify build` locally before pushing:
 
 ```bash
-netlify build      # runs the real build command, no deploy
+# one-time per clone — without it: "Could not find the project ID"
+netlify link --id a9c26139-fbe7-412e-8034-cc340b8f89e7
+netlify build      # runs the real build command and bundles the edge function
 ```
 
 ### Netlify "Pretty URLs" is enabled
