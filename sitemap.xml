@@ -352,21 +352,57 @@
   </url>
   <url>
     <loc>https://hongbon.tw/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/privacy.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/en/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/privacy.html"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://hongbon.tw/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/terms.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/en/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/terms.html"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://hongbon.tw/shipping.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/shipping.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/shipping.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/en/shipping.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/shipping.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/shipping.html"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://hongbon.tw/quality.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/quality.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/quality.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/en/quality.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/quality.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/quality.html"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

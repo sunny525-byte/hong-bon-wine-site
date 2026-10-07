@@ -42,23 +42,12 @@ const t = v => (v && typeof v === 'object')
   : (v == null ? '' : String(v));
 
 // flavour chips — ported from app.js so the prerendered cards match
-const FLAVORS = [
-  { zh: '果香', en: 'Fruity', match: ['果香', '水果', '漿果', '黑莓', '櫻桃', '草莓', '覆盆子', '柑橘', '檸檬', '蘋果', '桃', '杏', '李子', '梨', '黑加侖', '葡萄柚'] },
-  { zh: '花香', en: 'Floral', match: ['花香', '白花', '接骨木', '紫羅蘭', '白色花朵', '乾燥花'] },
-  { zh: '礦物', en: 'Mineral', match: ['礦物', '礦石', '板岩', '碎石', '鵝卵石', '礫石'] },
-  { zh: '單寧', en: 'Tannin', match: ['單寧'] },
-  { zh: '氣泡', en: 'Sparkling', match: ['氣泡', '起泡'] },
-  { zh: '煙燻', en: 'Smoky', match: ['煙燻', '煙燻感'] },
-  { zh: '香料', en: 'Spice', match: ['香料', '胡椒', '甘草', '肉桂', '茴香', '烘焙香料'] },
-  { zh: '草本', en: 'Herbal', match: ['草本', '鼠尾草', '迷迭香', '百里香', '月桂', '杜松子', '薄荷'] },
-  { zh: '巧克力', en: 'Chocolate', match: ['巧克力', '可可', '摩卡', '太妃糖'] },
-  { zh: '橡木', en: 'Oak', match: ['橡木'] },
-];
-
+// Flavour labels + match terms come from catalog.json, so the client can edit
+// them. Each `match` list holds both languages, so one table serves either locale.
 const flavorsOf = w => {
   const hay = t(w.desc) + t(w.taste);
-  return FLAVORS.filter(f => f.match.some(k => hay.includes(k)))
-    .map(f => (LOCALE === 'en' ? f.en : f.zh));
+  return (catalog.flavors || []).filter(f => (f.match || []).some(k => hay.includes(k)))
+    .map(f => t(f));
 };
 
 const flavorChips = w => {
@@ -70,7 +59,7 @@ const flavorChips = w => {
 function card(w, index) {
   const n = String(index + 1).padStart(2, '0');
   const name = esc(t(w.name));
-  const href = w.slug ? `/wine/${w.slug}/` : null;   // no slug -> no link, never a 404
+  const href = w.slug ? p(`/wine/${w.slug}/`) : null;   // no slug -> no link, never a 404
   const open = href ? `<a class="product-link" href="${href}">` : '<span>';
   const close = href ? '</a>' : '</span>';
   return `<article class="product${w.featured ? ' featured' : ''}">`
@@ -95,8 +84,8 @@ const glass = type => `<svg class="glass glass-${type}" viewBox="0 0 24 24" aria
 // The {{FILTERS}} token replaces the whole toolbar block, so this must emit the
 // .toolbar wrapper too — it is the element the position:sticky rule targets.
 function filters(activeType) {
-  const items = [{ type: 'all', href: '/', label: t(ui('allWines')) }]
-    .concat((catalog.categories || []).map(c => ({ type: c.type, href: `/${c.slug}/`, label: t(c.label) })));
+  const items = [{ type: 'all', href: p('/'), label: t(ui('allWines')) }]
+    .concat((catalog.categories || []).map(c => ({ type: c.type, href: p(`/${c.slug}/`), label: t(c.label) })));
   return `<div class="toolbar"><div class="filters" role="group" aria-label="${esc(t(ui('ariaFilters')))}">`
     + items.map(it => {
       const on = it.type === activeType;
@@ -110,6 +99,8 @@ const ui = k => (catalog.ui || {})[k];
 // `path` is locale-independent ('/', '/red-wine/', '/wine/<slug>/'), so the
 // canonical and the alternates are all derived from it.
 const urlFor = (loc, path) => `${BASE_URL}${loc.prefix}${path}`;
+// locale-aware internal link: '' for zh, '/en' for en
+const p = path => ((LOCALES.find(l => l.code === LOCALE) || {}).prefix || '') + path;
 const other = () => LOCALES.find(l => l.code !== LOCALE);
 
 function hreflang(path) {
@@ -143,9 +134,9 @@ const visible = () => (catalog.wines || []).filter(w => w.status !== 'hidden' &&
 
 // slim header for non-homepage pages: same .top bar, no intro / no video
 function slimHeader() {
-  const brand = esc(t(catalog.brand));
+  const brand = esc(t(ui('brandFull')));
   return `<div class="hb-hero"><header class="top">`
-    + `<a class="logo brand" href="/" aria-label="${brand}"><img src="/assets/logo.png" alt="${brand}"><span class="wm">Hong Bon</span></a>`
+    + `<a class="logo brand" href="${p('/')}" aria-label="${brand}"><img src="/assets/logo.png" alt="${brand}"><span class="wm">Hong Bon</span></a>`
     + `<div class="top-actions">${langSwitch(CURRENT_PATH)}`
     + `<button class="cart" id="openCart" type="button" aria-label="${esc(t(ui('cartLabel')))}">${esc(t(ui('cartLabel')))} <b id="count">0</b></button>`
     + `<button class="menu-toggle" id="menuToggle" type="button" aria-label="${esc(t(ui('ariaMenu')))}" aria-expanded="false" aria-controls="mobileMenu">☰</button>`
@@ -155,14 +146,14 @@ function slimHeader() {
 function pageHead(cat) {
   const n = visible().filter(w => w.type === cat.type).length;
   return `<section class="page-head">`
-    + `<nav class="breadcrumb" aria-label="breadcrumb"><a href="/">${esc(t(ui('homeLabel')))}</a><span aria-hidden="true">/</span><span>${esc(t(cat.label))}</span></nav>`
+    + `<nav class="breadcrumb" aria-label="breadcrumb"><a href="${p('/')}">${esc(t(ui('homeLabel')))}</a><span aria-hidden="true">/</span><span>${esc(t(cat.label))}</span></nav>`
     + `<span class="eyebrow">${esc(t(ui('wineEyebrow')))}</span>`
     + `<h1>${esc(t(cat.label))}</h1>`
     + `<p>${esc(t(cat.intro)) || fill(t(ui('catFallback')), { brand: t(ui('brandFull')), label: t(cat.label), n })}</p>`
     + `</section>`;
 }
 
-function jsonld({ title, canonical, cat, wine }) {
+function jsonld({ title, canonical, cat, catUrl, wine }) {
   const org = {
     '@type': 'LiquorStore', name: `${t(ui('brandFull'))}`, url: `${BASE_URL}/`,
     telephone: catalog.phone,
@@ -186,7 +177,7 @@ function jsonld({ title, canonical, cat, wine }) {
       },
       crumbs([
         { '@type': 'ListItem', position: 1, name: t(ui('homeLabel')), item: `${BASE_URL}/` },
-        { '@type': 'ListItem', position: 2, name: t(cat.label), item: `${BASE_URL}/${cat.slug}/` },
+        { '@type': 'ListItem', position: 2, name: t(cat.label), item: catUrl || canonical },
         { '@type': 'ListItem', position: 3, name: t(wine.name), item: canonical },
       ]),
       org,
@@ -208,8 +199,8 @@ function jsonld({ title, canonical, cat, wine }) {
 function winePage(w, cat) {
   const name = esc(t(w.name));
   return `<section class="page-head wine-page">`
-    + `<nav class="breadcrumb" aria-label="breadcrumb"><a href="/">${esc(t(ui('homeLabel')))}</a><span aria-hidden="true">/</span>`
-    + `<a href="/${cat.slug}/">${esc(t(cat.label))}</a><span aria-hidden="true">/</span><span>${name}</span></nav>`
+    + `<nav class="breadcrumb" aria-label="breadcrumb"><a href="${p('/')}">${esc(t(ui('homeLabel')))}</a><span aria-hidden="true">/</span>`
+    + `<a href="${p(`/${cat.slug}/`)}">${esc(t(cat.label))}</a><span aria-hidden="true">/</span><span>${name}</span></nav>`
     + `<div class="wine-page-grid">`
     + `<div class="wine-page-art"><img src="${esc(w.image)}" alt="${name}"></div>`
     + `<div class="wine-page-info">`
@@ -252,11 +243,17 @@ function render({ kind, path, title, description, ogDescription, ogImage, cat, w
     FILTERS: filters(cat ? cat.type : 'all'),
     GRID: wines.map((w, i) => card(w, i)).join(''),
     EXTRA_SCRIPTS: isHome ? '<script src="/assets/hero.js"></script>' : '',
-    JSONLD: jsonld({ title, canonical, cat, wine }),
+    JSONLD: jsonld({ title, canonical, cat, catUrl: cat ? urlFor(loc, `/${cat.slug}/`) : undefined, wine }),
     // derived from the catalog rather than duplicated as new strings
     BRAND: esc(t(catalog.brand)),
     BRAND_FULL: esc(t(ui('brandFull'))),
     ADDRESS_LINK: esc(t(catalog.address)) + ' ↗',
+    PREFIX: loc.prefix,
+    HOME: loc.prefix + '/',
+    MAP_URL: esc(catalog.mapUrl || '#'),
+    PHONE: esc(catalog.phone || ''),
+    PHONE_TEL: String(catalog.phone || '').replace(/[^0-9+]/g, ''),
+    PAYMENTS: (catalog.payments || []).map(x => esc(t(x))).join(t(ui('listSeparator'))),
     TICKER: ticker(),
   };
   // UI chrome strings, localised per render. Keys in catalog.json's `ui` block
@@ -285,6 +282,36 @@ function render({ kind, path, title, description, ogDescription, ogImage, cat, w
   return out;
 }
 
+// ---------------------------------------------------------------- policy pages
+// Separate template: they are simple documents and load no scripts.
+const policyTemplate = readFileSync(join(ROOT, '_templates', 'policy.html'), 'utf8');
+
+function renderPolicy(page, loc, path) {
+  const title = `${t(page.title)}｜${t(ui('brandFull'))}`;
+  const values = {
+    LANG: loc.lang,
+    TITLE: esc(title),
+    H1: esc(t(page.title)),
+    DESCRIPTION: esc(t(page.description)),
+    CANONICAL: urlFor(loc, path),
+    HREFLANG: hreflang(path),
+    BRAND_FULL: esc(t(ui('brandFull'))),
+    HOME: loc.prefix + '/',
+    LINE_URL: catalog.lineUrl,
+    BODY: (page.body || []).map(p => `<p>${esc(t(p))}</p>`).join(''),
+    UI_HOMELABEL: esc(t(ui('homeLabel'))),
+    UI_PAGEEYEBROW: esc(t(ui('pageEyebrow'))),
+    UI_PAGECONTACT: esc(t(ui('pageContact'))),
+    UI_PAGEWARNING: esc(t(ui('pageWarning'))),
+    LANG_SWITCH: langSwitch(path),
+  };
+  let out = policyTemplate;
+  for (const [k, v] of Object.entries(values)) out = out.split(`{{${k}}}`).join(v);
+  const left = out.match(/\{\{[A-Z_]+\}\}/g);
+  if (left) throw new Error(`policy ${page.slug}: unreplaced ${[...new Set(left)].join(', ')}`);
+  return out;
+}
+
 function write(relPath, html) {
   const dest = join(ROOT, relPath);
   mkdirSync(dirname(dest), { recursive: true });
@@ -303,7 +330,7 @@ const fill = (tpl, vars) => String(tpl).replace(/\{(\w+)\}/g, (_, k) => vars[k] 
 const entries = [{ path: '/', cf: 'weekly', pr: '1.0', locales: null }];
 for (const cat of cats) entries.push({ path: `/${cat.slug}/`, cf: 'weekly', pr: '0.8', locales: null });
 for (const w of all) if (w.slug) entries.push({ path: `/wine/${w.slug}/`, cf: 'monthly', pr: '0.6', locales: null });
-for (const p of policies) entries.push({ path: `/${p}.html`, cf: 'yearly', pr: '0.3', locales: ['zh'] });
+for (const p of policies) entries.push({ path: `/${p}.html`, cf: 'yearly', pr: '0.3', locales: null });
 
 let pageCount = 0;
 for (const loc of LOCALES) {
@@ -328,6 +355,12 @@ for (const loc of LOCALES) {
       description: fill(t(ui('catDescription')), { brand: t(catalog.brand), label: t(cat.label), n: wines.length }),
       cat, wines,
     }));
+    pageCount++;
+  }
+
+  for (const page of catalog.pages || []) {
+    const path = `/${page.slug}.html`;
+    write(at(`${page.slug}.html`), renderPolicy(page, loc, path));
     pageCount++;
   }
 

@@ -22,23 +22,23 @@
   "payments": [
     {
       "zh": "現金",
-      "en": ""
+      "en": "Cash"
     },
     {
       "zh": "Visa 信用卡",
-      "en": ""
+      "en": "Visa"
     },
     {
       "zh": "LINE Pay",
-      "en": ""
+      "en": "LINE Pay"
     },
     {
       "zh": "台灣 Pay",
-      "en": ""
+      "en": "Taiwan Pay"
     },
     {
       "zh": "街口支付",
-      "en": ""
+      "en": "JKO Pay"
     }
   ],
   "headline": {
@@ -54,19 +54,19 @@
       "image_name": "cbd82072-9945-4f2b-abe3-b5349c6ac99b.webp",
       "en": {
         "zh": "RED WINE / WILD & ELEGANT",
-        "en": ""
+        "en": "RED WINE / WILD & ELEGANT"
       },
       "name": {
         "zh": "德國 - 2023 黑皮諾紅酒",
-        "en": ""
+        "en": "Germany — 2023 Pinot Noir"
       },
       "desc": {
         "zh": "來自陡峭坡地手工採收葡萄，帶皮自然發酵約15天，於小型橡木桶中熟成至少18個月。帶有漿果、草本植物、杜松子與紅醋栗的複合香調，並有細緻香料味、黑櫻桃及淡淡煙燻感。口感多汁優雅，單寧細緻內斂，結構平衡，屬中等酒體。",
-        "en": ""
+        "en": "Hand-picked from steep slopes, fermented on the skins for about 15 days and aged at least 18 months in small oak barrels. Layered notes of berries, herbs, juniper and redcurrant, with delicate spice, black cherry and a faint smokiness. Juicy and elegant, with fine restrained tannins, balanced structure and a medium body."
       },
       "taste": {
         "zh": "產區：德國摩澤爾｜葡萄品種：黑皮諾｜酒精濃度：11.5%｜搭配：烤鮭魚、冷肉起司拼盤",
-        "en": ""
+        "en": "Region: Mosel, Germany | Grape: Pinot Noir | Alcohol: 11.5% | Pairing: grilled salmon, cold cuts and cheese platter"
       },
       "category": "red",
       "image": "/assets/cbd82072-9945-4f2b-abe3-b5349c6ac99b.webp",
@@ -81,19 +81,19 @@
       "image_name": "d89b214e-928e-49ac-af4b-01762adc679c.webp",
       "en": {
         "zh": "WHITE WINE / MINERAL & FLORAL",
-        "en": ""
+        "en": "WHITE WINE / MINERAL & FLORAL"
       },
       "name": {
         "zh": "德國 - 2023 DHRONER HOFBERG",
-        "en": ""
+        "en": "Germany — 2023 DHRONER HOFBERG"
       },
       "desc": {
         "zh": "陡峭坡地手工採收葡萄，自然酵母於500L橡木桶中發酵陳釀至少18個月，葡萄藤生長於貧瘠崎嶇土壤，風味集中。展現純淨礦物清新感，風格直接輕盈，入口帶成熟杏桃與白色花朵的細緻香氣，層次優雅富表現力。",
-        "en": ""
+        "en": "Hand-picked from steep slopes, fermented with wild yeast in 500 L oak barrels and aged at least 18 months. The vines grow in poor, rugged soils, concentrating the fruit. Pure, fresh minerality with a direct, light style — ripe apricot and white blossom on the palate, elegantly layered and expressive."
       },
       "taste": {
         "zh": "產區：德國摩澤爾｜葡萄品種：麗絲玲｜酒精濃度：12%｜適飲溫度：8-12°C｜搭配：烤鴨胸、蕈菇起司葉菜沙拉",
-        "en": ""
+        "en": "Region: Mosel, Germany | Grape: Riesling | Alcohol: 12% | Serve at: 8-12°C | Pairing: seared duck breast, mushroom and cheese leaf salad"
       },
       "category": "white",
       "image": "/assets/d89b214e-928e-49ac-af4b-01762adc679c.webp",
@@ -108,19 +108,19 @@
       "image_name": "3e32bbb2-cc0b-49e1-a891-23009e99035f.webp",
       "en": {
         "zh": "WHITE WINE / LIGHT & SWEET",
-        "en": ""
+        "en": "WHITE WINE / LIGHT & SWEET"
       },
       "name": {
         "zh": "德國 - 2024 \"STEEP SLOPE\" KABINETT",
-        "en": ""
+        "en": "Germany — 2024 \"STEEP SLOPE\" KABINETT"
       },
       "desc": {
         "zh": "陡峭坡地手工採收葡萄，於不鏽鋼桶自然發酵並以冷卻中止發酵鎖住天然甜分，隨後於細酒泥上陳釀5-6個月。散發成熟蟠桃與接骨木花細緻香氣，並帶摩澤爾經典板岩礦物氣息，口感絲絨般滑順，果酸與甜度平衡，酒精濃度僅8%，輕盈清爽且富層次。\n✿2025年榮獲Falstaff雜誌93+高分評價✿",
-        "en": ""
+        "en": "Hand-picked from steep slopes, naturally fermented in stainless steel and stopped by chilling to lock in the natural sweetness, then aged 5-6 months on the fine lees. Delicate aromas of ripe flat peach and elderflower with the classic Mosel slate minerality. Velvet-smooth, balanced between acidity and sweetness, just 8% alcohol — light, refreshing and layered.\n✿Awarded 93+ by Falstaff magazine, 2025✿"
       },
       "taste": {
         "zh": "產區：德國摩澤爾｜葡萄品種：麗絲玲｜酒精濃度：8%｜適飲溫度：8-12°C｜搭配：清爽雪酪、輕盈戚風蛋糕",
-        "en": ""
+        "en": "Region: Mosel, Germany | Grape: Riesling | Alcohol: 8% | Serve at: 8-12°C | Pairing: sorbet, light chiffon cake"
       },
       "category": "white",
       "image": "/assets/3e32bbb2-cc0b-49e1-a891-23009e99035f.webp",
@@ -135,19 +135,19 @@
       "image_name": "19a738ec-2e08-4760-953e-03030f9fce8f.webp",
       "en": {
         "zh": "WHITE WINE / CRISP & MINERAL",
-        "en": ""
+        "en": "WHITE WINE / CRISP & MINERAL"
       },
       "name": {
         "zh": "德國 - 2021 HAMBURG",
-        "en": ""
+        "en": "Germany — 2021 HAMBURG"
       },
       "desc": {
         "zh": "捕捉漢堡城市的清涼礦物味與清爽感，靈感來自年輕釀酒師Corvin Prigge。乾型雷司令充滿青蘋果香氣與黑醋栗葉香味，令人印象深刻，鵝卵石味與微苦酸度賦予清涼礦物質感，如微風吹過港口。",
-        "en": ""
+        "en": "Captures the cool minerality and freshness of Hamburg, inspired by young winemaker Corvin Prigge. A dry Riesling full of green apple and blackcurrant leaf, with pebble-like minerality and gently bitter acidity — like a breeze off the harbour."
       },
       "taste": {
         "zh": "產區：德國摩澤爾｜葡萄品種：麗絲玲｜酒精濃度：12%｜適飲溫度：8-12°C｜搭配：海鮮沙拉、雞肉料理",
-        "en": ""
+        "en": "Region: Mosel, Germany | Grape: Riesling | Alcohol: 12% | Serve at: 8-12°C | Pairing: seafood salad, chicken dishes"
       },
       "category": "white",
       "image": "/assets/19a738ec-2e08-4760-953e-03030f9fce8f.webp",
@@ -162,19 +162,19 @@
       "image_name": "c8ce37e7-ee82-4580-abad-079129a73888.webp",
       "en": {
         "zh": "WHITE WINE / OFF-DRY & FRUITY",
-        "en": ""
+        "en": "WHITE WINE / OFF-DRY & FRUITY"
       },
       "name": {
         "zh": "德國 - 2023 FEINHERB",
-        "en": ""
+        "en": "Germany — 2023 FEINHERB"
       },
       "desc": {
         "zh": "社交聚會與熱鬧對話的完美伴侶，帶著迷人甜美氣息，是與親朋好友共度悠閒夜晚的理想選擇。活潑雷司令以濃郁果香打動人心，散發柑橘、橙皮香氣，並帶一絲怡人殘留甜味，清新酸度為味蕾注入活力。",
-        "en": ""
+        "en": "The perfect companion for gatherings and lively conversation, with a charming touch of sweetness for an easy evening among friends. A lively Riesling with generous fruit — citrus and orange peel — a pleasant thread of residual sweetness and fresh acidity that lifts the palate."
       },
       "taste": {
         "zh": "產區：德國摩澤爾｜葡萄品種：麗絲玲｜酒精濃度：10.5%｜適飲溫度：8-12°C｜搭配：燒烤料理、清淡醬汁義大利麵",
-        "en": ""
+        "en": "Region: Mosel, Germany | Grape: Riesling | Alcohol: 10.5% | Serve at: 8-12°C | Pairing: grilled dishes, pasta with light sauces"
       },
       "category": "white",
       "image": "/assets/c8ce37e7-ee82-4580-abad-079129a73888.webp",
@@ -189,19 +189,19 @@
       "image_name": "d6e79733-07fa-4d43-a190-f1d4ca427cb8.webp",
       "en": {
         "zh": "WHITE WINE / CITRUS & MINERAL",
-        "en": ""
+        "en": "WHITE WINE / CITRUS & MINERAL"
       },
       "name": {
         "zh": "德國 - 2022 NEUMAGENER ROSENGÄRTCHEN",
-        "en": ""
+        "en": "Germany — 2022 NEUMAGENER ROSENGÄRTCHEN"
       },
       "desc": {
         "zh": "踏入玫瑰園（Rosengärtchen），這款干型雷司令以清新的柑橘香氣迷住味蕾，在清爽的酸度與礦物風味之間取得完美平衡，入口時如氣泡般輕盈閃耀，口感如同俯瞰玫瑰葡萄園壯麗景色一般令人驚艷。",
-        "en": ""
+        "en": "Step into the rose garden (Rosengärtchen). This dry Riesling charms the palate with fresh citrus, perfectly balanced between bright acidity and minerality. It sparkles on entry — as striking as the view over the rose vineyard."
       },
       "taste": {
         "zh": "產區：德國摩澤爾｜葡萄品種：麗絲玲｜酒精濃度：11%｜適飲溫度：8-12°C｜搭配：越南米粉沙拉、抱子甘藍葡萄堅果沙拉",
-        "en": ""
+        "en": "Region: Mosel, Germany | Grape: Riesling | Alcohol: 11% | Serve at: 8-12°C | Pairing: Vietnamese rice-noodle salad, Brussels sprout salad with grapes and nuts"
       },
       "category": "white",
       "image": "/assets/d6e79733-07fa-4d43-a190-f1d4ca427cb8.webp",
@@ -216,19 +216,19 @@
       "image_name": "11361319-8858-45d2-9b13-452bbd99ccad.webp",
       "en": {
         "zh": "SPARKLING / CLASSIC DRY",
-        "en": ""
+        "en": "SPARKLING / CLASSIC DRY"
       },
       "name": {
         "zh": "德國 - 2021 GUTS-SEKT TROCKEN",
-        "en": ""
+        "en": "Germany — 2021 GUTS-SEKT TROCKEN"
       },
       "desc": {
         "zh": "經典瓶裝發酵氣泡酒，以美妙宜人的氣泡和細膩的果香滿足味蕾，酸度與果味完美平衡，起泡以特別美味的方式在舌頭上滾動。",
-        "en": ""
+        "en": "A classic bottle-fermented sparkling wine with pleasing bubbles and delicate fruit. Acidity and fruit in perfect balance, the mousse rolling across the tongue in a particularly delicious way."
       },
       "taste": {
         "zh": "產區：德國摩澤爾｜葡萄品種：麗絲玲｜酒精濃度：12.5%｜適飲溫度：8-12°C｜搭配：小沙拉、鹹味小吃",
-        "en": ""
+        "en": "Region: Mosel, Germany | Grape: Riesling | Alcohol: 12.5% | Serve at: 8-12°C | Pairing: small salads, savoury snacks"
       },
       "category": "sparkling",
       "image": "/assets/11361319-8858-45d2-9b13-452bbd99ccad.webp",
@@ -243,19 +243,19 @@
       "image_name": "77f5c6d0-9550-48f0-bbe9-b561cb622950.webp",
       "en": {
         "zh": "SPARKLING / BRUT",
-        "en": ""
+        "en": "SPARKLING / BRUT"
       },
       "name": {
         "zh": "德國 - 2021 GUTS-SEKT BRUT",
-        "en": ""
+        "en": "Germany — 2021 GUTS-SEKT BRUT"
       },
       "desc": {
         "zh": "經典瓶裝發酵氣泡酒，細膩氣泡與優雅而輕微的舌尖刺痛感令人印象深刻，微妙的奶油蛋捲味與細膩酸度相結合，賦予氣泡酒獨特風味。",
-        "en": ""
+        "en": "A classic bottle-fermented sparkling wine with fine bubbles and an elegant, gentle prickle on the tongue. Subtle brioche notes combine with delicate acidity to give it a character all its own."
       },
       "taste": {
         "zh": "產區：德國摩澤爾｜葡萄品種：麗絲玲｜酒精濃度：12.5%｜適飲溫度：8-12°C｜搭配：薯條等鹹香小點",
-        "en": ""
+        "en": "Region: Mosel, Germany | Grape: Riesling | Alcohol: 12.5% | Serve at: 8-12°C | Pairing: fries and other savoury snacks"
       },
       "category": "sparkling",
       "image": "/assets/77f5c6d0-9550-48f0-bbe9-b561cb622950.webp",
@@ -270,19 +270,19 @@
       "image_name": "b87bafda-2443-42d4-8f44-50d9244d963f.webp",
       "en": {
         "zh": "RED WINE / CLASSIC RESERVE",
-        "en": ""
+        "en": "RED WINE / CLASSIC RESERVE"
       },
       "name": {
         "zh": "法國 - 2020 珍藏蝴蝶紅酒",
-        "en": ""
+        "en": "France — 2020 Papillon Rouge Réserve"
       },
       "desc": {
         "zh": "陳釀於法國橡木桶中長達12個月，磚紅色酒體，香氣濃郁而豐富，帶覆盆子、松露和焦糖味道，口感濃厚，有果醬、咖啡和巧克力風味，同時散發白花香氣，單寧柔順，回味悠長，複雜而開放，喝過後令人難忘。",
-        "en": ""
+        "en": "Aged 12 months in French oak. Brick-red in the glass with rich, generous aromas of raspberry, truffle and caramel. Full on the palate with jam, coffee and chocolate, lifted by white blossom. Supple tannins and a long finish — complex, open and memorable."
       },
       "taste": {
         "zh": "產區：超級波爾多產區｜葡萄品種：梅洛、卡本內佛朗、卡本內蘇維濃｜酒精濃度：13.5%｜適飲溫度：16-18°C｜搭配：法式香煎牛排、烤小乳牛、各式乳酪",
-        "en": ""
+        "en": "Region: Super Bordeaux | Grapes: Merlot, Cabernet Franc, Cabernet Sauvignon | Alcohol: 13.5% | Serve at: 16-18°C | Pairing: pan-seared steak, roast veal, assorted cheeses"
       },
       "category": "red",
       "image": "/assets/b87bafda-2443-42d4-8f44-50d9244d963f.webp",
@@ -297,19 +297,19 @@
       "image_name": "105379f4-8c8a-46ac-91ae-a69afff3ab83.webp",
       "en": {
         "zh": "RED WINE / RARE RESERVE",
-        "en": ""
+        "en": "RED WINE / RARE RESERVE"
       },
       "name": {
         "zh": "法國 - 2020 頂級珍藏蝴蝶紅酒",
-        "en": ""
+        "en": "France — 2020 Papillon Rouge Grande Réserve"
       },
       "desc": {
         "zh": "限量1200瓶，好年份才有生產。由58年的卡本內佛朗老藤所釀造，於400L法國橡木桶中陳釀30個月。深寶石紅色，帶朱紅色反光，香氣濃郁，讓人想起摩卡、李子和黑色水果，口感和諧柔和，帶卡本內佛朗特有的薄荷清新感和甜椒味，橡木桶陳釀增添咖啡與焦糖香氣，餘味悠長甜美，具較強陳年潛力。",
-        "en": ""
+        "en": "Limited to 1,200 bottles and made only in good vintages. From 58-year-old Cabernet Franc vines, aged 30 months in 400 L French oak. Deep gem red with crimson highlights. Intense aromas recalling mocha, plum and black fruit; harmonious and soft on the palate with the minty freshness and sweet pepper typical of Cabernet Franc. The oak adds coffee and caramel, with a long, sweet finish and real ageing potential."
       },
       "taste": {
         "zh": "產區：超級波爾多產區｜葡萄品種：100%卡本內佛朗｜酒精濃度：14%｜適飲溫度：16-18°C｜搭配：法式香煎牛排、烤小乳牛、各式乳酪",
-        "en": ""
+        "en": "Region: Super Bordeaux | Grape: 100% Cabernet Franc | Alcohol: 14% | Serve at: 16-18°C | Pairing: pan-seared steak, roast veal, assorted cheeses"
       },
       "category": "red",
       "image": "/assets/105379f4-8c8a-46ac-91ae-a69afff3ab83.webp",
@@ -324,19 +324,19 @@
       "image_name": "ccb55fba-d50c-4583-8875-761a3948ec46.webp",
       "en": {
         "zh": "RED WINE / OAK-AGED & VELVETY",
-        "en": ""
+        "en": "RED WINE / OAK-AGED & VELVETY"
       },
       "name": {
         "zh": "法國 -  2022 橡木桶特釀紅酒",
-        "en": ""
+        "en": "France — 2022 Oak-Aged Cuvée Rouge"
       },
       "desc": {
         "zh": "經過12個月的法國橡木桶陳釀，每年固定替換新橡木桶並使用不同烘烤程度以增加複雜性，陳年使其平衡度更佳。酒體飽滿、圓潤，熟透的紅色水果香氣伴隨輕盈胡椒味，使搭配的肉類菜餚和巧克力甜點口感更升華。",
-        "en": ""
+        "en": "Aged 12 months in French oak, with barrels rotated each year and different toast levels for added complexity; bottle age rounds it further. Full and round, with ripe red fruit and a light pepper note that lifts meat dishes and chocolate desserts alike."
       },
       "taste": {
         "zh": "產區：AOC波爾多產區｜葡萄品種：梅洛、卡本內佛朗、卡本內蘇維濃、馬爾貝克｜酒精濃度：15%｜適飲溫度：16-18°C｜搭配：法式香煎牛排、烤小乳牛、各式乳酪",
-        "en": ""
+        "en": "Region: AOC Bordeaux | Grapes: Merlot, Cabernet Franc, Cabernet Sauvignon, Malbec | Alcohol: 15% | Serve at: 16-18°C | Pairing: pan-seared steak, roast veal, assorted cheeses"
       },
       "category": "red",
       "image": "/assets/ccb55fba-d50c-4583-8875-761a3948ec46.webp",
@@ -351,19 +351,19 @@
       "image_name": "fa43e564-907e-4067-9754-7d35d93928e0.webp",
       "en": {
         "zh": "WHITE WINE / STONE FRUIT & MINERAL",
-        "en": ""
+        "en": "WHITE WINE / STONE FRUIT & MINERAL"
       },
       "name": {
         "zh": "法國 - 2021 拉加德白酒",
-        "en": ""
+        "en": "France — 2021 Lagarde Blanc"
       },
       "desc": {
         "zh": "波爾多聖馬凱爾法定產區（最古老的風土產區之一），細膩黏土與紅色礫石風土釀造出個性十足的葡萄酒。橡木桶中陳釀6個月，散發桃子、葡萄柚和礦物質及奶油堅果的香氣，入口圓潤而柔滑，優雅大方融合了新鮮柑橘水果，芳香複雜。",
-        "en": ""
+        "en": "From the Saint-Macaire appellation — one of Bordeaux's oldest terroirs — where fine clay and red gravel produce a wine of real character. Aged 6 months in oak, with peach, grapefruit, mineral and creamy nut aromas. Round and silky on entry, elegantly blending fresh citrus with complex aromatics."
       },
       "taste": {
         "zh": "產區：AOP波爾多產區｜葡萄品種：白蘇維翁｜酒精濃度：12%｜適飲溫度：14-16°C｜搭配：魚蝦海鮮、家禽類菜餚（如法式奶油蘑菇雞）、甜點",
-        "en": ""
+        "en": "Region: AOP Bordeaux | Grape: Sauvignon Blanc | Alcohol: 12% | Serve at: 14-16°C | Pairing: fish and shellfish, poultry such as creamy mushroom chicken, desserts"
       },
       "category": "white",
       "image": "/assets/fa43e564-907e-4067-9754-7d35d93928e0.webp",
@@ -378,19 +378,19 @@
       "image_name": "a4c70396-f29d-4dab-a757-36a148f6410d.webp",
       "en": {
         "zh": "ROSÉ / JOYFUL & FRUITY",
-        "en": ""
+        "en": "ROSÉ / JOYFUL & FRUITY"
       },
       "name": {
         "zh": "法國 - 2022 Y'A DE LA JOIE 歡樂粉紅酒",
-        "en": ""
+        "en": "France — 2022 Y'A DE LA JOIE Rosé"
       },
       "desc": {
         "zh": "使用最古老品種之一「神索」直接壓榨的粉紅葡萄酒，口感絲絨般柔和滑順，帶有櫻桃、草莓、覆盆子、李子、紅醋栗和石榴等紅色水果香氣，餘味精緻清新，散發迷人水果香氣。",
-        "en": ""
+        "en": "A rosé pressed directly from Cinsault, one of the oldest grape varieties. Velvet-soft and smooth, with cherry, strawberry, raspberry, plum, redcurrant and pomegranate. A refined, fresh finish and charming fruit aromas."
       },
       "taste": {
         "zh": "產區：波爾多產區｜葡萄品種：梅洛、神索｜酒精濃度：13.5%｜適飲溫度：8-10°C｜搭配：開胃菜、海鮮卷、燒烤BBQ、夏季涼拌菜餚",
-        "en": ""
+        "en": "Region: Bordeaux | Grapes: Merlot, Cinsault | Alcohol: 13.5% | Serve at: 8-10°C | Pairing: starters, seafood rolls, BBQ, summer salads"
       },
       "category": "rose",
       "image": "/assets/a4c70396-f29d-4dab-a757-36a148f6410d.webp",
@@ -405,19 +405,19 @@
       "image_name": "e03e7286-e0db-4a03-9c46-747e93361ab8.webp",
       "en": {
         "zh": "RED WINE / SINGLE BARREL RESERVE",
-        "en": ""
+        "en": "RED WINE / SINGLE BARREL RESERVE"
       },
       "name": {
         "zh": "澳洲- 2021 GRATITUDE SHIRAZ",
-        "en": ""
+        "en": "Australia — 2021 GRATITUDE SHIRAZ"
       },
       "desc": {
         "zh": "單桶精選當年最好的希拉，21年是精彩的一年，於法國橡木桶中陳釀兩年。外觀呈深暗寶石紅，鼻腔散發沙士、黑莓果醬、荊棘、柑橘李子、檀香木以及優雅烘焙香料的香氣。口感濃郁且富有層次，飽滿的黑李子和黑莓風味伴隨著甘草和茴香，是值得收藏的佳作。\n✿Halliday Wine Companion 96分✿",
-        "en": ""
+        "en": "A single-barrel selection of the year's best Shiraz — 2021 was a superb vintage — aged two years in French oak. Deep dark gem red, with sarsaparilla, blackberry jam, bramble, citrus plum, sandalwood and elegant baking spice on the nose. Rich and layered on the palate, full of black plum and blackberry with liquorice and anise. One to cellar.\n✿Halliday Wine Companion 96 points✿"
       },
       "taste": {
         "zh": "產區：巴羅莎谷（Barossa Valley）｜葡萄品種：Shiraz希拉｜酒精濃度：14.4%｜適飲溫度：16-18°C",
-        "en": ""
+        "en": "Region: Barossa Valley | Grape: Shiraz | Alcohol: 14.4% | Serve at: 16-18°C"
       },
       "category": "red",
       "image": "/assets/e03e7286-e0db-4a03-9c46-747e93361ab8.webp",
@@ -432,19 +432,19 @@
       "image_name": "ceebe50c-25ec-44b9-86f4-a713c26bf95a.webp",
       "en": {
         "zh": "RED WINE / SINGLE VINEYARD HERITAGE",
-        "en": ""
+        "en": "RED WINE / SINGLE VINEYARD HERITAGE"
       },
       "name": {
         "zh": "澳洲 - 2020 THE SCHILLER SHIRAZ",
-        "en": ""
+        "en": "Australia — 2020 THE SCHILLER SHIRAZ"
       },
       "desc": {
         "zh": "香氣充滿乾燥紫羅蘭、黑加侖、胡椒粒與可可的氣息，還帶有榛果和甜香料。口感柔滑且圓潤，酒體飽滿，單寧絲滑如天鵝絨，尾韻帶有美味的巧克力和甜香料，餘味悠長。來自1881年種植的400株老藤葡萄，僅生產1,485瓶，承載著巴羅莎歷史。\n✿2024 Halliday 92分、James Suckling 93分、The Real Review四星推薦；限量1,485瓶✿",
-        "en": ""
+        "en": "Aromas of dried violet, blackcurrant, cracked pepper and cocoa, with hazelnut and sweet spice. Smooth and round, full-bodied, with velvet tannins and a long finish of chocolate and sweet spice. From 400 old vines planted in 1881 — only 1,485 bottles, a piece of Barossa history.\n✿2024 Halliday 92, James Suckling 93, The Real Review 4 stars; 1,485 bottles✿"
       },
       "taste": {
         "zh": "產區：巴羅莎谷（Barossa Valley）｜葡萄品種：Shiraz希拉｜酒精濃度：14.6%｜適飲溫度：16-18°C",
-        "en": ""
+        "en": "Region: Barossa Valley | Grape: Shiraz | Alcohol: 14.6% | Serve at: 16-18°C"
       },
       "category": "red",
       "image": "/assets/ceebe50c-25ec-44b9-86f4-a713c26bf95a.webp",
@@ -459,19 +459,19 @@
       "image_name": "449cbe56-b5c2-4d65-9779-64f89e509c17.webp",
       "en": {
         "zh": "RED WINE / AROMATIC BLEND",
-        "en": ""
+        "en": "RED WINE / AROMATIC BLEND"
       },
       "name": {
         "zh": "澳洲 - 2023 THE GROWER GSM",
-        "en": ""
+        "en": "Australia — 2023 THE GROWER GSM"
       },
       "desc": {
         "zh": "香氣甜美成熟且芳香，帶有黑莓、煙燻與花香，並伴隨一絲黑巧克力氣息，口感豐富多汁、緊實飽滿，輔以絲滑質地與優雅單寧，餘韻悠長、風味十足。帶有鮮明沙士、覆盆子、新鮮土壤以及黑焦糖／太妃糖香氣，中等酒體，展現覆盆子、黑莓與黑櫻桃風味，甜美、酸爽與鹹香果味間完美平衡，迷迭香、百里香與草本氣息增添複雜度。\n✿WineOrbit 94分✿",
-        "en": ""
+        "en": "Sweet, ripe and aromatic, with blackberry, smoke and florals alongside a hint of dark chocolate. Rich, juicy and tightly packed, with a silky texture and elegant tannins, long and full of flavour. Distinctive sarsaparilla, raspberry, fresh earth and dark caramel/toffee; medium-bodied, showing raspberry, blackberry and black cherry in a fine balance of sweetness, freshness and savoury fruit, with rosemary, thyme and herbal notes adding complexity.\n✿WineOrbit 94✿"
       },
       "taste": {
         "zh": "產區：巴羅莎谷（Barossa Valley）｜葡萄品種：56% Grenache歌海娜／40% Shiraz希拉／4% Mataro馬塔羅｜酒精濃度：14%｜適飲溫度：16-18°C",
-        "en": ""
+        "en": "Region: Barossa Valley | Grapes: 56% Grenache / 40% Shiraz / 4% Mataro | Alcohol: 14% | Serve at: 16-18°C"
       },
       "category": "red",
       "image": "/assets/449cbe56-b5c2-4d65-9779-64f89e509c17.webp",
@@ -486,19 +486,19 @@
       "image_name": "15157533-a4c8-4538-a1e8-197c304188ef.webp",
       "en": {
         "zh": "RED WINE / COMPLEX & SILKY",
-        "en": ""
+        "en": "RED WINE / COMPLEX & SILKY"
       },
       "name": {
         "zh": "澳洲 - 2022 META GRENACHE",
-        "en": ""
+        "en": "Australia — 2022 META GRENACHE"
       },
       "desc": {
         "zh": "極其複雜且引人入勝的香氣，呈現出深色漿果、月桂葉、醃肉和烤杏仁的香氣，帶來極其柔順的口感，既廣闊又持久。酒體有精緻的質感與細膩的單寧結構支撐，散發甜菜根與土耳其軟糖的迷人香氣，並伴隨黑胡椒香料氣息，餘味悠長結構分明。\n✿Halliday 94分、WineOrbit 95+分、Decanter Panel Tasting 94分、The Real Review四星推薦✿",
-        "en": ""
+        "en": "Extremely complex and captivating — dark berries, bay leaf, charcuterie and roasted almond — leading to an exceptionally supple palate that is both expansive and long. Fine texture and a delicate tannin structure, with beetroot, Turkish delight and black pepper, and a long, well-defined finish.\n✿Halliday 94, WineOrbit 95+, Decanter Panel Tasting 94, The Real Review 4 stars✿"
       },
       "taste": {
         "zh": "產區：巴羅莎谷（Barossa Valley）｜葡萄品種：Grenache歌海娜｜酒精濃度：14%｜適飲溫度：16-18°C",
-        "en": ""
+        "en": "Region: Barossa Valley | Grape: Grenache | Alcohol: 14% | Serve at: 16-18°C"
       },
       "category": "red",
       "image": "/assets/15157533-a4c8-4538-a1e8-197c304188ef.webp",
@@ -514,19 +514,19 @@
       "image_name": "5d300a17-7eca-4679-b584-eb6ec7acde74.webp",
       "en": {
         "zh": "RED WINE / RICH & SILKY",
-        "en": ""
+        "en": "RED WINE / RICH & SILKY"
       },
       "name": {
         "zh": "澳洲 - 2022 META SHIRAZ",
-        "en": ""
+        "en": "Australia — 2022 META SHIRAZ"
       },
       "desc": {
         "zh": "中度深紅色，散發出熟透的黑莓和黑巧克力香氣，伴隨著柑橘皮的氣息。口感豐富，帶有充沛的黑莓和黑巧克力風味，完美融合蛋糕香料、絲滑的黑巧克力、淡淡的雪松味和乾燥花香，單寧柔順細膩，尾韻充滿巧克力與礦物氣息，餘味綿長。\n✿Halliday 92分、Decanter 95分、WineOrbit 93+分、Winepilot 94分優秀推薦✿",
-        "en": ""
+        "en": "Medium-deep red, with ripe blackberry and dark chocolate alongside citrus peel. Rich on the palate with abundant blackberry and dark chocolate, seamlessly blended with cake spice, silky chocolate, a touch of cedar and dried florals. Supple, fine tannins and a long finish full of chocolate and minerality.\n✿Halliday 92, Decanter 95, WineOrbit 93+, Winepilot 94✿"
       },
       "taste": {
         "zh": "產區：巴羅莎谷（Barossa Valley）｜葡萄品種：Shiraz希拉｜酒精濃度：14.4%｜適飲溫度：16-18°C",
-        "en": ""
+        "en": "Region: Barossa Valley | Grape: Shiraz | Alcohol: 14.4% | Serve at: 16-18°C"
       },
       "category": "red",
       "image": "/assets/5d300a17-7eca-4679-b584-eb6ec7acde74.webp",
@@ -541,19 +541,19 @@
       "image_name": "80e41337-b236-497e-b184-d8408965c54b.webp",
       "en": {
         "zh": "WHITE WINE / AROMATIC & TEXTURED",
-        "en": ""
+        "en": "WHITE WINE / AROMATIC & TEXTURED"
       },
       "name": {
         "zh": "澳洲 - 2023 META GRENACHE BLANC",
-        "en": ""
+        "en": "Australia — 2023 META GRENACHE BLANC"
       },
       "desc": {
         "zh": "開瓶後散發白花和乾燥香草的香氣，並帶有一絲鼠尾草的味道，酒體清新脆口，質感豐富，風味強勁且動感十足，餘味悠長。呈現淺稻草色，香氣有清新檸檬、酸爽葡萄柚和甜美水煮梨，並伴隨凝脂奶油、杏仁、碎石與精緻白色花香，手工採摘後於風乾法國橡木桶中陳釀5個月。\n✿2024 Barossa Wine Show冠軍獎盃、2024 Halliday 92分、Winepilot 92分推薦✿",
-        "en": ""
+        "en": "Opens with white flowers and dried herbs and a hint of sage. Fresh and crisp, richly textured and powerfully driven, with a long finish. Pale straw in the glass, with fresh lemon, tangy grapefruit and sweet poached pear, plus clotted cream, almond, crushed stone and delicate white blossom. Hand-picked and aged 5 months in air-dried French oak.\n✿2024 Barossa Wine Show trophy, 2024 Halliday 92, Winepilot 92✿"
       },
       "taste": {
         "zh": "產區：巴羅莎谷（Barossa Valley）｜葡萄品種：Grenache Blanc白歌海娜｜酒精濃度：13.1%｜適飲溫度：14-16°C",
-        "en": ""
+        "en": "Region: Barossa Valley | Grape: Grenache Blanc | Alcohol: 13.1% | Serve at: 14-16°C"
       },
       "category": "white",
       "image": "/assets/80e41337-b236-497e-b184-d8408965c54b.webp",
@@ -568,19 +568,19 @@
       "image_name": "c6eddd1f-50ee-4d82-97a2-c08a09e3b3a9.webp",
       "en": {
         "zh": "WHITE WINE / CRISP & LAYERED",
-        "en": ""
+        "en": "WHITE WINE / CRISP & LAYERED"
       },
       "name": {
         "zh": "澳洲 - 2023 CHENIN BLANC",
-        "en": ""
+        "en": "Australia — 2023 CHENIN BLANC"
       },
       "desc": {
         "zh": "酒杯中呈現淺稻草色，散發出青蘋果、燉梨和多汁柑橘的香氣，伴隨奶油、碎石、杏仁和白花氣息，口感絲滑愉悅，結尾乾淨，明亮酸度帶來充足速度感與活力。帶有奶酪元素與青蘋果、梨的香氣，口感有豐富酸度，柔和且易於接近，並有一點蜂蜜和鹹味提示，收尾乾爽。\n✿2024 Halliday 92分、Winepilot 92分推薦✿",
-        "en": ""
+        "en": "Pale straw in the glass, with green apple, stewed pear and juicy citrus alongside cream, crushed stone, almond and white blossom. Silky and pleasurable on the palate with a clean finish; bright acidity gives it pace and energy. Creamy notes with green apple and pear, generous acidity, soft and approachable, with a hint of honey and salinity and a dry finish.\n✿2024 Halliday 92, Winepilot 92✿"
       },
       "taste": {
         "zh": "產區：巴羅莎谷（Barossa Valley）｜葡萄品種：Chenin Blanc白詩南｜酒精濃度：13%｜適飲溫度：14-16°C",
-        "en": ""
+        "en": "Region: Barossa Valley | Grape: Chenin Blanc | Alcohol: 13% | Serve at: 14-16°C"
       },
       "category": "white",
       "image": "/assets/c6eddd1f-50ee-4d82-97a2-c08a09e3b3a9.webp",
@@ -696,7 +696,7 @@
     },
     "heroLine2": {
       "zh": "找到你的",
-      "en": "find the one"
+      "en": "find the one "
     },
     "heroEm": {
       "zh": "心之所選",
@@ -825,14 +825,6 @@
     "footerDisclaimer": {
       "zh": "本網站提供酒款展示與諮詢，不提供線上交易。",
       "en": "This site presents wines and takes enquiries. No online sales."
-    },
-    "payCash": {
-      "zh": "付款方式：現金、Visa 信用卡",
-      "en": "Payment: cash, Visa"
-    },
-    "payWallets": {
-      "zh": "LINE Pay、台灣 Pay、街口支付",
-      "en": "LINE Pay, Taiwan Pay, JKO Pay"
     },
     "payNote": {
       "zh": "適用方式請洽門市確認。",
@@ -1229,6 +1221,297 @@
     "wineMoreTitle": {
       "zh": "其他{label}",
       "en": "More {label}"
+    },
+    "payLabel": {
+      "zh": "付款方式：",
+      "en": "Payment: "
+    },
+    "pageEyebrow": {
+      "zh": "HONG BON · INFORMATION",
+      "en": "HONG BON · INFORMATION"
+    },
+    "pageWarning": {
+      "zh": "飲酒過量，有害健康。未滿十八歲請勿飲酒。酒後不開車。",
+      "en": "Drink responsibly. Not for anyone under 18. Never drink and drive."
+    },
+    "pageContact": {
+      "zh": "聯絡宏邦貿易官方 LINE",
+      "en": "Contact Hong Bon on LINE"
+    },
+    "listSeparator": {
+      "zh": "、",
+      "en": ", "
     }
-  }
+  },
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E9%9B%84%E5%B8%82%E6%A9%8B%E9%A0%AD%E5%8D%80%E6%96%B0%E8%88%88%E8%B7%AF9%E8%99%9F",
+  "flavors": [
+    {
+      "zh": "果香",
+      "en": "Fruity",
+      "match": [
+        "果香",
+        "水果",
+        "漿果",
+        "黑莓",
+        "櫻桃",
+        "草莓",
+        "覆盆子",
+        "柑橘",
+        "檸檬",
+        "蘋果",
+        "桃",
+        "杏",
+        "李子",
+        "梨",
+        "黑加侖",
+        "葡萄柚",
+        "fruit",
+        "berry",
+        "blackberry",
+        "cherry",
+        "strawberry",
+        "raspberry",
+        "citrus",
+        "lemon",
+        "apple",
+        "peach",
+        "apricot",
+        "plum",
+        "pear",
+        "currant",
+        "grapefruit"
+      ]
+    },
+    {
+      "zh": "花香",
+      "en": "Floral",
+      "match": [
+        "花香",
+        "白花",
+        "接骨木",
+        "紫羅蘭",
+        "白色花朵",
+        "乾燥花",
+        "floral",
+        "blossom",
+        "elderflower",
+        "violet",
+        "dried flower"
+      ]
+    },
+    {
+      "zh": "礦物",
+      "en": "Mineral",
+      "match": [
+        "礦物",
+        "礦石",
+        "板岩",
+        "碎石",
+        "鵝卵石",
+        "礫石",
+        "mineral",
+        "slate",
+        "stone",
+        "pebble",
+        "gravel"
+      ]
+    },
+    {
+      "zh": "單寧",
+      "en": "Tannin",
+      "match": [
+        "單寧",
+        "tannin"
+      ]
+    },
+    {
+      "zh": "氣泡",
+      "en": "Sparkling",
+      "match": [
+        "氣泡",
+        "起泡",
+        "sparkling",
+        "bubble",
+        "mousse"
+      ]
+    },
+    {
+      "zh": "煙燻",
+      "en": "Smoky",
+      "match": [
+        "煙燻",
+        "煙燻感",
+        "smoky",
+        "smoke",
+        "flinty"
+      ]
+    },
+    {
+      "zh": "香料",
+      "en": "Spice",
+      "match": [
+        "香料",
+        "胡椒",
+        "甘草",
+        "肉桂",
+        "茴香",
+        "烘焙香料",
+        "spice",
+        "pepper",
+        "liquorice",
+        "cinnamon",
+        "anise",
+        "baking spice"
+      ]
+    },
+    {
+      "zh": "草本",
+      "en": "Herbal",
+      "match": [
+        "草本",
+        "鼠尾草",
+        "迷迭香",
+        "百里香",
+        "月桂",
+        "杜松子",
+        "薄荷",
+        "herb",
+        "sage",
+        "rosemary",
+        "thyme",
+        "bay",
+        "juniper",
+        "mint"
+      ]
+    },
+    {
+      "zh": "巧克力",
+      "en": "Chocolate",
+      "match": [
+        "巧克力",
+        "可可",
+        "摩卡",
+        "太妃糖",
+        "chocolate",
+        "cocoa",
+        "mocha",
+        "toffee"
+      ]
+    },
+    {
+      "zh": "橡木",
+      "en": "Oak",
+      "match": [
+        "橡木",
+        "oak",
+        "barrel"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "slug": "privacy",
+      "navKey": "navPrivacy",
+      "title": {
+        "zh": "隱私權政策",
+        "en": "Privacy Policy"
+      },
+      "description": {
+        "zh": "宏邦貿易 HONG BON 隱私權政策：酒款展示與詢價服務的資料處理說明。",
+        "en": "Hong Bon privacy policy — how data is handled for the wine catalogue and enquiry service."
+      },
+      "body": [
+        {
+          "zh": "本網站提供酒款展示及詢價服務，不提供線上結帳。",
+          "en": "This site presents wines and takes enquiries. It does not offer online checkout."
+        },
+        {
+          "zh": "透過 LINE 詢價時，顧客會自行將詢價內容傳送至宏邦貿易官方 LINE。請勿在詢價內容中提供不必要的敏感個人資料。",
+          "en": "When you enquire through LINE, you send the enquiry to our official LINE account yourself. Please do not include unnecessary sensitive personal data in your message."
+        },
+        {
+          "zh": "若需查詢或請求處理透過本網站取得的資料，請聯絡宏邦貿易：0932-811-678。",
+          "en": "To ask about, or request handling of, data collected through this site, please contact Hong Bon: 0932-811-678."
+        }
+      ]
+    },
+    {
+      "slug": "terms",
+      "navKey": "navTerms",
+      "title": {
+        "zh": "服務條款",
+        "en": "Terms of Service"
+      },
+      "description": {
+        "zh": "宏邦貿易 HONG BON 服務條款：酒款介紹與詢價資訊，不構成線上交易。",
+        "en": "Hong Bon terms of service — wine information and enquiries, with no online sales."
+      },
+      "body": [
+        {
+          "zh": "本網站內容為酒款介紹及詢價資訊，提交詢價不構成訂單或線上交易。",
+          "en": "The content on this site is wine information and enquiry material. Submitting an enquiry does not create an order or an online transaction."
+        },
+        {
+          "zh": "價格、庫存、配送、付款及交易條件均須由宏邦貿易另行確認；雙方確認前不成立訂購。",
+          "en": "Price, stock, delivery, payment and other terms are confirmed separately by Hong Bon. No purchase is formed until both parties confirm."
+        },
+        {
+          "zh": "酒類商品僅提供符合法令規範之成年人詢問及購買。未滿十八歲請勿飲酒。",
+          "en": "Alcohol is offered for enquiry and purchase only by adults who meet the legal requirements. Not for anyone under 18."
+        }
+      ]
+    },
+    {
+      "slug": "shipping",
+      "navKey": "navShipping",
+      "title": {
+        "zh": "配送資訊",
+        "en": "Delivery Information"
+      },
+      "description": {
+        "zh": "宏邦貿易 HONG BON 配送資訊：配送方式、費用與到貨時間以專人確認，如採黑貓宅急便依最新規範。",
+        "en": "Hong Bon delivery information — methods, cost and lead time confirmed with you."
+      },
+      "body": [
+        {
+          "zh": "配送方式、服務範圍、費用與到貨時間由宏邦貿易與顧客確認。",
+          "en": "Delivery method, service area, cost and lead time are confirmed between Hong Bon and the customer."
+        },
+        {
+          "zh": "如採黑貓宅急便配送，實際費用與到貨時程依訂單確認時的黑貓宅急便最新規範及可配送條件為準。",
+          "en": "Where delivery is by Black Cat (宅急便), the actual cost and timing follow the carrier’s latest terms and serviceable conditions at the time the order is confirmed."
+        },
+        {
+          "zh": "請勿以網站詢價訊息視為已成立配送安排。",
+          "en": "An enquiry sent through this site should not be treated as a confirmed delivery arrangement."
+        }
+      ]
+    },
+    {
+      "slug": "quality",
+      "navKey": "navQuality",
+      "title": {
+        "zh": "品質保證",
+        "en": "Quality Assurance"
+      },
+      "description": {
+        "zh": "宏邦貿易 HONG BON 品質保證：酒款供應、保存狀況與商品資訊由宏邦貿易於接洽時確認。",
+        "en": "Hong Bon quality assurance — supply, storage and product information confirmed on contact."
+      },
+      "body": [
+        {
+          "zh": "酒款供應、保存狀況與商品資訊由宏邦貿易於接洽時確認。",
+          "en": "Supply of wine, storage condition and product information are confirmed by Hong Bon when we get in touch."
+        },
+        {
+          "zh": "如收到商品後發現包裝或商品狀況異常，請保留商品及包裝並儘速聯絡宏邦貿易：0932-811-678。",
+          "en": "If a product arrives with packaging or condition problems, please keep the product and packaging and contact Hong Bon promptly: 0932-811-678."
+        },
+        {
+          "zh": "此頁面不取代個別商品之標示或依法應提供的資訊。",
+          "en": "This page does not replace the labelling on individual products or information we are required to provide by law."
+        }
+      ]
+    }
+  ]
 }
