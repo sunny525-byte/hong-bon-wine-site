@@ -26,7 +26,22 @@
 # is referenced by any generated page (verified), so returning 404 is safe.
 # ---------------------------------------------------------------------------
 [[redirects]]
-  from = "/*.md"
+  from = "/README.md"
+  to = "/"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/CONTRIBUTING.md"
+  to = "/"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/SECURITY.md"
+  to = "/"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/CHANGELOG.md"
   to = "/"
   status = 404
   force = true
