@@ -44,3 +44,7 @@
  .product-bottom{margin-top:auto;padding-top:16px;align-items:stretch}
  .product-bottom .add{width:100%;white-space:normal}
 }
+
+/* Netlify injects a "Powered by Netlify" badge iframe (id=nl-badge-frame) into every
+   HTML response at serve time, so it cannot be removed from this repo — only hidden. */
+#nl-badge-frame{display:none!important}
