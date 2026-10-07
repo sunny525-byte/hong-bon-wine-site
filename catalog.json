@@ -1241,6 +1241,10 @@
     "listSeparator": {
       "zh": "、",
       "en": ", "
+    },
+    "creditTemplate": {
+      "zh": "由 {link} 開發",
+      "en": "Developed by {link}"
     }
   },
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E9%9B%84%E5%B8%82%E6%A9%8B%E9%A0%AD%E5%8D%80%E6%96%B0%E8%88%88%E8%B7%AF9%E8%99%9F",
@@ -1513,5 +1517,9 @@
         }
       ]
     }
-  ]
+  ],
+  "developer": {
+    "name": "Alpha Cool Tech",
+    "url": "https://alphacooltech.com/zh/"
+  }
 }

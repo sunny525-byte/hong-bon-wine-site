@@ -255,6 +255,7 @@ function render({ kind, path, title, description, ogDescription, ogImage, cat, w
     PHONE_TEL: String(catalog.phone || '').replace(/[^0-9+]/g, ''),
     PAYMENTS: (catalog.payments || []).map(x => esc(t(x))).join(t(ui('listSeparator'))),
     TICKER: ticker(),
+    DEVELOPER_CREDIT: devCredit(),
   };
   // UI chrome strings, localised per render. Keys in catalog.json's `ui` block
   // map to {{UI_*}} tokens in the template.
@@ -282,6 +283,17 @@ function render({ kind, path, title, description, ogDescription, ogImage, cat, w
   return out;
 }
 
+// "Developed by <strong>Alpha Cool Tech</strong>", with name/URL from the catalog.
+// One templated sentence per locale rather than prefix+suffix: an intentionally
+// empty English suffix would fall back to Chinese through t()'s en||zh rule.
+function devCredit() {
+  const d = catalog.developer || {};
+  const tpl = t(ui('creditTemplate'));
+  if (!d.name || !d.url || !tpl) return '';
+  const link = `<a href="${esc(d.url)}" target="_blank" rel="noopener"><strong>${esc(d.name)}</strong></a>`;
+  return `<p class="developed-by">${fill(tpl, { link })}</p>`;
+}
+
 // ---------------------------------------------------------------- policy pages
 // Separate template: they are simple documents and load no scripts.
 const policyTemplate = readFileSync(join(ROOT, '_templates', 'policy.html'), 'utf8');
@@ -303,6 +315,7 @@ function renderPolicy(page, loc, path) {
     UI_PAGEEYEBROW: esc(t(ui('pageEyebrow'))),
     UI_PAGECONTACT: esc(t(ui('pageContact'))),
     UI_PAGEWARNING: esc(t(ui('pageWarning'))),
+    DEVELOPER_CREDIT: devCredit(),
     LANG_SWITCH: langSwitch(path),
   };
   let out = policyTemplate;

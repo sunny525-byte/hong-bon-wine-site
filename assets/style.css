@@ -98,3 +98,11 @@
 .lang-switch{display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:40px;padding:0 13px;border:1px solid var(--line);border-radius:999px;font-size:13px;letter-spacing:.1em;color:var(--wine);white-space:nowrap;transition:background .3s,color .3s,border-color .3s}
 .lang-switch:hover{background:var(--wine);color:#fff;border-color:var(--wine)}
 @media(max-width:520px){.lang-switch{min-width:40px;height:36px;padding:0 10px;font-size:12px}}
+
+/* Developer credit. .footer-bottom p sets colour/size, so override it there. */
+.developed-by{margin:14px 0 0;font-size:13px;color:var(--muted);letter-spacing:.04em}
+.developed-by a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line);transition:color .3s,border-color .3s}
+.developed-by a:hover{color:var(--wine);border-color:var(--wine)}
+.developed-by strong{font-weight:600;color:var(--ink)}
+.footer-bottom .developed-by{margin:14px 0 0;font-size:13px;color:var(--muted)}
+.policy .developed-by{margin-top:26px;font-size:13px}
