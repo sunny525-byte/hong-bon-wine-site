@@ -16,3 +16,49 @@
   to = "https://hongbon.tw/:splat"
   status = 301
   force = true
+
+# ---------------------------------------------------------------------------
+# Internal sources are not part of the website.
+#
+# publish = "." serves the whole repository root, so build sources, docs and
+# original images would otherwise be readable at hongbon.tw — the edge function
+# source was publicly served before these rules were added. None of these paths
+# is referenced by any generated page (verified), so returning 404 is safe.
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/*.md"
+  to = "/"
+  status = 404
+[[redirects]]
+  from = "/docs/*"
+  to = "/"
+  status = 404
+[[redirects]]
+  from = "/scripts/*"
+  to = "/"
+  status = 404
+[[redirects]]
+  from = "/_templates/*"
+  to = "/"
+  status = 404
+[[redirects]]
+  from = "/netlify/*"
+  to = "/"
+  status = 404
+[[redirects]]
+  from = "/policies/*"
+  to = "/"
+  status = 404
+# original PNGs: the site serves /assets/*.webp instead
+[[redirects]]
+  from = "/product-images/*"
+  to = "/"
+  status = 404
+[[redirects]]
+  from = "/generate.mjs"
+  to = "/"
+  status = 404
+[[redirects]]
+  from = "/.gitignore"
+  to = "/"
+  status = 404

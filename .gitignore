@@ -1,10 +1,32 @@
-.DS_Store
-*.zip
-
-# Local Netlify folder
-.netlify
-
-# Local env
+# --- Secrets & local config (never commit these) ---
 .env
 .env.*
+!.env.example
 
+# --- Netlify ---
+.netlify
+
+# --- OS noise ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Editors / IDEs ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Logs ---
+*.log
+npm-debug.log*
+
+# --- Build artifacts (the project has no deps today, but keep these out) ---
+node_modules/
+
+# --- Archives (release zips live outside the repo) ---
+*.zip
+
+# --- Local scratch ---
+*.tmp

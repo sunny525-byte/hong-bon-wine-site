@@ -1,0 +1,62 @@
+name: Feature request
+description: Suggest something the site should do
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please describe the **outcome** you want rather than a specific implementation — the
+        simplest solution is often better than the first idea.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Who is affected, and what do they have to do today?
+      placeholder: Visitors can't tell which wines pair with which food, so they message us to ask.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like to happen?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of the site?
+      options:
+        - Catalogue / wine pages
+        - Category pages
+        - Homepage / hero
+        - Admin editor
+        - Both locales / translations
+        - SEO / performance
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: content
+    attributes:
+      label: Does this need new content?
+      description: >
+        Text, images or translations that someone must write. This is usually the long pole —
+        code is quick, content is not.
+      options:
+        - "No — it's a code/design change only"
+        - "Yes — I can supply the copy and images"
+        - "Yes — I'd like help drafting it"
+        - "Not sure"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else?
+      description: Examples from other sites, priority, deadlines, links.

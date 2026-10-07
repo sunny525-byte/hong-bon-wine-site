@@ -1,0 +1,87 @@
+name: Bug report
+description: Something on the site is broken or behaving unexpectedly
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. If this is a **security** issue, please do **not** file it here —
+        see [SECURITY.md](../blob/main/SECURITY.md).
+
+  - type: input
+    id: where
+    attributes:
+      label: Where is it?
+      description: The exact URL, including the locale.
+      placeholder: https://hongbon.tw/en/red-wine/
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What happens?
+      placeholder: The wine grid stays empty and the console shows "catalogue failed to load".
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to /en/
+        2. Click the first wine
+        3. …
+    validations:
+      required: true
+
+  - type: dropdown
+    id: locale
+    attributes:
+      label: Which locale?
+      options:
+        - Both
+        - Chinese (/)
+        - English (/en/)
+        - Not locale-specific
+    validations:
+      required: true
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device
+      options:
+        - Desktop
+        - Mobile
+        - Tablet
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+      placeholder: Chrome 141 on macOS
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Console errors
+      description: Open the browser console and paste anything in red. This is often the whole answer.
+      render: text
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else?
+      description: Screenshots, when it started, whether it worked before.

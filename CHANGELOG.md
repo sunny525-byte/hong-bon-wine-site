@@ -1,0 +1,100 @@
+# Changelog
+
+All notable changes to the Hong Bon site.
+
+The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and this project
+adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+Versioning note: the site has no runtime version — releases are tracked here and by deploy. A
+**major** bump means the content model or URLs changed, **minor** means new pages or features,
+**patch** means fixes and copy.
+
+---
+
+## [1.0.0] — 2026-10-07
+
+The release that replaced the hand-written draft with a bilingual generated site.
+
+### Added
+
+- **Static site generator** (`generate.mjs`) — prerenders every page from `catalog.json` plus
+  `_templates/`. Zero dependencies; runs in CI via `netlify.toml`.
+- **English locale** at `/en/` with `hreflang` alternates in the head and in `sitemap.xml`, a
+  language switcher in the header, and locale-aware internal links.
+- **Wine detail pages** at `/wine/<slug>/` — 20 pages with their own title, canonical, breadcrumb,
+  `Product` structured data and per-wine social image.
+- **Indexable category pages** at `/red-wine/`, `/white-wine/`, `/rose-wine/`,
+  `/sparkling-wine/`. Previously the catalogue was rendered in the browser, so the served HTML
+  contained no wine content and nothing could be indexed.
+- **Generated policy pages** (privacy, terms, shipping, quality) in both locales.
+- **Sticky category bar** — the filters stay reachable while browsing.
+- **LINE call-to-action band** between the hero and the catalogue.
+- **Social links** (Instagram, Facebook) rendered from the catalogue.
+- **Footer developer credit** — "Developed by Alpha Cool Tech", linking to alphacooltech.com.
+- **Admin "網站文字" section** — roughly 145 interface strings as paired Chinese/English inputs,
+  grouped into collapsible sections, so all chrome copy is reviewable and editable without code.
+- **`scripts/serve.mjs`** — a local preview server with caching disabled, which also mirrors
+  Netlify's pretty URLs.
+- **Project documentation** — this changelog, `CONTRIBUTING.md`, `SECURITY.md` and
+  `docs/DEPLOYMENT.md`.
+
+### Changed
+
+- **`catalog.json` is now version 2.** Every translatable value is `{zh, en}`, with English
+  falling back to Chinese until translated. Added `categories[]`, `pages[]`, `flavors[]`,
+  `wines[].slug` and a `ui{}` block of interface strings.
+- **`index.html` is generated output.** The source is `_templates/page.html`; the page shell is
+  no longer hand-maintained.
+- **Category filters are real links** to the category pages, replacing in-memory client-side
+  filtering. `app.js` lost its card renderer, flavour logic and filter state (~2.2 KB smaller).
+- **Footer contact details** (address, phone, map link, payment methods) render from the
+  catalogue instead of being hardcoded, and the payment separator is locale-aware.
+- **Flavour chips** moved out of the generator into `catalog.json`, so labels are editable and
+  match both languages.
+- The search bar was **removed** at the client's request, along with its styles and its
+  top-level event listener.
+- Generated pages **are committed**, so the repository stays previewable without a build and a
+  failed build cannot leave git without a complete site.
+
+### Fixed
+
+- **25 image references had lost their file extension** — 21 returned 404 and 4 were served as
+  `Content-Type: text/plain`, so browsers would not render them. Regression from an earlier
+  WebP-conversion commit that renamed the files but not the references.
+- **Canonical, Open Graph, sitemap and robots all named `hongbon.netlify.app`** instead of
+  `hongbon.tw`, while the duplicate host served 200 with no redirect — search engines could
+  prefer the wrong domain. Corrected in 7 files and a 301 was added for the legacy host.
+- **Homepage hero disappeared on rebuild** — the generator replaced the span between the hero
+  markers instead of preserving it, which also removed the cart and menu elements the client
+  script depends on.
+- **The hero entrance animation never completed.** Scoping the hero stylesheet inverted the
+  specificity of the hidden/revealed state rules, so content stayed at `opacity: 0`. The
+  homepage appeared to load with only the carousel visible.
+- **Internal links on `/en/` pointed at the Chinese tree** — cards, filters, breadcrumbs, logo
+  and home all sent English visitors to Chinese pages.
+- **Category pages reverted to the homepage title**, because the client script overwrote
+  `document.title` after the generator had set a per-page one.
+- **Netlify's injected "Powered by Netlify" badge** is hidden from the stylesheet. It is added at
+  serve time by `/.netlify/scripts/hud`, so it cannot be removed from this repository.
+- The English hero read "the one**you love**" (a lost trailing space), the English payment list
+  used a Chinese enumeration comma, and the policy `<h1>` repeated the brand name.
+
+### Security
+
+- Confirmed no secrets are tracked, `.env` is ignored, and `https://hongbon.tw/.env` plus
+  `/.git/config` both return 404 — i.e. the Netlify build respects `.gitignore`.
+- The admin password is read from `PROTECTED_PAGE_PASSWORD` at runtime and is **not** in the
+  repository; the gate fails closed when the variable is unset.
+
+---
+
+## [0.1.0] — 2026-09-24 … 2026-09-29
+
+The initial static draft, before the generator existed.
+
+- Hand-written HTML site with a browser-rendered catalogue, `admin.html` editor gated by a
+  Netlify Edge Function, and `catalog.json` as the content file.
+- WebP image conversion, filter glass icons, dynamic storefront effects, logo and inquiry form,
+  mobile menu, SEO basics, and the privacy / terms / shipping / quality starter pages.
+
+[1.0.0]: https://github.com/sunny525-byte/hong-bon-wine-site/commits/main
