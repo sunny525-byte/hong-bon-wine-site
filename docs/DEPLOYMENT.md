@@ -67,7 +67,7 @@ git push origin main
 Netlify detects the push
       │
       ▼
-runs `node generate.mjs`   ← renders 58 pages from catalog.json + _templates/
+runs `node generate.mjs`   ← renders 78 pages from catalog.json + _templates/
       │
       ▼
 publishes the repo root (excluding .git, .env, .netlify — see .gitignore)
@@ -98,8 +98,10 @@ netlify api listSiteDeploys \
   | python3 -c "import sys,json; d=json.load(sys.stdin)[0]; print(d['state'], str(d['commit_ref'])[:7], d.get('published_at'))"
 
 # page types
-for p in / /en/ /red-wine/ /en/red-wine/ /wine/red-wild-elegant/ /privacy.html /en/privacy.html; do
-  printf '%-32s %s\n' "$p" "$(curl -s -o /dev/null -w '%{http_code}' "https://hongbon.tw$p?cb=$RANDOM")"
+for p in / /en/ /red-wine/ /en/red-wine/ /wine/red-wild-elegant/ /privacy.html /en/privacy.html \
+         /regions/ /wineries/ /region/mosel/ /winery/maring-prigge/ \
+         /en/regions/ /en/wineries/ /en/region/mosel/ /en/winery/maring-prigge/; do
+  printf '%-34s %s\n' "$p" "$(curl -s -o /dev/null -w '%{http_code}' "https://hongbon.tw$p?cb=$RANDOM")"
 done
 ```
 
@@ -109,8 +111,14 @@ Sanity checks that have caught real problems:
 # wine content actually in the HTML (not client-rendered)
 curl -s https://hongbon.tw/ | grep -c '<article class="product'      # expect 20
 
+# region and winery pages list their wines too, in both locales
+curl -s https://hongbon.tw/region/mosel/ | grep -c '<article class="product'   # expect 8
+curl -s https://hongbon.tw/winery/schwarz/ | grep -c '<article class="product' # expect 7
+# a winery with no wines says so rather than rendering nothing
+curl -s https://hongbon.tw/winery/le-pin-d-ambert/ | grep -c 'class="empty"'
+
 # the sitemap
-curl -s https://hongbon.tw/sitemap.xml | grep -c '<loc>'             # expect 58
+curl -s https://hongbon.tw/sitemap.xml | grep -c '<loc>'             # expect 78
 
 # secrets must never be served
 curl -s -o /dev/null -w '%{http_code}\n' https://hongbon.tw/.env     # expect 404

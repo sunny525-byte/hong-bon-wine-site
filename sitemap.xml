@@ -406,4 +406,144 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://hongbon.tw/regions/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/regions/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/regions/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/en/regions/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/regions/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/regions/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/wineries/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/wineries/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/wineries/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/en/wineries/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/wineries/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/wineries/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/region/mosel/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/region/mosel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/region/mosel/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/en/region/mosel/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/region/mosel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/region/mosel/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/region/bordeaux/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/region/bordeaux/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/region/bordeaux/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/en/region/bordeaux/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/region/bordeaux/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/region/bordeaux/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/region/barossa-valley/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/region/barossa-valley/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/region/barossa-valley/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/en/region/barossa-valley/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/region/barossa-valley/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/region/barossa-valley/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/winery/chateau-de-lagarde/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/chateau-de-lagarde/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/chateau-de-lagarde/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/en/winery/chateau-de-lagarde/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/chateau-de-lagarde/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/chateau-de-lagarde/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/winery/le-pin-d-ambert/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/le-pin-d-ambert/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/le-pin-d-ambert/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/en/winery/le-pin-d-ambert/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/le-pin-d-ambert/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/le-pin-d-ambert/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/winery/maring-prigge/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/maring-prigge/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/maring-prigge/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/en/winery/maring-prigge/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/maring-prigge/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/maring-prigge/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/winery/perayne/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/perayne/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/perayne/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/en/winery/perayne/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/perayne/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/perayne/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/winery/schwarz/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/schwarz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/schwarz/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/en/winery/schwarz/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/schwarz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/schwarz/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>

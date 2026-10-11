@@ -143,13 +143,21 @@ node scripts/serve.mjs            # open http://127.0.0.1:8931 and http://127.0.
 - [ ] Internal links stay in their own locale
 - [ ] Any new string is in the `ui` block and translated (or deliberately falling back)
 - [ ] Images load with the right `Content-Type`
+- [ ] If `generate.mjs` or a template changed, the pages you did **not** mean to touch are
+      unchanged: diff a few against `git show HEAD:<path>` and confirm only the intended edit
+      appears. A generator change silently rewrites all 78 pages, and tokenising markup is easy
+      to get subtly wrong.
 - [ ] `git diff` contains no stray files; generated pages are included
 - [ ] Commit message says **what changed and why**
 
 Then push to `main` — that deploys (see [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)).
 
 > Consider running `netlify build` too: branch deploys are disabled on this site, so there is no
-> preview to catch a problem before production.
+> preview to catch a problem before production. It needs live site data, so it fails with
+> `Failed retrieving site data … Not Found` when the account is unreachable (no access, or the
+> plan is out of credits). That failure says nothing about your change — `node generate.mjs` is
+> the actual build command, so if it succeeds and the tree is identical to a second run, the
+> build is fine.
 
 ---
 

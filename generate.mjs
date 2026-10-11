@@ -153,16 +153,23 @@ function pageHead(cat) {
     + `</section>`;
 }
 
-function jsonld({ title, canonical, cat, catUrl, wine }) {
+function jsonld({ title, canonical, cat, catUrl, wine, crumbs }) {
   const org = {
     '@type': 'LiquorStore', name: `${t(ui('brandFull'))}`, url: `${BASE_URL}/`,
     telephone: catalog.phone,
     sameAs: [catalog.lineUrl, catalog.social?.instagram, catalog.social?.facebook].filter(Boolean),
   };
-  const crumbs = list => ({ '@type': 'BreadcrumbList', itemListElement: list });
+  const crumbList = list => ({ '@type': 'BreadcrumbList', itemListElement: list });
 
   let graph;
-  if (wine) {
+  if (crumbs) {
+    // region / winery / hub pages: a collection page plus its breadcrumb trail
+    graph = [org,
+      { '@type': 'CollectionPage', name: title, url: canonical },
+      crumbList(crumbs.map((cr, i) => ({
+        '@type': 'ListItem', position: i + 1, name: cr.name, item: cr.href,
+      })))];
+  } else if (wine) {
     graph = [
       {
         '@type': 'Product',
@@ -175,7 +182,7 @@ function jsonld({ title, canonical, cat, catUrl, wine }) {
         url: canonical,
         // deliberately no `offers`: this site shows no prices and takes no orders
       },
-      crumbs([
+      crumbList([
         { '@type': 'ListItem', position: 1, name: t(ui('homeLabel')), item: `${BASE_URL}/` },
         { '@type': 'ListItem', position: 2, name: t(cat.label), item: catUrl || canonical },
         { '@type': 'ListItem', position: 3, name: t(wine.name), item: canonical },
@@ -185,7 +192,7 @@ function jsonld({ title, canonical, cat, catUrl, wine }) {
   } else if (cat) {
     graph = [org,
       { '@type': 'CollectionPage', name: title, url: canonical },
-      crumbs([
+      crumbList([
         { '@type': 'ListItem', position: 1, name: t(ui('homeLabel')), item: `${BASE_URL}/` },
         { '@type': 'ListItem', position: 2, name: t(cat.label), item: canonical },
       ])];
@@ -215,7 +222,8 @@ function winePage(w, cat) {
 }
 
 // ---------------------------------------------------------------- render
-function render({ kind, path, title, description, ogDescription, ogImage, cat, wine, wines }) {
+function render({ kind, path, title, description, ogDescription, ogImage, cat, wine, wines,
+                 pageHeadHtml, collectionHeadHtml, grid, filtersHtml, crumbs }) {
   const isHome = kind === 'home';
   CURRENT_PATH = path;             // slimHeader() needs it for the switcher
   const loc = LOCALES.find(l => l.code === LOCALE);
@@ -238,12 +246,20 @@ function render({ kind, path, title, description, ogDescription, ogImage, cat, w
     LANG_SWITCH: langSwitch(path),
     OG_IMAGE: ogImage || `${BASE_URL}/assets/og-image.jpg`,
     BODY_ATTRS: isHome ? ' class="lock"' : '',
-    PAGE_HEAD: isHome ? '' : (kind === 'wine' ? winePage(wine, cat) : pageHead(cat)),
-    COLLECTION_HEAD: collectionHead,
-    FILTERS: filters(cat ? cat.type : 'all'),
-    GRID: wines.map((w, i) => card(w, i)).join(''),
+    PAGE_HEAD: isHome ? '' : (pageHeadHtml !== undefined ? pageHeadHtml
+      : (kind === 'wine' ? winePage(wine, cat) : pageHead(cat))),
+    // Hub pages show a plain link list, so they keep the section (for its padding)
+    // but drop the heading, the toolbar and the .grid wrapper — a card-list inside
+    // .grid would render as a single 3-column cell.
+    COLLECTION_SECTION: kind === 'hub' ? `<section class="collection" id="collection">`
+      + (grid || '') + `</section>` : `<section class="collection" id="collection">`
+      + (collectionHeadHtml !== undefined ? collectionHeadHtml : collectionHead)
+      + (filtersHtml !== undefined ? filtersHtml : filters(cat ? cat.type : 'all'))
+      + `<div class="grid" id="products">`
+      + (grid !== undefined ? grid : wines.map((w, i) => card(w, i)).join(''))
+      + `</div></section>`,
     EXTRA_SCRIPTS: isHome ? '<script src="/assets/hero.js"></script>' : '',
-    JSONLD: jsonld({ title, canonical, cat, catUrl: cat ? urlFor(loc, `/${cat.slug}/`) : undefined, wine }),
+    JSONLD: jsonld({ title, canonical, cat, catUrl: cat ? urlFor(loc, `/${cat.slug}/`) : undefined, wine, crumbs }),
     // derived from the catalog rather than duplicated as new strings
     BRAND: esc(t(catalog.brand)),
     BRAND_FULL: esc(t(ui('brandFull'))),
@@ -325,6 +341,76 @@ function renderPolicy(page, loc, path) {
   return out;
 }
 
+// ---------------------------------------------------------------- content blocks
+// The client asked for formatted text and inline images, not raw PDFs. `body[]`
+// carries typed blocks so richer pages stay editable in the admin.
+const paras = (v, cls = 'section-text') => String(t(v) || '')
+  .split('\n').map(l => l.trim()).filter(Boolean)
+  .map(l => `<p class="${cls}">${esc(l)}</p>`).join('');
+
+function contentBlocks(blocks, name) {
+  return (blocks || []).map(b => {
+    if (b.type === 'text') return paras(b.value);
+    if (b.type === 'image' && b.src) {
+      const cap = t(b.caption);
+      return `<figure class="figure"><img src="${esc(b.src)}" alt="${esc(cap || name)}" loading="lazy">`
+        + (cap ? `<figcaption>${esc(cap)}</figcaption>` : '') + `</figure>`;
+    }
+    return '';
+  }).join('');
+}
+
+const snippet = (v, n = 96) => {
+  const str = String(t(v) || '').replace(/\s+/g, ' ').trim();
+  return str.length > n ? str.slice(0, n - 1).trimEnd() + '\u2026' : str;
+};
+
+// hub list: plain links, not wine cards
+function cardList(items) {
+  return `<div class="card-list">` + items.map(i =>
+    `<a class="card-item" href="${i.href}">`
+    + (i.image ? `<img src="${esc(i.image)}" alt="${esc(i.title)}" loading="lazy">` : `<span class="card-item-art"></span>`)
+    + `<span class="card-item-body"><strong>${esc(i.title)}</strong>`
+    + (i.meta ? `<span class="card-item-meta">${esc(i.meta)}</span>` : '')
+    + (i.text ? `<span class="card-item-text">${esc(i.text)}</span>` : '')
+    + `</span></a>`).join('') + `</div>`;
+}
+
+const sectionHeadBlock = (eyebrow, title) =>
+  `<div class="section-head"><div><span class="eyebrow">${esc(eyebrow)}</span><h2>${esc(title)}</h2></div></div>`;
+
+const arrow = '\u2197';
+
+function regionHead(region) {
+  const name = esc(t(region.name));
+  return `<section class="page-head section-page">`
+    + `<nav class="breadcrumb" aria-label="breadcrumb"><a href="${p('/')}">${esc(t(ui('homeLabel')))}</a>`
+    + `<span aria-hidden="true">/</span><a href="${p('/regions/')}">${esc(t(ui('regionsTitle')))}</a>`
+    + `<span aria-hidden="true">/</span><span>${name}</span></nav>`
+    + `<span class="eyebrow">${esc(t(ui('regionEyebrow')))} \u00b7 ${esc(region.country)}</span>`
+    + `<h1>${name}</h1>`
+    + paras(region.intro, 'section-lead')
+    + contentBlocks(region.body, t(region.name))
+    + `</section>`;
+}
+
+function wineryHead(w) {
+  const name = esc(t(w.name));
+  const region = (catalog.regions || []).find(r => r.slug === w.region);
+  return `<section class="page-head section-page">`
+    + `<nav class="breadcrumb" aria-label="breadcrumb"><a href="${p('/')}">${esc(t(ui('homeLabel')))}</a>`
+    + `<span aria-hidden="true">/</span><a href="${p('/wineries/')}">${esc(t(ui('wineriesTitle')))}</a>`
+    + `<span aria-hidden="true">/</span><span>${name}</span></nav>`
+    + `<span class="eyebrow">${esc(t(ui('wineryEyebrow')))} \u00b7 ${esc(w.country)}</span>`
+    + `<h1>${name}</h1>`
+    + paras(w.story, 'section-lead')
+    + (region ? `<p class="section-meta">${esc(t(ui('inRegion')))}: <a href="${p(`/region/${region.slug}/`)}">${esc(t(region.name))}</a></p>` : '')
+    + (w.website ? `<p class="section-meta"><a href="${esc(w.website)}" target="_blank" rel="noopener">${esc(t(ui('visitWebsite')))} ${arrow}</a></p>` : '')
+    + (w.image ? `<figure class="figure figure-lead"><img src="${esc(w.image)}" alt="${name}"></figure>` : '')
+    + contentBlocks(w.body, name)
+    + `</section>`;
+}
+
 function write(relPath, html) {
   const dest = join(ROOT, relPath);
   mkdirSync(dirname(dest), { recursive: true });
@@ -344,6 +430,10 @@ const entries = [{ path: '/', cf: 'weekly', pr: '1.0', locales: null }];
 for (const cat of cats) entries.push({ path: `/${cat.slug}/`, cf: 'weekly', pr: '0.8', locales: null });
 for (const w of all) if (w.slug) entries.push({ path: `/wine/${w.slug}/`, cf: 'monthly', pr: '0.6', locales: null });
 for (const p of policies) entries.push({ path: `/${p}.html`, cf: 'yearly', pr: '0.3', locales: null });
+entries.push({ path: '/regions/', cf: 'monthly', pr: '0.7', locales: null });
+entries.push({ path: '/wineries/', cf: 'monthly', pr: '0.7', locales: null });
+for (const r of catalog.regions || []) entries.push({ path: `/region/${r.slug}/`, cf: 'monthly', pr: '0.6', locales: null });
+for (const w of catalog.wineries || []) entries.push({ path: `/winery/${w.slug}/`, cf: 'monthly', pr: '0.6', locales: null });
 
 let pageCount = 0;
 for (const loc of LOCALES) {
@@ -392,6 +482,85 @@ for (const loc of LOCALES) {
       ogDescription: `${t(w.name)} — ${t(w.en)}`,
       ogImage: w.image && w.image.startsWith('/') ? `${BASE_URL}${w.image}` : undefined,
       cat, wine: w, wines: related,
+    }));
+    pageCount++;
+  }
+
+  // ---- regions ----
+  const regions = catalog.regions || [];
+  const wineries = catalog.wineries || [];
+  const crumbsHome = () => [{ name: t(ui('homeLabel')), href: urlFor(loc, '/') }];
+
+  write(at(join('regions', 'index.html')), render({
+    kind: 'hub', path: '/regions/',
+    title: `${t(ui('regionsTitle'))}|${t(ui('brandFull'))}`.replace('|', '\uff5c'),
+    description: t(ui('regionsLead')),
+    pageHeadHtml: `<section class="page-head section-page">`
+      + `<nav class="breadcrumb" aria-label="breadcrumb"><a href="${p('/')}">${esc(t(ui('homeLabel')))}</a>`
+      + `<span aria-hidden="true">/</span><span>${esc(t(ui('regionsTitle')))}</span></nav>`
+      + `<span class="eyebrow">${esc(t(ui('regionsEyebrow')))}</span><h1>${esc(t(ui('regionsTitle')))}</h1>`
+      + paras(ui('regionsLead'), 'section-lead') + `</section>`,
+    grid: cardList(regions.map(r => ({
+      href: p(`/region/${r.slug}/`), title: t(r.name), meta: r.country,
+      text: snippet(r.intro), image: '',
+    }))),
+    filtersHtml: '', collectionHeadHtml: '',
+    crumbs: [...crumbsHome(), { name: t(ui('regionsTitle')), href: urlFor(loc, '/regions/') }],
+  }));
+  pageCount++;
+
+  for (const r of regions) {
+    const rw = all.filter(w => w.region === r.slug);
+    write(at(join('region', r.slug, 'index.html')), render({
+      kind: 'section', path: `/region/${r.slug}/`,
+      title: `${t(r.name)}|${t(ui('brandFull'))}`.replace('|', '\uff5c'),
+      description: snippet(r.intro, 155),
+      pageHeadHtml: regionHead(r),
+      collectionHeadHtml: sectionHeadBlock(t(ui('regionEyebrow')), fill(t(ui('winesFromRegion')), { name: t(r.name) })),
+      grid: rw.map((w, i) => card(w, i)).join(''),
+      filtersHtml: '',
+      crumbs: [...crumbsHome(), { name: t(ui('regionsTitle')), href: urlFor(loc, '/regions/') },
+               { name: t(r.name), href: urlFor(loc, `/region/${r.slug}/`) }],
+    }));
+    pageCount++;
+  }
+
+  // ---- wineries ----
+  write(at(join('wineries', 'index.html')), render({
+    kind: 'hub', path: '/wineries/',
+    title: `${t(ui('wineriesTitle'))}|${t(ui('brandFull'))}`.replace('|', '\uff5c'),
+    description: t(ui('wineriesLead')),
+    pageHeadHtml: `<section class="page-head section-page">`
+      + `<nav class="breadcrumb" aria-label="breadcrumb"><a href="${p('/')}">${esc(t(ui('homeLabel')))}</a>`
+      + `<span aria-hidden="true">/</span><span>${esc(t(ui('wineriesTitle')))}</span></nav>`
+      + `<span class="eyebrow">${esc(t(ui('wineriesEyebrow')))}</span><h1>${esc(t(ui('wineriesTitle')))}</h1>`
+      + paras(ui('wineriesLead'), 'section-lead') + `</section>`,
+    grid: cardList(wineries.map(w => ({
+      href: p(`/winery/${w.slug}/`), title: t(w.name), meta: w.country,
+      text: snippet(w.story), image: w.image || '',
+    }))),
+    filtersHtml: '', collectionHeadHtml: '',
+    crumbs: [...crumbsHome(), { name: t(ui('wineriesTitle')), href: urlFor(loc, '/wineries/') }],
+  }));
+  pageCount++;
+
+  for (const w of wineries) {
+    const ww = all.filter(x => x.winery === w.slug);
+    write(at(join('winery', w.slug, 'index.html')), render({
+      kind: 'section', path: `/winery/${w.slug}/`,
+      title: `${t(w.name)}|${t(ui('brandFull'))}`.replace('|', '\uff5c'),
+      description: snippet(w.story, 155),
+      ogImage: w.image ? `${BASE_URL}${w.image}` : undefined,
+      pageHeadHtml: wineryHead(w),
+      collectionHeadHtml: ww.length
+        ? sectionHeadBlock(t(ui('wineryEyebrow')), fill(t(ui('winesFromWinery')), { name: t(w.name) }))
+        : '',
+      // A winery with no wines yet: an empty .grid shows nothing, so say so instead.
+      grid: ww.length ? ww.map((x, i) => card(x, i)).join('')
+        : `<p class="empty">${esc(t(ui('noWinesYet')))}</p>`,
+      filtersHtml: '',
+      crumbs: [...crumbsHome(), { name: t(ui('wineriesTitle')), href: urlFor(loc, '/wineries/') },
+               { name: t(w.name), href: urlFor(loc, `/winery/${w.slug}/`) }],
     }));
     pageCount++;
   }

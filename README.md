@@ -37,7 +37,7 @@ into HTML; Netlify builds and publishes on every push to `main`.
 | | |
 |---|---|
 | **Languages** | zh-TW (default, at `/`) and English (at `/en/`) |
-| **Pages** | 58 — home, 4 category pages, 20 wine detail pages, 4 policy pages × 2 locales |
+| **Pages** | 78 — home, 4 category pages, 20 wine detail pages, 4 policy pages, 3 region + 5 winery pages + 2 hubs, all × 2 locales |
 | **Content source** | `catalog.json` (single source of truth) |
 | **Generator** | `generate.mjs` — zero dependencies, runs on Node |
 | **Hosting** | Netlify, custom domain `hongbon.tw` |
@@ -175,7 +175,7 @@ index.html                        en/index.html
 <category>/index.html   × 4       en/<category>/index.html   × 4
 wine/<slug>/index.html  × 20      en/wine/<slug>/index.html  × 20
 <policy>.html           × 4       en/<policy>.html           × 4
-sitemap.xml                       (58 URLs with hreflang alternates)
+sitemap.xml                       (78 URLs with hreflang alternates)
 ```
 
 Generated files **are committed** on purpose: the repo stays previewable without a build, and
@@ -247,12 +247,14 @@ Full operational detail, including the Netlify account situation and DNS:
 | `social` | `{ instagram, facebook }` URLs |
 | `developer` | `{ name, url }` for the footer credit |
 | `payments[]` | Accepted payment methods (`{zh,en}`) |
-| `ui{}` | **~145 UI strings** — buttons, headings, dialogs, toasts, labels |
+| `ui{}` | **~158 UI strings** — buttons, headings, dialogs, toasts, labels |
 | `flavors[]` | Flavour chips: `{zh,en, match[]}` — `match` holds both languages' search terms |
 | `categories[]` | `{ slug, type, label{zh,en}, intro{zh,en} }` — drives the category pages |
 | `wines[]` | The catalogue (below) |
 | `pages[]` | Policy pages: `{ slug, title, description, body[] }` |
 | `heroSlides[]` | Homepage banner: `{ image, alt{zh,en} }` |
+| `regions[]` | Wine regions — drives `/region/<slug>/` and the `/regions/` hub |
+| `wineries[]` | Producers — drives `/winery/<slug>/` and the `/wineries/` hub |
 
 A wine:
 
@@ -264,6 +266,8 @@ A wine:
   "featured": true,                   // shows the "featured" ribbon
   "active": true,                     // false hides it
   "image": "/assets/<uuid>.webp",     // always keep the file extension
+  "region": "mosel",                  // a regions[].slug — decides the wine list on that region page
+  "winery": "maring-prigge",          // a wineries[].slug — same, for the winery page
   "name":  { "zh": "德國 - 2023 黑皮諾紅酒", "en": "Germany — 2023 Pinot Noir" },
   "en":    { "zh": "RED WINE / WILD & ELEGANT", "en": "RED WINE / WILD & ELEGANT" },
   "taste": { "zh": "產區…", "en": "Region…" },
@@ -272,6 +276,50 @@ A wine:
 ```
 
 Wines without a `slug` are skipped rather than linked to a 404.
+
+A region and a winery:
+
+```jsonc
+// regions[]  →  /region/<slug>/  and a card on /regions/
+{
+  "slug": "mosel",
+  "country": "Germany",              // shown next to the eyebrow, in either locale
+  "name":  { "zh": "摩澤爾", "en": "Mosel" },
+  "intro": { "zh": "…", "en": "…" }, // the page's lead paragraph(s); \n starts a new <p>
+  "body":  [],                        // optional content blocks (see below)
+  "introDraft": true                  // true = the editor shows a "草稿" badge
+}
+
+// wineries[]  →  /winery/<slug>/  and a card on /wineries/
+{
+  "slug": "maring-prigge",
+  "region": "mosel",                  // a regions[].slug; empty is allowed
+  "country": "Germany",
+  "name":  { "zh": "…", "en": "…" },
+  "website": "https://…",             // optional; renders a "visit the winery" link
+  "story": { "zh": "…", "en": "…" },  // the page's lead paragraph(s)
+  "image": "/assets/winery-<slug>-1.webp",  // optional lead photo; "" renders no figure
+  "body":  [],                        // optional content blocks
+  "storyDraft": true
+}
+```
+
+`body[]` is the content-block model for anything longer than a lead paragraph. Order is
+preserved and each block is one of:
+
+```jsonc
+{ "type": "text",  "value": { "zh": "…", "en": "…" } }              // → <p class="section-text">
+{ "type": "image", "src": "/assets/…", "caption": { "zh": "", "en": "" } }  // → <figure>
+```
+
+Both editors (region and winery) have **＋ 文字段落** / **＋ 圖片** buttons, reorder and delete
+controls, and an image upload that compresses to WebP like the wine and banner uploads.
+`introDraft` / `storyDraft` are a review flag only — the generator ignores them; clear the
+checkbox once the client has approved the wording.
+
+A winery with no wines yet renders the `noWinesYet` UI string instead of an empty grid.
+Deleting a region or winery unlinks the wines that pointed at it, so no wine is left
+referring to a slug that no longer exists.
 
 ---
 
@@ -305,8 +353,14 @@ Wines without a `slug` are skipped rather than linked to a 404.
     sitemap.xml
     red-wine/ · white-wine/ · rose-wine/ · sparkling-wine/
     wine/                        ← 20 wine detail pages
+    regions/ · region/<slug>/    ← the 3 region pages + the hub
+    wineries/ · winery/<slug>/   ← the 5 winery pages + the hub
     en/                          ← the whole site again, in English
 ```
+
+78 pages across 2 locales. `node generate.mjs` prints the count; every page is generated,
+so never edit a generated file — edit `catalog.json` (content) or `generate.mjs` +
+`_templates/` (markup).
 
 ---
 

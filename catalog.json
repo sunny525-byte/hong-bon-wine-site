@@ -75,7 +75,9 @@
       "type": "red",
       "id": "product-1",
       "imageStatus": "unconfirmed",
-      "slug": "red-wild-elegant"
+      "slug": "red-wild-elegant",
+      "region": "mosel",
+      "winery": "maring-prigge"
     },
     {
       "image_name": "d89b214e-928e-49ac-af4b-01762adc679c.webp",
@@ -102,7 +104,9 @@
       "type": "white",
       "id": "product-2",
       "imageStatus": "label-match",
-      "slug": "2023-dhroner-hofberg"
+      "slug": "2023-dhroner-hofberg",
+      "region": "mosel",
+      "winery": "maring-prigge"
     },
     {
       "image_name": "3e32bbb2-cc0b-49e1-a891-23009e99035f.webp",
@@ -129,7 +133,9 @@
       "type": "white",
       "id": "product-3",
       "imageStatus": "label-match",
-      "slug": "2024-steep-slope-kabinett"
+      "slug": "2024-steep-slope-kabinett",
+      "region": "mosel",
+      "winery": "maring-prigge"
     },
     {
       "image_name": "19a738ec-2e08-4760-953e-03030f9fce8f.webp",
@@ -156,7 +162,9 @@
       "type": "white",
       "id": "product-4",
       "imageStatus": "label-match",
-      "slug": "2021-hamburg"
+      "slug": "2021-hamburg",
+      "region": "mosel",
+      "winery": "maring-prigge"
     },
     {
       "image_name": "c8ce37e7-ee82-4580-abad-079129a73888.webp",
@@ -183,7 +191,9 @@
       "type": "white",
       "id": "product-5",
       "imageStatus": "label-match",
-      "slug": "2023-feinherb"
+      "slug": "2023-feinherb",
+      "region": "mosel",
+      "winery": "maring-prigge"
     },
     {
       "image_name": "d6e79733-07fa-4d43-a190-f1d4ca427cb8.webp",
@@ -210,7 +220,9 @@
       "type": "white",
       "id": "product-6",
       "imageStatus": "label-match",
-      "slug": "2022-neumagener-rosengartchen"
+      "slug": "2022-neumagener-rosengartchen",
+      "region": "mosel",
+      "winery": "maring-prigge"
     },
     {
       "image_name": "11361319-8858-45d2-9b13-452bbd99ccad.webp",
@@ -237,7 +249,9 @@
       "type": "sparkling",
       "id": "product-7",
       "imageStatus": "label-match",
-      "slug": "2021-guts-sekt-trocken"
+      "slug": "2021-guts-sekt-trocken",
+      "region": "mosel",
+      "winery": "maring-prigge"
     },
     {
       "image_name": "77f5c6d0-9550-48f0-bbe9-b561cb622950.webp",
@@ -264,7 +278,9 @@
       "type": "sparkling",
       "id": "product-8",
       "imageStatus": "label-match",
-      "slug": "2021-guts-sekt-brut"
+      "slug": "2021-guts-sekt-brut",
+      "region": "mosel",
+      "winery": "maring-prigge"
     },
     {
       "image_name": "b87bafda-2443-42d4-8f44-50d9244d963f.webp",
@@ -291,7 +307,9 @@
       "type": "red",
       "id": "product-9",
       "imageStatus": "unconfirmed",
-      "slug": "red-classic-reserve"
+      "slug": "red-classic-reserve",
+      "region": "bordeaux",
+      "winery": "perayne"
     },
     {
       "image_name": "105379f4-8c8a-46ac-91ae-a69afff3ab83.webp",
@@ -318,7 +336,9 @@
       "type": "red",
       "id": "product-10",
       "imageStatus": "unconfirmed",
-      "slug": "red-rare-reserve"
+      "slug": "red-rare-reserve",
+      "region": "bordeaux",
+      "winery": "perayne"
     },
     {
       "image_name": "ccb55fba-d50c-4583-8875-761a3948ec46.webp",
@@ -345,7 +365,9 @@
       "type": "red",
       "id": "product-11",
       "imageStatus": "unconfirmed",
-      "slug": "red-oak-aged-velvety"
+      "slug": "red-oak-aged-velvety",
+      "region": "bordeaux",
+      "winery": "perayne"
     },
     {
       "image_name": "fa43e564-907e-4067-9754-7d35d93928e0.webp",
@@ -372,7 +394,9 @@
       "type": "white",
       "id": "product-12",
       "imageStatus": "unconfirmed",
-      "slug": "white-stone-fruit-mineral"
+      "slug": "white-stone-fruit-mineral",
+      "region": "bordeaux",
+      "winery": "chateau-de-lagarde"
     },
     {
       "image_name": "a4c70396-f29d-4dab-a757-36a148f6410d.webp",
@@ -399,7 +423,9 @@
       "type": "rose",
       "id": "product-13",
       "imageStatus": "label-match",
-      "slug": "2022-de-la-joie"
+      "slug": "2022-de-la-joie",
+      "region": "bordeaux",
+      "winery": "chateau-de-lagarde"
     },
     {
       "image_name": "e03e7286-e0db-4a03-9c46-747e93361ab8.webp",
@@ -426,7 +452,9 @@
       "type": "red",
       "id": "product-14",
       "imageStatus": "label-match",
-      "slug": "2021-gratitude-shiraz"
+      "slug": "2021-gratitude-shiraz",
+      "region": "barossa-valley",
+      "winery": "schwarz"
     },
     {
       "image_name": "ceebe50c-25ec-44b9-86f4-a713c26bf95a.webp",
@@ -453,7 +481,9 @@
       "type": "red",
       "id": "product-15",
       "imageStatus": "label-match",
-      "slug": "2020-the-schiller-shiraz"
+      "slug": "2020-the-schiller-shiraz",
+      "region": "barossa-valley",
+      "winery": "schwarz"
     },
     {
       "image_name": "449cbe56-b5c2-4d65-9779-64f89e509c17.webp",
@@ -480,7 +510,9 @@
       "type": "red",
       "id": "product-16",
       "imageStatus": "label-match",
-      "slug": "2023-the-grower-gsm"
+      "slug": "2023-the-grower-gsm",
+      "region": "barossa-valley",
+      "winery": "schwarz"
     },
     {
       "image_name": "15157533-a4c8-4538-a1e8-197c304188ef.webp",
@@ -508,7 +540,9 @@
       "id": "product-17",
       "imageStatus": "label-match",
       "featured": true,
-      "slug": "2022-meta-grenache"
+      "slug": "2022-meta-grenache",
+      "region": "barossa-valley",
+      "winery": "schwarz"
     },
     {
       "image_name": "5d300a17-7eca-4679-b584-eb6ec7acde74.webp",
@@ -535,7 +569,9 @@
       "type": "red",
       "id": "product-18",
       "imageStatus": "label-match",
-      "slug": "2022-meta-shiraz"
+      "slug": "2022-meta-shiraz",
+      "region": "barossa-valley",
+      "winery": "schwarz"
     },
     {
       "image_name": "80e41337-b236-497e-b184-d8408965c54b.webp",
@@ -562,7 +598,9 @@
       "type": "white",
       "id": "product-19",
       "imageStatus": "label-match",
-      "slug": "2023-meta-grenache-blanc"
+      "slug": "2023-meta-grenache-blanc",
+      "region": "barossa-valley",
+      "winery": "schwarz"
     },
     {
       "image_name": "c6eddd1f-50ee-4d82-97a2-c08a09e3b3a9.webp",
@@ -589,7 +627,9 @@
       "type": "white",
       "id": "product-20",
       "imageStatus": "label-match",
-      "slug": "2023-chenin-blanc"
+      "slug": "2023-chenin-blanc",
+      "region": "barossa-valley",
+      "winery": "schwarz"
     }
   ],
   "heroSlides": [
@@ -1245,6 +1285,58 @@
     "creditTemplate": {
       "zh": "由 {link} 開發",
       "en": "Developed by {link}"
+    },
+    "regionsTitle": {
+      "zh": "產區",
+      "en": "Regions"
+    },
+    "regionsEyebrow": {
+      "zh": "REGIONS",
+      "en": "REGIONS"
+    },
+    "regionsLead": {
+      "zh": "我們挑選的酒款來自三個產區。每一個產區的氣候與土壤，決定了酒款的性格。",
+      "en": "Our wines come from three regions. Each one&rsquo;s climate and soil are what shape the wines."
+    },
+    "wineriesTitle": {
+      "zh": "合作酒莊",
+      "en": "Wineries"
+    },
+    "wineriesEyebrow": {
+      "zh": "WINERIES",
+      "en": "WINERIES"
+    },
+    "wineriesLead": {
+      "zh": "我們與這些酒莊長期合作，從葡萄園到裝瓶，每一款酒都能追溯到釀造它的人。",
+      "en": "We work with these wineries over the long term — from vineyard to bottling, every wine traces back to the people who made it."
+    },
+    "regionEyebrow": {
+      "zh": "產區",
+      "en": "REGION"
+    },
+    "wineryEyebrow": {
+      "zh": "酒莊",
+      "en": "WINERY"
+    },
+    "winesFromRegion": {
+      "zh": "{name} 的酒款",
+      "en": "Wines from {name}"
+    },
+    "winesFromWinery": {
+      "zh": "{name} 的酒款",
+      "en": "Wines by {name}"
+    },
+    "visitWebsite": {
+      "zh": "造訪酒莊網站",
+      "en": "Visit the winery"
+    },
+    "noWinesYet": {
+      "zh": "此酒莊的酒款即將上架，歡迎透過 LINE 詢問。",
+      "en": "Wines from this winery are coming soon — ask us on LINE."
+    },
+    "inRegion": {
+      "zh": "產區",
+      "en": "Region"
     }
   },
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E9%9B%84%E5%B8%82%E6%A9%8B%E9%A0%AD%E5%8D%80%E6%96%B0%E8%88%88%E8%B7%AF9%E8%99%9F",
@@ -1521,5 +1613,244 @@
   "developer": {
     "name": "Alpha Cool Tech",
     "url": "https://alphacooltech.com/zh/"
-  }
+  },
+  "regions": [
+    {
+      "slug": "mosel",
+      "country": "Germany",
+      "name": {
+        "zh": "摩澤爾",
+        "en": "Mosel"
+      },
+      "intro": {
+        "zh": "摩澤爾是德國最負盛名的白酒產區。葡萄園沿著蜿蜒的摩澤爾河，種植在近乎垂直的陡峭板岩坡地上。板岩白天吸收熱能、夜間釋放，為麗絲玲帶來獨特的礦物感與酸度骨架。酒款從不甜到微甜皆有，酒精濃度通常偏低，是全世界最優雅的麗絲玲產地之一。",
+        "en": "Mosel is Germany's most celebrated white-wine region. Its vineyards climb near-vertical slate slopes above the winding river, where the stone takes up heat by day and releases it at night — giving Riesling its unmistakable minerality and backbone of acidity. Styles run from bone-dry to gently sweet, usually at low alcohol: some of the most elegant Riesling made anywhere."
+      },
+      "body": [],
+      "introDraft": true
+    },
+    {
+      "slug": "bordeaux",
+      "country": "France",
+      "name": {
+        "zh": "波爾多",
+        "en": "Bordeaux"
+      },
+      "intro": {
+        "zh": "波爾多位於法國西南部、吉倫特河口兩岸，是全球最知名的葡萄酒產區之一。以卡本內蘇維濃與梅洛等品種調配的紅酒聞名，也生產以白蘇維濃、賽美濃為主的干白酒。黏土、礫石與石灰岩比例不同，讓每一片地塊都有自己的個性。",
+        "en": "Bordeaux lies in south-west France on the banks of the Gironde estuary, and is among the best-known wine regions in the world. Famous for red blends of Cabernet Sauvignon and Merlot, it also makes dry whites from Sauvignon Blanc and Sémillon. Clay, gravel and limestone in different proportions give each plot its own character."
+      },
+      "body": [],
+      "introDraft": true
+    },
+    {
+      "slug": "barossa-valley",
+      "country": "Australia",
+      "name": {
+        "zh": "巴羅莎谷",
+        "en": "Barossa Valley"
+      },
+      "intro": {
+        "zh": "巴羅莎谷位於南澳，是澳洲最具代表性的產區之一，以濃郁厚實的希哈聞名。溫暖乾燥的氣候讓果實充分成熟，酒款展現黑莓、黑巧克力與香料氣息。區內保有世界上最古老的希哈與格那希老藤，部分種植於 1840 年代。",
+        "en": "The Barossa Valley in South Australia is one of the country's defining regions, known for rich, full-bodied Shiraz. A warm, dry climate ripens the fruit fully, giving wines of blackberry, dark chocolate and spice. The valley also holds some of the oldest Shiraz and Grenache vines in the world, some planted in the 1840s."
+      },
+      "body": [],
+      "introDraft": true
+    }
+  ],
+  "wineries": [
+    {
+      "slug": "chateau-de-lagarde",
+      "region": "bordeaux",
+      "country": "France",
+      "name": {
+        "zh": "兩兄弟酒莊",
+        "en": "Château de Lagarde (Les 2 Frérots)"
+      },
+      "website": "",
+      "story": {
+        "zh": "兩兄弟酒莊（Château de Lagarde / Les 2 Frérots）位於波爾多最古老的產區之一——聖馬凱爾（Saint-Macaire）。細緻的黏土與紅色礫石構成本地風土，葡萄以手工採收，釀造出個性鮮明的波爾多酒款。",
+        "en": "Château de Lagarde — Les 2 Frérots, \"the two brothers\" — sits in Saint-Macaire, one of Bordeaux's oldest terroirs. Fine clay and red gravel define the site; the grapes are picked by hand, giving Bordeaux wines with a clear character of their own."
+      },
+      "image": "",
+      "body": [],
+      "storyDraft": true
+    },
+    {
+      "slug": "le-pin-d-ambert",
+      "region": "bordeaux",
+      "country": "France",
+      "name": {
+        "zh": "安貝松酒莊",
+        "en": "Château Le Pin d'Ambert"
+      },
+      "website": "",
+      "story": {
+        "zh": "安貝松酒莊（Château Le Pin d'Ambert）位於波爾多，白酒以賽美濃與白蘇維濃調配。葡萄手工採收後輕柔壓榨，酒色淡檸檬黃、明亮高雅，以蜜桃、檸檬與淡雅花香為主調，酸甜平衡、餘味悠長。",
+        "en": "Château Le Pin d'Ambert is a Bordeaux estate whose white is a blend of Sémillon and Sauvignon Blanc. Hand-picked and gently pressed, it shows a pale, bright lemon colour with peach, lemon and delicate floral notes — balanced between fruit and freshness, with a long finish."
+      },
+      "image": "/assets/winery-le-pin-d-ambert-1.webp",
+      "body": [
+        {
+          "type": "image",
+          "src": "/assets/winery-le-pin-d-ambert-2.webp",
+          "caption": {
+            "zh": "",
+            "en": ""
+          }
+        },
+        {
+          "type": "image",
+          "src": "/assets/winery-le-pin-d-ambert-3.webp",
+          "caption": {
+            "zh": "",
+            "en": ""
+          }
+        },
+        {
+          "type": "image",
+          "src": "/assets/winery-le-pin-d-ambert-4.webp",
+          "caption": {
+            "zh": "",
+            "en": ""
+          }
+        }
+      ],
+      "storyDraft": true
+    },
+    {
+      "slug": "maring-prigge",
+      "region": "mosel",
+      "country": "Germany",
+      "name": {
+        "zh": "馬林-普里格酒莊",
+        "en": "Maring-Prigge"
+      },
+      "website": "",
+      "story": {
+        "zh": "德國最老葡萄村的新生\n兩位好友跨越 8500 公里, 歷時多年醞釀的夢想實踐. 放下原本的職業, 我們在摩澤爾陡峭的板岩坡地上找到歸屬, 以「低干預」釀造出能傳達身份的獨特風味.\n以雷司令為核心，輔以白皮諾與米勒-圖高，守護兩公頃的珍稀地塊。\n德羅納·霍夫山坡的三色板岩賦予強烈礦質感；諾伊馬根玫瑰園則綻放細膩花果香。\n在陡峭坡地上堅持全手工耕作，以永續精神成就高品質佳釀",
+        "en": "A new chapter for Germany's oldest wine village.\nTwo friends, 8,500 km apart, spent years turning a shared idea into reality. Leaving their original careers behind, they found their place on the steep slate slopes of the Mosel, making low-intervention wines that carry a sense of identity.\nRiesling is the core, supported by Pinot Blanc and Müller-Thurgau, across two hectares of rare parcels.\nThe three-colour slate of the Dhroner Hofberg gives intense minerality; the Neumagener Rosengärten blooms with delicate floral and fruit notes.\nEverything on these steep slopes is worked by hand, in a spirit of sustainability."
+      },
+      "image": "/assets/winery-maring-prigge-1.webp",
+      "body": [
+        {
+          "type": "image",
+          "src": "/assets/winery-maring-prigge-2.webp",
+          "caption": {
+            "zh": "",
+            "en": ""
+          }
+        },
+        {
+          "type": "image",
+          "src": "/assets/winery-maring-prigge-3.webp",
+          "caption": {
+            "zh": "",
+            "en": ""
+          }
+        },
+        {
+          "type": "image",
+          "src": "/assets/winery-maring-prigge-4.webp",
+          "caption": {
+            "zh": "",
+            "en": ""
+          }
+        },
+        {
+          "type": "image",
+          "src": "/assets/winery-maring-prigge-5.webp",
+          "caption": {
+            "zh": "",
+            "en": ""
+          }
+        }
+      ],
+      "storyDraft": true
+    },
+    {
+      "slug": "perayne",
+      "region": "bordeaux",
+      "country": "France",
+      "name": {
+        "zh": "貝合娜酒莊",
+        "en": "Château Perayne"
+      },
+      "website": "http://www.chateau-perayne.com/",
+      "story": {
+        "zh": "貝合娜酒莊（Château Perayne）位於波爾多，以「自然與波爾多」為理念。酒莊僅在好年份生產頂級酒款，數量有限；「蝴蝶」（Papillon）系列以卡本內弗朗為主，經法國橡木桶長時間陳年，展現細膩而悠長的風格。",
+        "en": "Château Perayne is a Bordeaux estate built around the idea of \"nature and Bordeaux\". Its top wine is made only in good vintages and in limited quantity, while the Papillon range centres on Cabernet Franc, aged at length in French oak for a fine, long finish."
+      },
+      "image": "/assets/winery-perayne-1.webp",
+      "body": [
+        {
+          "type": "image",
+          "src": "/assets/winery-perayne-2.webp",
+          "caption": {
+            "zh": "",
+            "en": ""
+          }
+        },
+        {
+          "type": "image",
+          "src": "/assets/winery-perayne-3.webp",
+          "caption": {
+            "zh": "",
+            "en": ""
+          }
+        },
+        {
+          "type": "image",
+          "src": "/assets/winery-perayne-4.webp",
+          "caption": {
+            "zh": "",
+            "en": ""
+          }
+        }
+      ],
+      "storyDraft": true
+    },
+    {
+      "slug": "schwarz",
+      "region": "barossa-valley",
+      "country": "Australia",
+      "name": {
+        "zh": "施瓦茨酒莊",
+        "en": "Schwarz Wine Co."
+      },
+      "website": "https://www.schwarzwineco.com.au/",
+      "story": {
+        "zh": "施瓦茨酒莊位於南澳巴羅莎谷，由釀酒師 Jason Schwarz 創立，專注以手工、小批次的方式釀造能表現地塊個性的酒款。酒莊與多個歷史悠久的葡萄園及種植者長期合作，旗下 Meta、The Grower、Single Vineyard 與 Single Barrel 等系列，展現巴羅莎谷在濃郁之外更細膩的一面。酒窖門市位於 Tanunda 的 Artisans of Barossa，酒款亦外銷至新加坡、香港、日本、英國與丹麥。",
+        "en": "Schwarz Wine Co. is a Barossa Valley producer founded by winemaker Jason Schwarz, working in small batches by hand to express the character of each site. The winery works with historic vineyards and long-standing growers, and its Meta, The Grower, Single Vineyard and Single Barrel ranges show a more detailed side of the Barossa than its reputation for sheer power suggests. The cellar door sits at Artisans of Barossa in Tanunda, and the wines are exported to Singapore, Hong Kong, Japan, the UK and Denmark."
+      },
+      "image": "/assets/winery-schwarz-1.webp",
+      "body": [
+        {
+          "type": "image",
+          "src": "/assets/winery-schwarz-2.webp",
+          "caption": {
+            "zh": "",
+            "en": ""
+          }
+        },
+        {
+          "type": "image",
+          "src": "/assets/winery-schwarz-3.webp",
+          "caption": {
+            "zh": "",
+            "en": ""
+          }
+        },
+        {
+          "type": "image",
+          "src": "/assets/winery-schwarz-4.webp",
+          "caption": {
+            "zh": "",
+            "en": ""
+          }
+        }
+      ],
+      "storyDraft": true
+    }
+  ]
 }

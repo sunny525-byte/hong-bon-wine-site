@@ -11,6 +11,62 @@ Versioning note: the site has no runtime version — releases are tracked here a
 
 ---
 
+## [1.1.0] — 2026-10-11
+
+Region and winery pages, so the catalogue can be browsed by where a wine comes from and who
+made it — plus the editor fields to maintain them.
+
+> **Not yet deployed.** The Netlify account is out of credits, so production is still on the
+> 1.0.0 build. Everything below is verified locally (`node generate.mjs`, `scripts/serve.mjs`,
+> a headless-browser pass, and the editor round-trip) but has never been served from Netlify.
+
+### Added
+
+- **Region pages** at `/region/<slug>/` and a `/regions/` hub — 3 regions (Mosel, Bordeaux,
+  Barossa Valley) × 2 locales.
+- **Winery pages** at `/winery/<slug>/` and a `/wineries/` hub — 5 producers × 2 locales. Each
+  winery page links to its region and, where there is one, its own website, and lists that
+  winery's wines.
+- **Content blocks** (`body[]`) — an ordered list of text paragraphs and images with bilingual
+  captions, so a region or winery page can carry more than a lead paragraph without a PDF.
+- **Region and winery editors** in `admin.html` / `assets/admin.js`: bilingual name, intro/story,
+  country, slug, website, lead image with the same WebP-compressing upload the wines use, a
+  repeatable block editor (add text / add image, reorder, delete), and a **草稿** review checkbox
+  that records the drafted copy as unapproved.
+- **產區 / 酒莊 selects on every wine** — the link between a wine and its region/winery is now
+  editable, instead of having to hand-edit JSON.
+- **Hub card lists** (`.card-list`) — 3 across, 2 on tablet, 1 on phone, matching the wine grid.
+- A winery with no wines yet says so (`noWinesYet`) instead of rendering an empty grid.
+- 10 new sitemap paths with `hreflang` alternates; 12 new `ui` strings for the chrome.
+- 17 winery photographs, converted to WebP (4.2 MB → 2.75 MB).
+
+### Changed
+
+- The collection section is now a single `{{COLLECTION_SECTION}}` token, so hub pages can render
+  a link list where the other pages render the wine grid. Verified byte-for-byte on all 50
+  pre-existing pages: the only change to them is the two footer nav links.
+- Footer nav and mobile menu link to 產區 and 合作酒莊, ahead of the policy links.
+- `docs/DEPLOYMENT.md`, `README.md` (content model + structure) and `CONTRIBUTING.md` document the
+  new page types and the block model.
+
+### Fixed
+
+- **Hub pages rendered no list at all.** The `kind === 'hub'` branch replaced the whole
+  collection section, discarding the card list passed into it.
+- **`/admin` requested a favicon that does not exist** (404 in the console on every load) because
+  `admin.html` never declared one. It now declares the same icons as the rest of the site.
+- A dangling `class="line-link"` on the winery website link — nothing styles it.
+
+### Security
+
+- `robots.txt` disallows `/admin` and `/admin.html`, and `netlify.toml` blocks the internal
+  sources (`/docs/*`, `/scripts/*`, `/_templates/*`, `/netlify/*`, `/policies/*`,
+  `/product-images/*`, `generate.mjs`, and the root Markdown files) with forced 404s — a
+  redirect is skipped whenever a static file matches the path, so `force = true` is required.
+- `.env.example` records the optional `PROTECTED_PAGE_PASSWORD`; no secret is committed.
+
+---
+
 ## [1.0.0] — 2026-10-07
 
 The release that replaced the hand-written draft with a bilingual generated site.
