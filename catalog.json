@@ -1337,6 +1337,22 @@
     "inRegion": {
       "zh": "產區",
       "en": "Region"
+    },
+    "langNameZh": {
+      "zh": "中文",
+      "en": "中文"
+    },
+    "langNameEn": {
+      "zh": "EN",
+      "en": "EN"
+    },
+    "langLabelZh": {
+      "zh": "切換到中文",
+      "en": "Switch to Chinese"
+    },
+    "langLabelEn": {
+      "zh": "切換到英文",
+      "en": "Switch to English"
     }
   },
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E9%9B%84%E5%B8%82%E6%A9%8B%E9%A0%AD%E5%8D%80%E6%96%B0%E8%88%88%E8%B7%AF9%E8%99%9F",
@@ -1627,7 +1643,8 @@
         "en": "Mosel is Germany's most celebrated white-wine region. Its vineyards climb near-vertical slate slopes above the winding river, where the stone takes up heat by day and releases it at night — giving Riesling its unmistakable minerality and backbone of acidity. Styles run from bone-dry to gently sweet, usually at low alcohol: some of the most elegant Riesling made anywhere."
       },
       "body": [],
-      "introDraft": true
+      "introDraft": true,
+      "image": ""
     },
     {
       "slug": "bordeaux",
@@ -1641,7 +1658,8 @@
         "en": "Bordeaux lies in south-west France on the banks of the Gironde estuary, and is among the best-known wine regions in the world. Famous for red blends of Cabernet Sauvignon and Merlot, it also makes dry whites from Sauvignon Blanc and Sémillon. Clay, gravel and limestone in different proportions give each plot its own character."
       },
       "body": [],
-      "introDraft": true
+      "introDraft": true,
+      "image": ""
     },
     {
       "slug": "barossa-valley",
@@ -1655,7 +1673,8 @@
         "en": "The Barossa Valley in South Australia is one of the country's defining regions, known for rich, full-bodied Shiraz. A warm, dry climate ripens the fruit fully, giving wines of blackberry, dark chocolate and spice. The valley also holds some of the oldest Shiraz and Grenache vines in the world, some planted in the 1840s."
       },
       "body": [],
-      "introDraft": true
+      "introDraft": true,
+      "image": ""
     }
   ],
   "wineries": [

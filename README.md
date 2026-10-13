@@ -275,7 +275,7 @@ Full operational detail, including the Netlify account situation and DNS:
 | `social` | `{ instagram, facebook }` URLs |
 | `developer` | `{ name, url }` for the footer credit |
 | `payments[]` | Accepted payment methods (`{zh,en}`) |
-| `ui{}` | **~158 UI strings** — buttons, headings, dialogs, toasts, labels |
+| `ui{}` | **162 UI strings** — buttons, headings, dialogs, toasts, labels, the language switcher |
 | `flavors[]` | Flavour chips: `{zh,en, match[]}` — `match` holds both languages' search terms |
 | `categories[]` | `{ slug, type, label{zh,en}, intro{zh,en} }` — drives the category pages |
 | `wines[]` | The catalogue (below) |
@@ -314,6 +314,7 @@ A region and a winery:
   "country": "Germany",              // shown next to the eyebrow, in either locale
   "name":  { "zh": "摩澤爾", "en": "Mosel" },
   "intro": { "zh": "…", "en": "…" }, // the page's lead paragraph(s); \n starts a new <p>
+  "image": "/assets/…",               // optional lead photo; "" renders no figure
   "body":  [],                        // optional content blocks (see below)
   "introDraft": true                  // true = the editor shows a "草稿" badge
 }
@@ -341,7 +342,11 @@ preserved and each block is one of:
 ```
 
 Both editors (region and winery) have **＋ 文字段落** / **＋ 圖片** buttons, reorder and delete
-controls, and an image upload that compresses to WebP like the wine and banner uploads.
+controls for each block, and an image upload that compresses to WebP like the wine and banner
+uploads. **上移 / 下移** at the bottom of a region or winery also reorder the entries themselves —
+both hubs list them in array order — and **移除主要圖片** clears a lead photo (the button only
+appears when there is one). Regions and wineries both take a lead image; a region with no photo
+renders no figure rather than a broken one.
 `introDraft` / `storyDraft` are a review flag only — the generator ignores them; clear the
 checkbox once the client has approved the wording.
 

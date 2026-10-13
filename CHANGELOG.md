@@ -50,6 +50,18 @@ made it — plus the editor fields to maintain them.
   photo was inlined into every page showing that wine — one measured 146 KB photo added 195 KB to
   24 pages and took `index.html` from 51 KB to 245 KB.
 - `assets/placeholder.svg`, used by a wine that has no photo yet.
+- **Reordering** for regions and wineries (**上移 / 下移**), which the hubs list in array order —
+  previously the only way to change it was hand-editing JSON.
+- **移除主要圖片** — a control to clear a lead photo, shown only when there is one. Clearing the
+  URL field used to leave the old preview on screen, looking like the edit had failed.
+- **Regions take a lead image**, like wineries already did; a region with no photo renders no
+  figure.
+- **產區與酒莊** (13 strings) and **語言切換** (4) groups in 網站文字, so the region/winery chrome
+  and the language switcher are no longer buried in 其他文字.
+- The language switcher labels come from the catalogue. `generate.mjs` now contains **no** CJK
+  literal — the last one was the switcher's `中文`. Its accessible name is a separate, per-locale
+  string (「切換到英文」/ "Switch to Chinese"), where it previously read "English" on the Chinese
+  pages and just `中文` on the English ones.
 
 ### Changed
 

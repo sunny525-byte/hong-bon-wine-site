@@ -25,8 +25,8 @@ let LOCALE = 'zh';
 let CURRENT_PATH = '/';
 
 const LOCALES = [
-  { code: 'zh', lang: 'zh-Hant', prefix: '',    switchLabel: '中文' },
-  { code: 'en', lang: 'en',      prefix: '/en', switchLabel: 'EN' },
+  { code: 'zh', lang: 'zh-Hant', prefix: '',    switchKey: 'langNameZh', ariaKey: 'langLabelZh' },
+  { code: 'en', lang: 'en',      prefix: '/en', switchKey: 'langNameEn', ariaKey: 'langLabelEn' },
 ];
 
 const catalog = JSON.parse(readFileSync(join(ROOT, 'catalog.json'), 'utf8'));
@@ -108,10 +108,17 @@ function hreflang(path) {
     + `<link rel="alternate" hreflang="x-default" href="${urlFor(LOCALES[0], path)}">`;
 }
 
+// Language names are endonyms — the same in both locales — but they still come from
+// the catalogue, so 「中文」/「EN」 and the screen-reader label are editable like every
+// other string on the site.
 function langSwitch(path) {
   const o = other();
+  const label = esc(t(ui(o.switchKey)));
+  // A separate, descriptive label: "EN" alone is a poor accessible name, and the
+  // description has to be written in the reader's own language.
+  const aria = esc(t(ui(o.ariaKey)));
   return `<a class="lang-switch" href="${urlFor(o, path)}" hreflang="${o.lang}" lang="${o.lang}"`
-    + ` aria-label="${o.code === 'en' ? 'English' : '中文'}">${o.switchLabel}</a>`;
+    + ` aria-label="${aria}">${label}</a>`;
 }
 
 
@@ -390,6 +397,7 @@ function regionHead(region) {
     + `<span class="eyebrow">${esc(t(ui('regionEyebrow')))} \u00b7 ${esc(region.country)}</span>`
     + `<h1>${name}</h1>`
     + paras(region.intro, 'section-lead')
+    + (region.image ? `<figure class="figure figure-lead"><img src="${esc(region.image)}" alt="${name}"></figure>` : '')
     + contentBlocks(region.body, t(region.name))
     + `</section>`;
 }
