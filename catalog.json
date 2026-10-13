@@ -393,7 +393,8 @@
       "region": "",
       "winery": "le-pin-d-ambert",
       "category": "red",
-      "status": "active"
+      "status": "active",
+      "slug": "Grande-Réserve-2021"
     },
     {
       "id": "8e988026-b533-45b5-a9a8-57d47e1dafaf",
@@ -418,7 +419,8 @@
       "active": true,
       "winery": "le-pin-d-ambert",
       "category": "white",
-      "status": "active"
+      "status": "active",
+      "slug": "Classic-White"
     },
     {
       "image_name": "fa43e564-907e-4067-9754-7d35d93928e0.webp",
@@ -493,8 +495,8 @@
         "en": "A single-barrel selection of the year's best Shiraz — 2021 was a superb vintage — aged two years in French oak. Deep dark gem red, with sarsaparilla, blackberry jam, bramble, citrus plum, sandalwood and elegant baking spice on the nose. Rich and layered on the palate, full of black plum and blackberry with liquorice and anise. One to cellar.\n✿Halliday Wine Companion 96 points✿"
       },
       "taste": {
-        "zh": "產區：巴羅莎谷（Barossa Valley）｜葡萄品種：Shiraz希拉｜酒精濃度：14.4%｜適飲溫度：16-18°C",
-        "en": "Region: Barossa Valley | Grape: Shiraz | Alcohol: 14.4% | Serve at: 16-18°C"
+        "zh": "巴羅莎谷 (Barossa Valley)｜葡萄品種：Shiraz (希拉)｜酒精濃度：14.4%｜最佳品飲溫度：16-18度｜適合搭配：頂級牛排、香草烤羊排、濃郁紅肉料理",
+        "en": "Region: Barossa Valley | Grape: Shiraz | Alcohol: 14.4% | Serving Temp: 16-18°C | Food Pairing: Premium steak, herb-roasted lamb chops, rich red meat dishes"
       },
       "category": "red",
       "image": "/assets/e03e7286-e0db-4a03-9c46-747e93361ab8.webp",
@@ -522,8 +524,8 @@
         "en": "Aromas of dried violet, blackcurrant, cracked pepper and cocoa, with hazelnut and sweet spice. Smooth and round, full-bodied, with velvet tannins and a long finish of chocolate and sweet spice. From 400 old vines planted in 1881 — only 1,485 bottles, a piece of Barossa history.\n✿2024 Halliday 92, James Suckling 93, The Real Review 4 stars; 1,485 bottles✿"
       },
       "taste": {
-        "zh": "產區：巴羅莎谷（Barossa Valley）｜葡萄品種：Shiraz希拉｜酒精濃度：14.6%｜適飲溫度：16-18°C",
-        "en": "Region: Barossa Valley | Grape: Shiraz | Alcohol: 14.6% | Serve at: 16-18°C"
+        "zh": "產區：巴羅莎谷 (Barossa Valley)｜葡萄品種：Shiraz (希拉)｜酒精濃度：14.6%｜最佳品飲溫度：16-18度｜適合搭配：頂級牛排、精緻熟食紅肉拼盤",
+        "en": "Region: Barossa Valley | Grape: Shiraz | Alcohol: 14.6% | Serving Temp: 16-18°C | Food Pairing: Prime steak, refined cured red meat platters"
       },
       "category": "red",
       "image": "/assets/ceebe50c-25ec-44b9-86f4-a713c26bf95a.webp",
@@ -551,8 +553,8 @@
         "en": "Sweet, ripe and aromatic, with blackberry, smoke and florals alongside a hint of dark chocolate. Rich, juicy and tightly packed, with a silky texture and elegant tannins, long and full of flavour. Distinctive sarsaparilla, raspberry, fresh earth and dark caramel/toffee; medium-bodied, showing raspberry, blackberry and black cherry in a fine balance of sweetness, freshness and savoury fruit, with rosemary, thyme and herbal notes adding complexity.\n✿WineOrbit 94✿"
       },
       "taste": {
-        "zh": "產區：巴羅莎谷（Barossa Valley）｜葡萄品種：56% Grenache歌海娜／40% Shiraz希拉／4% Mataro馬塔羅｜酒精濃度：14%｜適飲溫度：16-18°C",
-        "en": "Region: Barossa Valley | Grapes: 56% Grenache / 40% Shiraz / 4% Mataro | Alcohol: 14% | Serve at: 16-18°C"
+        "zh": "產區：巴羅莎谷｜葡萄品種：56% Grenache, 40% Shiraz, 4% Mataro｜酒精濃度：14%｜最佳品飲溫度：16-18度｜適合搭配：迷迭香烤羊排、義式香料燉肉、烤紅肉料理",
+        "en": "Region: Barossa Valley | Grape: 56% Grenache, 40% Shiraz, 4% Mataro | Alcohol: 14% | Serving Temp: 16-18°C | Food Pairing: Rosemary roasted lamb, Italian ragù, grilled red meats"
       },
       "category": "red",
       "image": "/assets/449cbe56-b5c2-4d65-9779-64f89e509c17.webp",
@@ -580,8 +582,8 @@
         "en": "Extremely complex and captivating — dark berries, bay leaf, charcuterie and roasted almond — leading to an exceptionally supple palate that is both expansive and long. Fine texture and a delicate tannin structure, with beetroot, Turkish delight and black pepper, and a long, well-defined finish.\n✿Halliday 94, WineOrbit 95+, Decanter Panel Tasting 94, The Real Review 4 stars✿"
       },
       "taste": {
-        "zh": "產區：巴羅莎谷（Barossa Valley）｜葡萄品種：Grenache歌海娜｜酒精濃度：14%｜適飲溫度：16-18°C",
-        "en": "Region: Barossa Valley | Grape: Grenache | Alcohol: 14% | Serve at: 16-18°C"
+        "zh": "產區：巴羅莎谷｜葡萄品種：Grenache｜酒精濃度：14%｜最佳品飲溫度：16-18度｜適合搭配：法式烤鴨胸、冷肉拼盤、輕油脂肉類料理",
+        "en": "Region: Barossa Valley | Grape: Grenache | Alcohol: 14% | Serving Temp: 16-18°C | Food Pairing: Pan-roasted duck breast, cold cuts, light-fat meats"
       },
       "category": "red",
       "image": "/assets/15157533-a4c8-4538-a1e8-197c304188ef.webp",
@@ -610,8 +612,8 @@
         "en": "Medium-deep red, with ripe blackberry and dark chocolate alongside citrus peel. Rich on the palate with abundant blackberry and dark chocolate, seamlessly blended with cake spice, silky chocolate, a touch of cedar and dried florals. Supple, fine tannins and a long finish full of chocolate and minerality.\n✿Halliday 92, Decanter 95, WineOrbit 93+, Winepilot 94✿"
       },
       "taste": {
-        "zh": "產區：巴羅莎谷（Barossa Valley）｜葡萄品種：Shiraz希拉｜酒精濃度：14.4%｜適飲溫度：16-18°C",
-        "en": "Region: Barossa Valley | Grape: Shiraz | Alcohol: 14.4% | Serve at: 16-18°C"
+        "zh": "產區：巴羅莎谷｜葡萄品種：Shiraz｜酒精濃度：14.4%｜最佳品飲溫度：16-18度｜適合搭配：美式 BBQ 燒烤、美式牛豬肋排、香料燉牛肉",
+        "en": "Region: Barossa Valley | Grape: Shiraz | Alcohol: 14.4% | Serving Temp: 16-18°C | Food Pairing: American BBQ, grilled ribs, spiced beef stew"
       },
       "category": "red",
       "image": "/assets/5d300a17-7eca-4679-b584-eb6ec7acde74.webp",
@@ -639,8 +641,8 @@
         "en": "Opens with white flowers and dried herbs and a hint of sage. Fresh and crisp, richly textured and powerfully driven, with a long finish. Pale straw in the glass, with fresh lemon, tangy grapefruit and sweet poached pear, plus clotted cream, almond, crushed stone and delicate white blossom. Hand-picked and aged 5 months in air-dried French oak.\n✿2024 Barossa Wine Show trophy, 2024 Halliday 92, Winepilot 92✿"
       },
       "taste": {
-        "zh": "產區：巴羅莎谷（Barossa Valley）｜葡萄品種：Grenache Blanc白歌海娜｜酒精濃度：13.1%｜適飲溫度：14-16°C",
-        "en": "Region: Barossa Valley | Grape: Grenache Blanc | Alcohol: 13.1% | Serve at: 14-16°C"
+        "zh": "產區：巴羅莎谷｜葡萄品種：Grenache Blanc｜酒精濃度：13.1%｜最佳品飲溫度：14-16度｜適合搭配：佐奶油醬汁的海鮮、白肉料理、風乾火腿與堅果拼盤",
+        "en": "Region: Barossa Valley | Grape: Grenache Blanc | Alcohol: 13.1% | Serving Temp: 14-16°C | Food Pairing: Creamy sauce seafood, white meat dishes, cured ham and nut platters"
       },
       "category": "white",
       "image": "/assets/80e41337-b236-497e-b184-d8408965c54b.webp",
@@ -650,8 +652,35 @@
       "id": "product-19",
       "imageStatus": "label-match",
       "slug": "2023-meta-grenache-blanc",
-      "region": "barossa-valley",
+      "region": "",
       "winery": "schwarz"
+    },
+    {
+      "id": "3edca50a-d3db-48a1-b3bc-398a91655b1c",
+      "name": {
+        "zh": "澳洲 - 2022 META MATARO",
+        "en": "2022 Meta Mataro"
+      },
+      "type": "red",
+      "en": {
+        "zh": "RED WINE / SAVORY & INTENSITY",
+        "en": "RED WINE / SAVORY & INTENSITY"
+      },
+      "desc": {
+        "zh": "手工採摘自 Moppa、Vine Vale 和 Bethany 的馬塔羅葡萄。酒體呈現紫紅色，散發藍莓、桑椹的香氣，帶有異國香料、土壤、烤肉，以及恰到好處的“馬塔羅灌木香”。酒體呈深紅寶石色，帶有濃郁的黑莓香氣，與煙燻/醃製的肉類和一點烘焙香料相映成趣。口感中展現了果味與鹹味的微妙平衡，融入了黑莓果醬、藍莓，並伴隨著橄欖醬、培根油脂和更多的熟肉香氣，帶有一絲鹹味。總體來說，這是一款果味純粹、異國風情的葡萄酒，帶有美妙的柔順單寧，飲用起來輕鬆愉快，風味濃郁但不厚重。\n✿Halliday 95分, WineOrbit 93+分✿",
+        "en": "Hand-harvested Mataro grapes sourced from Moppa, Vine Vale, and Bethany. Displaying a vibrant purple-red hue, it bursts with blueberry and mulberry aromas alongside exotic spices, earthy soil, roasted meat, and signature Mataro bush scents. The deep ruby body combines rich blackberry nuances with smoky cured meats and baking spices. The palate achieves a subtle balance between fruitiness and savory notes, introducing blackberry jam, blueberry, tapenade, bacon fat, and charcuterie tones with a savory edge. Overall, a pure, exotic, and medium-bodied wine with silky tannins that makes for an approachable yet intensely flavorful experience.\n✿Halliday 95 Pts, WineOrbit 93+ Pts✿"
+      },
+      "taste": {
+        "zh": "產區：巴羅莎谷 (Barossa Valley)｜葡萄品種：Mataro (馬塔羅)｜酒精濃度：14.2%｜最佳品飲溫度：16-18度｜評分：Halliday 95分, WineOrbit 93+分｜適合搭配：燒烤肉類、香料烤肉、煙燻與醃製肉類、熟肉與起司拼盤",
+        "en": "Region: Barossa Valley | Grape: Mataro | Alcohol: 14.2% | Serving Temp: 16-18°C | Accolades: Halliday 95 Pts, WineOrbit 93+ Pts | Food Pairing: Grilled meats, barbecued dishes, smoked and cured meats, charcuterie and cheese platters"
+      },
+      "image": "/assets/upload-281a2a97ea062877.webp",
+      "active": true,
+      "winery": "schwarz",
+      "category": "red",
+      "status": "active",
+      "region": "barossa-valley",
+      "slug": "2022-Meta-Mataro"
     },
     {
       "image_name": "c6eddd1f-50ee-4d82-97a2-c08a09e3b3a9.webp",
@@ -668,8 +697,8 @@
         "en": "Pale straw in the glass, with green apple, stewed pear and juicy citrus alongside cream, crushed stone, almond and white blossom. Silky and pleasurable on the palate with a clean finish; bright acidity gives it pace and energy. Creamy notes with green apple and pear, generous acidity, soft and approachable, with a hint of honey and salinity and a dry finish.\n✿2024 Halliday 92, Winepilot 92✿"
       },
       "taste": {
-        "zh": "產區：巴羅莎谷（Barossa Valley）｜葡萄品種：Chenin Blanc白詩南｜酒精濃度：13%｜適飲溫度：14-16°C",
-        "en": "Region: Barossa Valley | Grape: Chenin Blanc | Alcohol: 13% | Serve at: 14-16°C"
+        "zh": "產區：巴羅莎谷｜葡萄品種：Chenin Blanc｜酒精濃度：13%｜最佳品飲溫度：14-16度｜適合搭配：生鮮生蠔蝦蟹、布里軟起司、輕食蔬果沙拉   ",
+        "en": "Region: Barossa Valley | Grape: Chenin Blanc | Alcohol: 13% | Serving Temp: 14-16°C | Food Pairing: Fresh oysters and seafood, Brie cheese, light green salads"
       },
       "category": "white",
       "image": "/assets/c6eddd1f-50ee-4d82-97a2-c08a09e3b3a9.webp",
@@ -681,31 +710,6 @@
       "slug": "2023-chenin-blanc",
       "region": "barossa-valley",
       "winery": "schwarz"
-    },
-    {
-      "id": "3edca50a-d3db-48a1-b3bc-398a91655b1c",
-      "name": {
-        "zh": "澳洲 - 2022 META MATARO",
-        "en": "2022 Meta Mataro"
-      },
-      "type": "red",
-      "en": {
-        "zh": "RED WINE / SAVORY & INTENSITY",
-        "en": "RED WINE / SAVORY & INTENSITY"
-      },
-      "desc": {
-        "zh": "手工採摘自 Moppa、Vine Vale 和 Bethany 的馬塔羅葡萄。酒體呈現紫紅色，散發藍莓、桑椹的香氣，帶有異國香料、土壤、烤肉，以及恰到好處的“馬塔羅灌木香”。酒體呈深紅寶石色，帶有濃郁的黑莓香氣，與煙燻/醃製的肉類和一點烘焙香料相映成趣。口感中展現了果味與鹹味的微妙平衡，融入了黑莓果醬、藍莓，並伴隨著橄欖醬、培根油脂和更多的熟肉香氣，帶有一絲鹹味。總體來說，這是一款果味純粹、異國風情的葡萄酒，帶有美妙的柔順單寧，飲用起來輕鬆愉快，風味濃郁但不厚重。",
-        "en": "Hand-harvested Mataro grapes sourced from Moppa, Vine Vale, and Bethany. Displaying a vibrant purple-red hue, it bursts with blueberry and mulberry aromas alongside exotic spices, earthy soil, roasted meat, and signature Mataro bush scents. The deep ruby body combines rich blackberry nuances with smoky cured meats and baking spices. The palate achieves a subtle balance between fruitiness and savory notes, introducing blackberry jam, blueberry, tapenade, bacon fat, and charcuterie tones with a savory edge. Overall, a pure, exotic, and medium-bodied wine with silky tannins that makes for an approachable yet intensely flavorful experience."
-      },
-      "taste": {
-        "zh": "產區：巴羅莎谷 (Barossa Valley)｜葡萄品種：Mataro (馬塔羅)｜酒精濃度：14.2%｜最佳品飲溫度：16-18度｜評分：Halliday 95分, WineOrbit 93+分｜適合搭配：燒烤肉類、香料烤肉、煙燻與醃製肉類、熟肉與起司拼盤",
-        "en": "Region: Barossa Valley | Grape: Mataro | Alcohol: 14.2% | Serving Temp: 16-18°C | Accolades: Halliday 95 Pts, WineOrbit 93+ Pts | Food Pairing: Grilled meats, barbecued dishes, smoked and cured meats, charcuterie and cheese platters"
-      },
-      "image": "/assets/upload-281a2a97ea062877.webp",
-      "active": true,
-      "winery": "schwarz",
-      "category": "red",
-      "status": "active"
     }
   ],
   "heroSlides": [
@@ -717,7 +721,7 @@
       }
     },
     {
-      "image": "/assets/105379f4-8c8a-46ac-91ae-a69afff3ab83.webp",
+      "image": "/assets/upload-70575ff0cc996779.webp",
       "alt": {
         "zh": "宏邦貿易酒款情境主視覺",
         "en": ""
@@ -1755,40 +1759,23 @@
   ],
   "wineries": [
     {
-      "slug": "chateau-de-lagarde",
-      "region": "bordeaux",
-      "country": "France",
-      "name": {
-        "zh": "兩兄弟酒莊",
-        "en": "Château de Lagarde (Les 2 Frérots)"
-      },
-      "website": "",
-      "story": {
-        "zh": "兩兄弟酒莊（Château de Lagarde / Les 2 Frérots）位於波爾多最古老的產區之一——聖馬凱爾（Saint-Macaire）。細緻的黏土與紅色礫石構成本地風土，葡萄以手工採收，釀造出個性鮮明的波爾多酒款。",
-        "en": "Château de Lagarde — Les 2 Frérots, \"the two brothers\" — sits in Saint-Macaire, one of Bordeaux's oldest terroirs. Fine clay and red gravel define the site; the grapes are picked by hand, giving Bordeaux wines with a clear character of their own."
-      },
-      "image": "",
-      "body": [],
-      "storyDraft": true
-    },
-    {
       "slug": "le-pin-d-ambert",
       "region": "bordeaux",
       "country": "France",
       "name": {
-        "zh": "安貝松酒莊",
+        "zh": "安貝松堡酒莊",
         "en": "Château Le Pin d'Ambert"
       },
       "website": "",
       "story": {
-        "zh": "安貝松酒莊（Château Le Pin d'Ambert）位於波爾多，白酒以賽美濃與白蘇維濃調配。葡萄手工採收後輕柔壓榨，酒色淡檸檬黃、明亮高雅，以蜜桃、檸檬與淡雅花香為主調，酸甜平衡、餘味悠長。",
-        "en": "Château Le Pin d'Ambert is a Bordeaux estate whose white is a blend of Sémillon and Sauvignon Blanc. Hand-picked and gently pressed, it shows a pale, bright lemon colour with peach, lemon and delicate floral notes — balanced between fruit and freshness, with a long finish."
+        "zh": "六代傳承的波爾多靈魂。酒莊歷史可追溯至 18 世紀，自 1885 年由家族接管以來，歷經六代職人守候。位於聖馬凱爾的朝南山坡，擁有黏土石灰質土壤與百年古松的守護。秉持環境至上的低干預釀造，呈現天然果香與細膩單寧，被英國酒評家 Jancis Robinson 譽為波爾多性價比最高的酒莊之一。",
+        "en": "A 140-Year Bordeaux Legacy. Tracing back to the 18th century and under family stewardship since 1885, Château Le Pin D'ambert spans six generations of winemaking craftsmanship. Located on the south-facing clay-limestone slopes of Saint-Martial and witnessed by a century-old pine tree, the estate practices minimal intervention to preserve pure natural flavors. Praised by renowned critic Jancis Robinson as one of Bordeaux's best-value wineries."
       },
-      "image": "/assets/winery-le-pin-d-ambert-1.webp",
+      "image": "/assets/upload-e0b5d3358e54643d.webp",
       "body": [
         {
           "type": "image",
-          "src": "/assets/winery-le-pin-d-ambert-2.webp",
+          "src": "/assets/upload-e123221d67bc98a9.webp",
           "caption": {
             "zh": "",
             "en": ""
@@ -1796,15 +1783,7 @@
         },
         {
           "type": "image",
-          "src": "/assets/winery-le-pin-d-ambert-3.webp",
-          "caption": {
-            "zh": "",
-            "en": ""
-          }
-        },
-        {
-          "type": "image",
-          "src": "/assets/winery-le-pin-d-ambert-4.webp",
+          "src": "/assets/upload-757cb181fcd0b088.webp",
           "caption": {
             "zh": "",
             "en": ""
@@ -1814,23 +1793,23 @@
       "storyDraft": true
     },
     {
-      "slug": "maring-prigge",
-      "region": "mosel",
-      "country": "Germany",
+      "slug": "chateau-de-lagarde",
+      "region": "bordeaux",
+      "country": "France",
       "name": {
-        "zh": "馬林-普里格酒莊",
-        "en": "Maring-Prigge"
+        "zh": "兩兄弟酒莊",
+        "en": "Les 2 Frérots"
       },
       "website": "",
       "story": {
-        "zh": "德國最老葡萄村的新生\n兩位好友跨越 8500 公里, 歷時多年醞釀的夢想實踐. 放下原本的職業, 我們在摩澤爾陡峭的板岩坡地上找到歸屬, 以「低干預」釀造出能傳達身份的獨特風味.\n以雷司令為核心，輔以白皮諾與米勒-圖高，守護兩公頃的珍稀地塊。\n德羅納·霍夫山坡的三色板岩賦予強烈礦質感；諾伊馬根玫瑰園則綻放細膩花果香。\n在陡峭坡地上堅持全手工耕作，以永續精神成就高品質佳釀",
-        "en": "A new chapter for Germany's oldest wine village.\nTwo friends, 8,500 km apart, spent years turning a shared idea into reality. Leaving their original careers behind, they found their place on the steep slate slopes of the Mosel, making low-intervention wines that carry a sense of identity.\nRiesling is the core, supported by Pinot Blanc and Müller-Thurgau, across two hectares of rare parcels.\nThe three-colour slate of the Dhroner Hofberg gives intense minerality; the Neumagener Rosengärten blooms with delicate floral and fruit notes.\nEverything on these steep slopes is worked by hand, in a spirit of sustainability."
+        "zh": "兄弟情誼與風土的結晶。由兩位充滿熱情的兄弟共同創立，將對土地的熱愛與釀酒工藝完美結合。酒莊專注於尊重自然、手工採摘與細緻的釀造過程，每一瓶酒都訴說著兄弟二人的夢想與對這片葡萄園的無盡承諾。",
+        "en": "The Essence of Brotherhood and Terroir. Founded by two passionate brothers, Les 2 Frérots unites a profound love for the land with dedicated craftsmanship. Focusing on natural respect, manual harvesting, and meticulous vinification, every bottle reflects their shared dream and unwavering commitment to the vineyard."
       },
-      "image": "/assets/winery-maring-prigge-1.webp",
+      "image": "/assets/upload-607746e71d5ee00e.webp",
       "body": [
         {
           "type": "image",
-          "src": "/assets/winery-maring-prigge-2.webp",
+          "src": "/assets/upload-8acdb4b59d83ffb5.webp",
           "caption": {
             "zh": "",
             "en": ""
@@ -1838,23 +1817,7 @@
         },
         {
           "type": "image",
-          "src": "/assets/winery-maring-prigge-3.webp",
-          "caption": {
-            "zh": "",
-            "en": ""
-          }
-        },
-        {
-          "type": "image",
-          "src": "/assets/winery-maring-prigge-4.webp",
-          "caption": {
-            "zh": "",
-            "en": ""
-          }
-        },
-        {
-          "type": "image",
-          "src": "/assets/winery-maring-prigge-5.webp",
+          "src": "/assets/upload-8ae7b0e065d67add.webp",
           "caption": {
             "zh": "",
             "en": ""
@@ -1873,8 +1836,8 @@
       },
       "website": "http://www.chateau-perayne.com/",
       "story": {
-        "zh": "貝合娜酒莊（Château Perayne）位於波爾多，以「自然與波爾多」為理念。酒莊僅在好年份生產頂級酒款，數量有限；「蝴蝶」（Papillon）系列以卡本內弗朗為主，經法國橡木桶長時間陳年，展現細膩而悠長的風格。",
-        "en": "Château Perayne is a Bordeaux estate built around the idea of \"nature and Bordeaux\". Its top wine is made only in good vintages and in limited quantity, while the Papillon range centres on Cabernet Franc, aged at length in French oak for a fine, long finish."
+        "zh": "始於 15 世紀的優雅印記，酒莊名稱源自坡地間一眼永不乾涸的泉源。自 1994 年起由 Luddecke 家族接管並悉心翻修，園內更有一棵見證自法國大革命至今、超過 200 年的日本槐樹。酒莊坐落於加龍河谷百米坡地，擁有黏土石灰質土壤與永續環保理念，現由接班人 Julius 守護，將大地的純淨滋味完美封存於瓶中。",
+        "en": "A Timeless Legacy Since the 15th Century. Named after the eternal spring at the heart of the vineyard. Since 1994, the Luddecke family has meticulously restored the estate, which features a 200-year-old Japanese pagoda tree witnessing history since the French Revolution. Perched 100m above the Garonne Valley with clay-limestone soil and sustainable practices, successor Julius preserves this vibrant land, capturing the purest essence of nature in every bottle."
       },
       "image": "/assets/winery-perayne-1.webp",
       "body": [
@@ -1893,14 +1856,6 @@
             "zh": "",
             "en": ""
           }
-        },
-        {
-          "type": "image",
-          "src": "/assets/winery-perayne-4.webp",
-          "caption": {
-            "zh": "",
-            "en": ""
-          }
         }
       ],
       "storyDraft": true
@@ -1915,19 +1870,11 @@
       },
       "website": "https://www.schwarzwineco.com.au/",
       "story": {
-        "zh": "施瓦茨酒莊位於南澳巴羅莎谷，由釀酒師 Jason Schwarz 創立，專注以手工、小批次的方式釀造能表現地塊個性的酒款。酒莊與多個歷史悠久的葡萄園及種植者長期合作，旗下 Meta、The Grower、Single Vineyard 與 Single Barrel 等系列，展現巴羅莎谷在濃郁之外更細膩的一面。酒窖門市位於 Tanunda 的 Artisans of Barossa，酒款亦外銷至新加坡、香港、日本、英國與丹麥。",
-        "en": "Schwarz Wine Co. is a Barossa Valley producer founded by winemaker Jason Schwarz, working in small batches by hand to express the character of each site. The winery works with historic vineyards and long-standing growers, and its Meta, The Grower, Single Vineyard and Single Barrel ranges show a more detailed side of the Barossa than its reputation for sheer power suggests. The cellar door sits at Artisans of Barossa in Tanunda, and the wines are exported to Singapore, Hong Kong, Japan, the UK and Denmark."
+        "zh": "施瓦茨酒莊位於南澳巴羅莎谷，由釀酒師 Jason Schwarz 創立，專注以手工、小批次的方式釀造能表現地塊個性的酒款。巴羅莎的獨立風土之聲。座落於澳洲知名產區，專注於發掘古老葡萄園的獨特潛力。透過極少的人為干預與傳統釀造技法，完美捕捉產區的大膽個性與細緻層次，展現出澳洲葡萄酒最真實、純粹的風土樣貌。",
+        "en": "Schwarz Wine Co. is a Barossa Valley producer founded by winemaker Jason Schwarz, working in small batches by hand to express the character of each site. The Voice of Independent Barossa Terroir. Situated in Australia's renowned wine region, Schwarz Wine Co. is dedicated to unlocking the unique potential of ancient vineyards. Through minimal intervention and traditional winemaking techniques, they capture the bold character and refined layers, revealing the purest expression of Australian terroir."
       },
       "image": "/assets/winery-schwarz-1.webp",
       "body": [
-        {
-          "type": "image",
-          "src": "/assets/winery-schwarz-2.webp",
-          "caption": {
-            "zh": "",
-            "en": ""
-          }
-        },
         {
           "type": "image",
           "src": "/assets/winery-schwarz-3.webp",
@@ -1939,6 +1886,48 @@
         {
           "type": "image",
           "src": "/assets/winery-schwarz-4.webp",
+          "caption": {
+            "zh": "",
+            "en": ""
+          }
+        }
+      ],
+      "storyDraft": true
+    },
+    {
+      "slug": "maring-prigge",
+      "region": "mosel",
+      "country": "Germany",
+      "name": {
+        "zh": "馬林-普里格酒莊",
+        "en": "Weingut Maring-Prigge"
+      },
+      "website": "",
+      "story": {
+        "zh": "德國最老葡萄村的新生。由來自漢堡的「非傳統」跨界釀酒師共同創立，勇敢離開都市、落腳德國最古老的葡萄酒村 Neumagen-Dhron。他們專注於陡峭斜坡（Steillage）上的麗絲玲（Riesling），以無畏的熱情、對自然的敬畏與獨特手作風格，打破傳統框架，釀造出充滿純淨礦物感與個性的摩澤爾佳釀。\n以雷司令為核心，輔以白皮諾與米勒-圖高，守護兩公頃的珍稀地塊。\n德羅納·霍夫山坡的三色板岩賦予強烈礦質感；諾伊馬根玫瑰園則綻放細膩花果香。\n在陡峭坡地上堅持全手工耕作，以永續精神成就高品質佳釀",
+        "en": "A new chapter for Germany's oldest wine village.\nUnconventional Passion on the Mosel Slopes. Founded by \"outsiders\" who left their lives behind in Hamburg to settle in Germany's oldest wine village, Neumagen-Dhron. Focusing on steep-slope (Steillage) Riesling, they break conventions with fearlessness and respect for nature, crafting Mosel wines of pure mineral tension and distinct character.\nRiesling is the core, supported by Pinot Blanc and Müller-Thurgau, across two hectares of rare parcels.\nThe three-colour slate of the Dhroner Hofberg gives intense minerality; the Neumagener Rosengärten blooms with delicate floral and fruit notes.\nEverything on these steep slopes is worked by hand, in a spirit of sustainability."
+      },
+      "image": "/assets/winery-maring-prigge-1.webp",
+      "body": [
+        {
+          "type": "image",
+          "src": "/assets/winery-maring-prigge-3.webp",
+          "caption": {
+            "zh": "",
+            "en": ""
+          }
+        },
+        {
+          "type": "image",
+          "src": "/assets/winery-maring-prigge-2.webp",
+          "caption": {
+            "zh": "",
+            "en": ""
+          }
+        },
+        {
+          "type": "image",
+          "src": "/assets/winery-maring-prigge-5.webp",
           "caption": {
             "zh": "",
             "en": ""
