@@ -2,6 +2,7 @@
   command = "node generate.mjs"
   publish = "."
   edge_functions = "netlify/edge-functions"
+  functions = "netlify/functions"
 
 [[redirects]]
   from = "/admin"
@@ -60,6 +61,7 @@
   to = "/"
   status = 404
   force = true
+# also covers /netlify/functions/*.mjs — the publish function's source
 [[redirects]]
   from = "/netlify/*"
   to = "/"

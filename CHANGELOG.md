@@ -39,6 +39,17 @@ made it — plus the editor fields to maintain them.
 - A winery with no wines yet says so (`noWinesYet`) instead of rendering an empty grid.
 - 10 new sitemap paths with `hreflang` alternates; 12 new `ui` strings for the chrome.
 - 17 winery photographs, converted to WebP (4.2 MB → 2.75 MB).
+- **The editor publishes.** `netlify/functions/publish.mjs` commits the catalogue to this
+  repository through the GitHub API, so the owner's one click reaches production by the same path
+  as any code change — and `git revert` undoes it. It carries a revision guard (a stale page
+  cannot overwrite a newer publish), a `DRY_RUN` mode for validating without writing, and the
+  download-to-a-file behaviour as a `下載備份` fallback.
+- **Uploaded photos are stored as files.** The editor hands over a base64 `data:` URI; the
+  function writes `assets/upload-<hash>.webp` and rewrites the field to point at it, committing the
+  image and the catalogue in a single commit so only one build runs. Before this, an uploaded
+  photo was inlined into every page showing that wine — one measured 146 KB photo added 195 KB to
+  24 pages and took `index.html` from 51 KB to 245 KB.
+- `assets/placeholder.svg`, used by a wine that has no photo yet.
 
 ### Changed
 
@@ -56,6 +67,17 @@ made it — plus the editor fields to maintain them.
 - **`/admin` requested a favicon that does not exist** (404 in the console on every load) because
   `admin.html` never declared one. It now declares the same icons as the rest of the site.
 - A dangling `class="line-link"` on the winery website link — nothing styles it.
+- **Publishing would have failed for everybody.** The `/admin` gate puts
+  `base64(sha256(password))` in its cookie, but the publish function compared that against a
+  **hex** digest — so every authorised request looked like "not signed in", however correct the
+  token was. Found by the endpoint tests, not in production.
+- **A new wine pointed at `/wine-editorial.png`**, a file that exists in no revision. Publishing
+  one put a broken image on the live homepage and in the admin's own preview.
+- **A new wine defaulted to 未上架**, and hidden wines are dropped from every page by the build, so
+  a correctly published product was invisible until the owner spotted the checkbox. New wines are
+  now on sale and use the placeholder photo, with 上架 still there to hide one.
+- The button reading 「儲存並更新網站」 only ever downloaded a file, while claiming to update the
+  site. It is now 「發佈到網站」, and the header copy describes what actually happens.
 
 ### Security
 

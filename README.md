@@ -73,7 +73,7 @@ A push to `main` → Netlify runs `node generate.mjs` → publishes the director
 | `_templates/page.html` | The site shell. `{{TOKEN}}`s are filled per locale by the generator |
 | `_templates/policy.html` | Policy page shell |
 | `generate.mjs` | Reads the catalog + templates, writes every page and the sitemap |
-| `admin.html` + `assets/admin.js` | The editor. Reads/writes `catalog.json`; publishing is export → commit → build |
+| `admin.html` + `assets/admin.js` | The editor. Loads `catalog.json`; publishing POSTs to the function below |
 | `assets/app.js` | Client behaviour: inquiry list, dialogs, locale-aware strings, toasts |
 | `assets/hero.js` | Homepage intro video + banner carousel (homepage only) |
 | `netlify/edge-functions/admin-gate.js` | Password gate for `/admin` |
@@ -129,12 +129,38 @@ validates the edge function and the publish configuration.
 ### Content — use the editor
 
 1. Open **`/admin`** (password: the shared admin password — see [SECURITY.md](SECURITY.md))
-2. Edit wines, categories, UI text, policy copy, contact details, hero slides
-3. **Save** — this downloads a replacement `catalog.json`
-4. Replace `catalog.json` in the repo with it, then commit and push
+2. Edit wines, regions, wineries, categories, UI text, policy copy, contact details, hero slides
+3. Press **發佈到網站** — the site updates about a minute later
 
 The editor shows every field in Chinese and English side by side. Leaving the English side empty
 is fine — that string falls back to Chinese.
+
+**How publishing works.** The editor is a static page, so it writes nothing by itself. Pressing
+publish POSTs the catalogue to `netlify/functions/publish.mjs`, which commits it to this
+repository via the GitHub API; the commit triggers the ordinary Netlify build. So an editor
+change travels the same path as a code change, and **`git revert` undoes it** — every publish is
+a commit, listed at
+[github.com/sunny525-byte/hong-bon-wine-site/commits/main](https://github.com/sunny525-byte/hong-bon-wine-site/commits/main).
+
+Consequences worth knowing:
+
+- **The GitHub credential never reaches the browser.** It lives only in Netlify's environment
+  variables, and only this function can use it.
+- **Uploaded photos are stored as files**, not embedded in the catalogue. The editor compresses in
+  the browser and hands the function a `data:` URI; the function writes the bytes to
+  `assets/upload-<hash>.webp`, points the field at that path, and commits the catalogue and the
+  image together — one commit, so only one build runs.
+- **Two people editing at once**: publishing sends the revision it started from, and a stale
+  revision is refused with a "reload first" message rather than silently overwriting the other
+  change.
+- **`下載備份`** always exports the current catalogue as a file, which is also what the publish
+  button falls back to when publishing is not configured.
+- **A newly added wine is on sale and uses `assets/placeholder.svg`** until a photo is uploaded.
+  Unticking 上架 hides it everywhere — hidden wines are dropped by the build, on every page.
+
+If publishing reports that it is not configured, the environment variables in
+[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) are missing. Until they are set, the editor can only
+export a file for a developer to commit.
 
 ### Code — edit the source
 
@@ -146,6 +172,7 @@ is fine — that string falls back to Chinese.
 | Client behaviour (inquiry list, dialogs) | `assets/app.js` |
 | The editor itself | `admin.html`, `assets/admin.js` |
 | Admin password gate | `netlify/edge-functions/admin-gate.js` |
+| Publishing (commit to GitHub) | `netlify/functions/publish.mjs` |
 | Redirects, build command, headers | `netlify.toml` |
 
 Then run `node generate.mjs`, refresh locally, and **commit the regenerated pages** with your
@@ -222,6 +249,7 @@ Probing the live site is the check that always works, and the one that matters.
 | Build command | `node generate.mjs` |
 | Publish directory | `.` (repo root) |
 | Edge function | `netlify/edge-functions/admin-gate.js` |
+| Publish function | `netlify/functions/publish.mjs` |
 | Required env var | `PROTECTED_PAGE_PASSWORD` |
 | CI Node version | v24.21.0 — pin via `NODE_VERSION` in `netlify.toml` if it ever matters |
 

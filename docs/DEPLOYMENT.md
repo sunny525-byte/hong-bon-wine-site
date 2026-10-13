@@ -151,13 +151,54 @@ does not go down. Check the build log, fix, push again.
 | Variable | Scope | Purpose |
 |---|---|---|
 | `PROTECTED_PAGE_PASSWORD` | Functions | The shared password for `/admin` |
+| `GITHUB_TOKEN` | Functions | Lets the editor publish (see below) |
+| `GITHUB_REPO` | Functions | `sunny525-byte/hong-bon-wine-site` |
+| `GITHUB_BRANCH` | Functions | Optional, defaults to `main` |
+| `DRY_RUN` | Functions | Optional. `1` makes publish validate and report without writing |
 
-Set at **Netlify → Site configuration → Environment variables**. If it is missing, the edge
-function fails closed: `/admin` returns a "setup required" page and stays blocked — the public
-site is unaffected.
+Set at **Netlify → Site configuration → Environment variables**. If `PROTECTED_PAGE_PASSWORD` is
+missing, the edge function fails closed: `/admin` returns a "setup required" page and stays
+blocked — the public site is unaffected.
 
 Rotating the password: change the value in Netlify and redeploy. There is nothing to change in
 the repository (see [SECURITY.md](../SECURITY.md)).
+
+### Publishing — `GITHUB_TOKEN`
+
+The editor publishes by committing to this repository through the GitHub API, so it needs a token
+with **write** access. Without it the editor still works, but can only export a file for a
+developer to commit.
+
+**Create it from the account that OWNS the repo.** A fine-grained token cannot be scoped to someone
+else's personal repository — a collaborator will not find it in the picker.
+
+1. GitHub → avatar → **Settings** → **Developer settings** → **Personal access tokens** →
+   **Fine-grained tokens** → **Generate new token**
+2. **Expiration: No expiration** — that is what makes this a one-time setup. (If the account is
+   covered by an organisation token-lifetime policy, the option may be capped.)
+3. **Repository access → Only select repositories** → `hong-bon-wine-site` **only**
+4. **Repository permissions → Contents → Read and write.** Nothing else. (`Metadata: Read` is
+   added automatically and is required.)
+5. Generate, copy, and paste it into `GITHUB_TOKEN` in Netlify
+6. **Redeploy.** Functions read environment variables at deploy time — without a new deploy the
+   editor keeps reporting that publishing is not configured.
+
+A fine-grained token is used rather than a classic `repo`-scoped one on purpose: the token sits in
+this project's environment variables, where anyone with access to the project can read it, and a
+classic token would grant write access to **every** repository the owner has.
+
+Rules for it: paste it only into Netlify's env var field — never into a chat, an issue, or a file
+in the repo (repo history is permanent). If it is ever exposed, **create the replacement first**,
+update Netlify, redeploy, *then* revoke the old one, so publishing never has a gap. GitHub removes
+tokens unused for a year; this one is used on every publish.
+
+Verify with:
+
+```bash
+curl -s https://hongbon.tw/api/publish | head -c 300     # {"configured":true,…} when signed in
+```
+
+Unauthenticated it returns `401`, which is the expected answer — it is not a public endpoint.
 
 ---
 
