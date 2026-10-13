@@ -238,24 +238,39 @@ generated files. `/privacy` and `/privacy.html` both return 200 and the canonica
 
 ---
 
-## Repository visibility
+## Repository visibility — keep it public on this plan
 
-The repository is **public** at the time of writing. Nothing sensitive is in it — no secrets are
-tracked, `.env` is git-ignored, and the admin password lives in Netlify, not in the repo. Making
-it private is hygiene rather than an incident response.
+**The repository is public, and that is load-bearing.** The site's plan allows **only one
+contributor on private repositories**, and the recognised contributor is the client's own Git
+account. So while the repo is private, a push authored by anyone else is refused *before the build
+starts*:
 
-**Before flipping it private, check the Netlify connection.** Netlify clones the repo to build;
-if the site was connected while the repo was public, Netlify may not hold a deploy key, and a
-private repo would then fail to build.
+> Build blocked: Unrecognized Git contributor. This plan allows only verified account members to
+> push to private repos
 
-1. Note the last deploy ID and its state.
-2. Make the repo private (owner only: *Settings → General → Danger Zone → Change visibility*).
-3. Push a trivial commit (or use *Deploys → Trigger deploy*).
-4. Confirm the new deploy reaches `ready`. If it fails with a clone/authentication error,
-   Netlify → *Site configuration → Build & deploy → Repository* → **re-link the repository**, or
-   add Netlify's deploy key under GitHub → *Settings → Deploy keys*.
-5. If it cannot be resolved quickly, set the repo back to public to restore deploys, then fix
-   the connection properly.
+This is not hypothetical: the repo was made private on 2026-10-08 and **four consecutive deploys
+were blocked this way** (`8b76040`, `626811f`, `8748951`, `66a6bf5`), leaving production on
+`6b97908` for five days. Setting the repo back to public fixed it.
+
+It is easy to misread, because nothing looks broken — there is no failing build with a log, just
+the absence of a new published deploy. If a push seems to do nothing, open *Deploys* and read the
+banner before debugging the build itself.
+
+Nothing sensitive is tracked here: no secrets, `.env` is git-ignored, and the admin password and
+the GitHub token live in Netlify's environment variables. Everything the site serves —
+`catalog.json`, every page, `assets/admin.js` — is already public at hongbon.tw, so a public repo
+adds only `docs/`, `_templates/`, `admin.html`'s source and the two function sources.
+
+If it ever has to be private, in order of reliability:
+
+1. **Upgrade to Pro** — lifts the contributor limit.
+2. **Link the Git account** under Netlify → *manage Git contributors* (what the banner suggests).
+3. **Have the client push** — a commit authored by their account is recognised, and it builds the
+   whole branch, so it unblocks things as a one-off.
+4. **Re-link the repository** (Netlify → *Site configuration → Build & deploy → Repository*) if the
+   failure is a clone/authentication error rather than the contributor banner. Netlify clones with
+   the deploy key at GitHub → *Settings → Deploy keys*; a repo connected while public has one, but
+   it is worth confirming.
 
 ---
 
