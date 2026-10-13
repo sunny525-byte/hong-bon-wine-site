@@ -225,6 +225,34 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://hongbon.tw/wine/Grande-Réserve-2021/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/wine/Grande-Réserve-2021/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/wine/Grande-Réserve-2021/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/en/wine/Grande-Réserve-2021/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/wine/Grande-Réserve-2021/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/wine/Grande-Réserve-2021/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/wine/Classic-White/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/wine/Classic-White/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/wine/Classic-White/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/en/wine/Classic-White/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/wine/Classic-White/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/wine/Classic-White/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://hongbon.tw/wine/white-stone-fruit-mineral/</loc>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/wine/white-stone-fruit-mineral/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/wine/white-stone-fruit-mineral/"/>
@@ -333,6 +361,20 @@
     <loc>https://hongbon.tw/en/wine/2023-meta-grenache-blanc/</loc>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/wine/2023-meta-grenache-blanc/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/wine/2023-meta-grenache-blanc/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/wine/2022-Meta-Mataro/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/wine/2022-Meta-Mataro/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/wine/2022-Meta-Mataro/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/en/wine/2022-Meta-Mataro/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/wine/2022-Meta-Mataro/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/wine/2022-Meta-Mataro/"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -477,20 +519,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hongbon.tw/winery/chateau-de-lagarde/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/chateau-de-lagarde/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/chateau-de-lagarde/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://hongbon.tw/en/winery/chateau-de-lagarde/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/chateau-de-lagarde/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/chateau-de-lagarde/"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://hongbon.tw/winery/le-pin-d-ambert/</loc>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/le-pin-d-ambert/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/le-pin-d-ambert/"/>
@@ -505,16 +533,16 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hongbon.tw/winery/maring-prigge/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/maring-prigge/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/maring-prigge/"/>
+    <loc>https://hongbon.tw/winery/chateau-de-lagarde/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/chateau-de-lagarde/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/chateau-de-lagarde/"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hongbon.tw/en/winery/maring-prigge/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/maring-prigge/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/maring-prigge/"/>
+    <loc>https://hongbon.tw/en/winery/chateau-de-lagarde/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/chateau-de-lagarde/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/chateau-de-lagarde/"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -543,6 +571,20 @@
     <loc>https://hongbon.tw/en/winery/schwarz/</loc>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/schwarz/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/schwarz/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/winery/maring-prigge/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/maring-prigge/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/maring-prigge/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hongbon.tw/en/winery/maring-prigge/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://hongbon.tw/winery/maring-prigge/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hongbon.tw/en/winery/maring-prigge/"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
