@@ -58,6 +58,11 @@ git add -A && git commit && git push origin main
 Content-only changes can also be made by the client in `/admin`, which publishes through
 `netlify/functions/publish.mjs` — see [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
 
+**A client publish leaves the committed pages stale.** Publish commits `catalog.json` (and any
+new photos), then the Netlify build regenerates the HTML — so the repository's committed pages
+lag what is live until someone runs `node generate.mjs` and commits. Do that before your next
+change, or your diff will mix their content shift with your work.
+
 ## Getting it wrong is easy
 
 - `t()`'s bilingual fallback **cannot express a deliberately empty translation** — use one
