@@ -390,7 +390,7 @@
       },
       "image": "/assets/upload-c4d8808312cd9e62.webp",
       "active": true,
-      "region": "",
+      "region": "bordeaux",
       "winery": "le-pin-d-ambert",
       "category": "red",
       "status": "active",
@@ -420,7 +420,8 @@
       "winery": "le-pin-d-ambert",
       "category": "white",
       "status": "active",
-      "slug": "Classic-White"
+      "slug": "Classic-White",
+      "region": "bordeaux"
     },
     {
       "image_name": "fa43e564-907e-4067-9754-7d35d93928e0.webp",
@@ -652,7 +653,7 @@
       "id": "product-19",
       "imageStatus": "label-match",
       "slug": "2023-meta-grenache-blanc",
-      "region": "",
+      "region": "barossa-valley",
       "winery": "schwarz"
     },
     {
