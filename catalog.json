@@ -370,6 +370,57 @@
       "winery": "perayne"
     },
     {
+      "id": "079b5612-20ca-4739-a8eb-f65db682662f",
+      "name": {
+        "zh": "法國 - 2021特級紅酒",
+        "en": "Grande Réserve 2021"
+      },
+      "type": "red",
+      "en": {
+        "zh": "RED WINE / FULL BODIED & ELEGANT",
+        "en": "RED WINE / FULL BODIED & ELEGANT"
+      },
+      "desc": {
+        "zh": "我們的葡萄園多位於日照充足的丘陵地帶，葡萄熟成度高，展現出濃郁的果香與飽滿的酒體，並具備卓越的陳年潛力。釀造上，我們延續波爾多傳統工藝，細緻呈現紅葡萄酒的典雅風格。在酒液中，常可發現甘草與黑胡椒的香氣，與葡萄品種所帶出的紅色水果風味相得益彰，層次分明、韻味悠長。",
+        "en": "Grown on sun-drenched hillside vineyards ensuring optimal grape ripeness, full body, and excellent cellaring potential. Crafted using traditional Bordeaux methods to highlight elegance. Features licorice and black pepper aromatics harmonious with ripe red fruit flavors, delivering distinct layers and a lasting finish."
+      },
+      "taste": {
+        "zh": "產區：AOC波爾多產區｜葡萄品種：梅洛、卡本內佛朗、卡本內蘇維濃、馬爾貝克 (Merlot, Cabernet Franc, Cabernet Sauvignon, Malbec)｜酒精濃度：14%｜最佳品飲溫度：16-18度｜適合搭配：肉類（煎 / 烤 / 燉）與各式乳酪",
+        "en": "Region: AOC Bordeaux | Grape: Merlot, Cabernet Franc, Cabernet Sauvignon, Malbec | Alcohol: 14% | Serving Temp: 16-18°C | Food Pairing: Seared, roasted, or braised meats, assorted cheeses"
+      },
+      "image": "/assets/upload-c4d8808312cd9e62.webp",
+      "active": true,
+      "region": "",
+      "winery": "le-pin-d-ambert",
+      "category": "red",
+      "status": "active"
+    },
+    {
+      "id": "8e988026-b533-45b5-a9a8-57d47e1dafaf",
+      "name": {
+        "zh": "法國 - 經典白酒",
+        "en": "Classic White"
+      },
+      "type": "white",
+      "en": {
+        "zh": "WHITE WINE / CRISP & BALANCED",
+        "en": "WHITE WINE / CRISP & BALANCED"
+      },
+      "desc": {
+        "zh": "葡萄經手工採收後先進行壓榨，外表呈淡檸檬黃色、明亮且高雅。濃郁的水果香氣，如蜜桃、檸檬和微微的花香，沉醉迷人。果味十足、酸甜平衡、口感清爽、餘味悠長。",
+        "en": "Hand-harvested grapes are gently pressed, producing a bright and elegant pale lemon wine. Offers inviting fruity aromas of nectarine, lemon, and subtle floral nuances. Fruit-forward with fine sweet-acid balance, delivering a crisp palate and long finish."
+      },
+      "taste": {
+        "zh": "產區：AOP波爾多產區｜葡萄品種：賽美濃、白蘇維濃 (Sémillon, Sauvignon Blanc)｜酒精濃度：12.5%｜最佳品飲溫度：14-16度｜適合搭配：魚蝦海鮮以及家禽類菜餚（如法式奶油蘑菇雞）、甜點",
+        "en": "Region: AOP Bordeaux | Grape: Sémillon, Sauvignon Blanc | Alcohol: 12.5% | Serving Temp: 14-16°C | Food Pairing: Seafood, poultry dishes, desserts"
+      },
+      "image": "/assets/upload-c3ff27a7656fbd82.webp",
+      "active": true,
+      "winery": "le-pin-d-ambert",
+      "category": "white",
+      "status": "active"
+    },
+    {
       "image_name": "fa43e564-907e-4067-9754-7d35d93928e0.webp",
       "en": {
         "zh": "WHITE WINE / STONE FRUIT & MINERAL",
@@ -632,27 +683,28 @@
       "winery": "schwarz"
     },
     {
-      "id": "cccf2642-d959-4fcb-89fd-33427198aa27",
+      "id": "3edca50a-d3db-48a1-b3bc-398a91655b1c",
       "name": {
-        "zh": "Test Wine",
-        "en": "Test Wine"
+        "zh": "澳洲 - 2022 META MATARO",
+        "en": "2022 Meta Mataro"
       },
-      "type": "sparkling",
+      "type": "red",
       "en": {
-        "en": "Test Wine"
+        "zh": "RED WINE / SAVORY & INTENSITY",
+        "en": "RED WINE / SAVORY & INTENSITY"
       },
       "desc": {
-        "zh": "ggggg",
-        "en": "gggg"
+        "zh": "手工採摘自 Moppa、Vine Vale 和 Bethany 的馬塔羅葡萄。酒體呈現紫紅色，散發藍莓、桑椹的香氣，帶有異國香料、土壤、烤肉，以及恰到好處的“馬塔羅灌木香”。酒體呈深紅寶石色，帶有濃郁的黑莓香氣，與煙燻/醃製的肉類和一點烘焙香料相映成趣。口感中展現了果味與鹹味的微妙平衡，融入了黑莓果醬、藍莓，並伴隨著橄欖醬、培根油脂和更多的熟肉香氣，帶有一絲鹹味。總體來說，這是一款果味純粹、異國風情的葡萄酒，帶有美妙的柔順單寧，飲用起來輕鬆愉快，風味濃郁但不厚重。",
+        "en": "Hand-harvested Mataro grapes sourced from Moppa, Vine Vale, and Bethany. Displaying a vibrant purple-red hue, it bursts with blueberry and mulberry aromas alongside exotic spices, earthy soil, roasted meat, and signature Mataro bush scents. The deep ruby body combines rich blackberry nuances with smoky cured meats and baking spices. The palate achieves a subtle balance between fruitiness and savory notes, introducing blackberry jam, blueberry, tapenade, bacon fat, and charcuterie tones with a savory edge. Overall, a pure, exotic, and medium-bodied wine with silky tannins that makes for an approachable yet intensely flavorful experience."
       },
       "taste": {
-        "zh": "Sweet"
+        "zh": "產區：巴羅莎谷 (Barossa Valley)｜葡萄品種：Mataro (馬塔羅)｜酒精濃度：14.2%｜最佳品飲溫度：16-18度｜評分：Halliday 95分, WineOrbit 93+分｜適合搭配：燒烤肉類、香料烤肉、煙燻與醃製肉類、熟肉與起司拼盤",
+        "en": "Region: Barossa Valley | Grape: Mataro | Alcohol: 14.2% | Serving Temp: 16-18°C | Accolades: Halliday 95 Pts, WineOrbit 93+ Pts | Food Pairing: Grilled meats, barbecued dishes, smoked and cured meats, charcuterie and cheese platters"
       },
-      "image": "/assets/upload-9b03052e63a5c7bd.webp",
+      "image": "/assets/upload-281a2a97ea062877.webp",
       "active": true,
-      "region": "bordeaux",
-      "winery": "chateau-de-lagarde",
-      "category": "sparkling",
+      "winery": "schwarz",
+      "category": "red",
       "status": "active"
     }
   ],
