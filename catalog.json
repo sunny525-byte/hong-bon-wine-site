@@ -630,6 +630,30 @@
       "slug": "2023-chenin-blanc",
       "region": "barossa-valley",
       "winery": "schwarz"
+    },
+    {
+      "id": "cccf2642-d959-4fcb-89fd-33427198aa27",
+      "name": {
+        "zh": "Test Wine",
+        "en": "Test Wine"
+      },
+      "type": "sparkling",
+      "en": {
+        "en": "Test Wine"
+      },
+      "desc": {
+        "zh": "ggggg",
+        "en": "gggg"
+      },
+      "taste": {
+        "zh": "Sweet"
+      },
+      "image": "/assets/upload-9b03052e63a5c7bd.webp",
+      "active": true,
+      "region": "bordeaux",
+      "winery": "chateau-de-lagarde",
+      "category": "sparkling",
+      "status": "active"
     }
   ],
   "heroSlides": [
