@@ -70,6 +70,12 @@ made it — plus the editor fields to maintain them.
   pages and just `中文` on the English ones.
 
 ### Changed
+- **The generated pages are no longer committed.** They are build output: the generator is
+  deterministic and dependency-free, so `catalog.json` plus the generator and templates are already
+  a complete record of the site. Tracking them meant every client publish left the repository
+  describing a different site until someone regenerated and committed — 12 files the first time,
+  69 the second. The build owns the output now, so that drift cannot exist. Verified by generating
+  from a clean checkout of this revision and diffing against the previous one: byte-identical.
 - **Unreferenced uploads are pruned on publish.** The endpoint previously only ever added files, so
   a photo that stopped being referenced — the wine using it deleted, or the photo replaced — stayed
   in the repository and kept being served publicly. An `assets/upload-<hash>.<ext>` file is now

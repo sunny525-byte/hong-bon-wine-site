@@ -43,25 +43,27 @@ and Netlify publishes the repository root. Content is maintained by the client t
 
 ## Making a change
 
-`catalog.json` is the single source of truth. `generate.mjs` writes **78 pages** (39 paths × 2
-locales) plus `sitemap.xml`. **Never hand-edit a generated file.**
+`catalog.json` is the single source of truth. `generate.mjs` writes the whole site — currently
+**84 pages** (42 paths × 2 locales) plus `sitemap.xml`. **Never hand-edit a generated file, and
+never commit one**: the output is git-ignored and the Netlify build owns it. The repository holds
+only sources — `catalog.json`, `generate.mjs`, `_templates/`, `assets/`, `admin.html`.
 
 ```bash
 # 1. edit catalog.json (content) and/or generate.mjs + _templates/ (markup)
-node generate.mjs                  # 78 pages — run twice; output must be byte-identical
+node generate.mjs                  # the whole site — run twice; output must be byte-identical
 node scripts/serve.mjs 8931 .      # no-cache preview (python -m http.server serves stale JS)
-# 2. if generate.mjs or a template changed, diff the pages you did NOT mean to touch against
-#    `git show HEAD:<path>` — a generator change rewrites all 78, so check before committing
+# 2. if generate.mjs or a template changed, prove the pages you did NOT mean to touch are
+#    unchanged: generate the OLD revision in a temp dir (`git archive <old> | tar -x`) and diff
+#    it against the working tree — a generator change rewrites every page
 git add -A && git commit && git push origin main
 ```
 
 Content-only changes can also be made by the client in `/admin`, which publishes through
 `netlify/functions/publish.mjs` — see [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
 
-**A client publish leaves the committed pages stale.** Publish commits `catalog.json` (and any
-new photos), then the Netlify build regenerates the HTML — so the repository's committed pages
-lag what is live until someone runs `node generate.mjs` and commits. Do that before your next
-change, or your diff will mix their content shift with your work.
+**A client publish needs no follow-up.** Publishing commits `catalog.json` (and any new photos)
+and the build regenerates the pages, so there is no resync step and no way for the repository to
+claim something different from what is live.
 
 ## Getting it wrong is easy
 

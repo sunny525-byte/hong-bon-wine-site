@@ -77,8 +77,9 @@ hongbon.tw is updated
 ```
 
 Because the generator runs in CI as well, **the build and a local run produce identical
-output** (it is idempotent). If you forget to run it locally, CI still produces the correct
-pages — but commit the regenerated files anyway so the repo matches what is deployed.
+output** (it is idempotent). The generated pages are **not committed** — they are git-ignored and
+the build owns them — so running the generator locally is only for previewing. A client publish
+therefore cannot leave the repository describing a different site from the live one.
 
 ### Verifying a deploy
 

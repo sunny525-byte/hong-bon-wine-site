@@ -22,8 +22,27 @@ desktop.ini
 *.log
 npm-debug.log*
 
-# --- Build artifacts (the project has no deps today, but keep these out) ---
+# --- Build artifacts ---
 node_modules/
+# Everything `node generate.mjs` writes. These are output, not sources: the Netlify build
+# regenerates them from catalog.json + generate.mjs + _templates/. Tracking them meant the
+# repository described a different site from the live one after every client publish.
+/index.html
+/privacy.html
+/terms.html
+/quality.html
+/shipping.html
+/sitemap.xml
+/red-wine/
+/white-wine/
+/rose-wine/
+/sparkling-wine/
+/wine/
+/regions/
+/region/
+/wineries/
+/winery/
+/en/
 
 # --- Archives (release zips live outside the repo) ---
 *.zip

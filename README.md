@@ -177,8 +177,9 @@ export a file for a developer to commit.
 | Publishing (commit to GitHub) | `netlify/functions/publish.mjs` |
 | Redirects, build command, headers | `netlify.toml` |
 
-Then run `node generate.mjs`, refresh locally, and **commit the regenerated pages** with your
-change (generated output is tracked — see [Build](#build)).
+Then run `node generate.mjs` and refresh locally. **Do not commit the generated pages** — they
+are git-ignored build output (see [Build](#build)) and the Netlify build produces them. Commit
+only your source change.
 
 ### Adding a new UI string
 
