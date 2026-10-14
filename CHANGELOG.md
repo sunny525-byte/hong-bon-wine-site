@@ -16,11 +16,17 @@ Versioning note: the site has no runtime version — releases are tracked here a
 Region and winery pages, so the catalogue can be browsed by where a wine comes from and who
 made it — plus the editor fields to maintain them.
 
-> **Not yet deployed.** The Netlify account is out of credits, so production is still on the
-> 1.0.0 build. Everything below is verified locally (`node generate.mjs`, `scripts/serve.mjs`,
-> a headless-browser pass, and the editor round-trip) but has never been served from Netlify.
+> **Deployed 2026-10-13.** Production runs this version. Note how it got there: the repository
+> had to be set back to **public** first. On this plan a private repository blocks deploys from
+> every contributor but the owner, silently — no failed build, no log, just no new deploy — which
+> left production five days behind. See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
+>
+> The client has since published content from `/admin` several times with no developer involved.
 
 ### Added
+- **A newly added wine is on sale by default.** (`addWine` used to create it hidden, and hidden
+  wines are dropped from every page, so a correctly published product was invisible until the
+  owner noticed the 上架 checkbox — which is easy to miss.)
 
 - **Region pages** at `/region/<slug>/` and a `/regions/` hub — 3 regions (Mosel, Bordeaux,
   Barossa Valley) × 2 locales.
@@ -64,6 +70,11 @@ made it — plus the editor fields to maintain them.
   pages and just `中文` on the English ones.
 
 ### Changed
+- **Unreferenced uploads are pruned on publish.** The endpoint previously only ever added files, so
+  a photo that stopped being referenced — the wine using it deleted, or the photo replaced — stayed
+  in the repository and kept being served publicly. An `assets/upload-<hash>.<ext>` file is now
+  deleted in the same atomic commit if nothing in the published catalogue mentions it;
+  `PRUNE_UPLOADS=0` disables it, and a truncated file listing skips pruning rather than guessing.
 
 - The collection section is now a single `{{COLLECTION_SECTION}}` token, so hub pages can render
   a link list where the other pages render the wine grid. Verified byte-for-byte on all 50
@@ -73,6 +84,9 @@ made it — plus the editor fields to maintain them.
   new page types and the block model.
 
 ### Fixed
+- One orphaned upload (`assets/upload-9b03052e63a5c7bd.webp`, 47 KB), left behind when a test wine
+  was deleted, and the eight `introDraft` / `storyDraft` review flags, cleared once the region and
+  winery copy was signed off. (Both were content, not code: the flags never affected the build.)
 
 - **Hub pages rendered no list at all.** The `kind === 'hub'` branch replaced the whole
   collection section, discarding the card list passed into it.

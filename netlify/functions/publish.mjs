@@ -44,6 +44,7 @@ const readConfig = () => ({
   repo: env('GITHUB_REPO') || '',
   branch: env('GITHUB_BRANCH') || 'main',
   dryRun: String(env('DRY_RUN') || '') === '1',
+  pruneUploads: String(env('PRUNE_UPLOADS') || '1') !== '0',
   password: env('PROTECTED_PAGE_PASSWORD') || '',
 });
 
@@ -201,6 +202,26 @@ async function extractImages(catalogue) {
   return { files, inlined: seen };
 }
 
+const UPLOAD = /assets\/upload-[0-9a-f]+\.(?:webp|png|jpe?g|gif)/g;
+const UPLOAD_EXACT = /^assets\/upload-[0-9a-f]+\.(?:webp|png|jpe?g|gif)$/;
+
+/** The upload files the catalogue being published actually points at. */
+function referencedUploads(serialised) {
+  return new Set(serialised.match(UPLOAD) || []);
+}
+
+/**
+ * Upload files currently on the branch. Up to now the endpoint only ever added files, so a
+ * photo that stopped being referenced — replaced, or the wine using it deleted — stayed in
+ * the repository and kept being served. Returns null when the listing is truncated, in which
+ * case the caller prunes nothing rather than guessing at what exists.
+ */
+async function existingUploads(cfg) {
+  const tree = await github(cfg, `/repos/${cfg.repo}/git/trees/${encodeURIComponent(cfg.branch)}?recursive=1`);
+  if (tree.truncated) return null;
+  return (tree.tree || []).filter((e) => e.type === 'blob' && UPLOAD_EXACT.test(e.path)).map((e) => e.path);
+}
+
 /** Shape checks only — enough to refuse a payload that would break the build. */
 function validate(catalogue) {
   if (!catalogue || typeof catalogue !== 'object' || Array.isArray(catalogue)) return 'catalogue must be a JSON object';
@@ -226,6 +247,10 @@ async function commitFiles(cfg, files, message) {
 
   const blobs = [];
   for (const file of files) {
+    if (file.remove) {
+      blobs.push(null); // a deletion needs no blob
+      continue;
+    }
     blobs.push(await github(cfg, `/repos/${cfg.repo}/git/blobs`, {
       method: 'POST',
       body: JSON.stringify({ content: file.base64, encoding: 'base64' }),
@@ -236,7 +261,10 @@ async function commitFiles(cfg, files, message) {
     method: 'POST',
     body: JSON.stringify({
       base_tree: parent.tree.sha,
-      tree: files.map((file, i) => ({ path: file.path, mode: '100644', type: 'blob', sha: blobs[i].sha })),
+      // sha:null is how the Git Data API removes a path
+      tree: files.map((file, i) => (file.remove
+        ? { path: file.path, mode: '100644', type: 'blob', sha: null }
+        : { path: file.path, mode: '100644', type: 'blob', sha: blobs[i].sha })),
     }),
   });
 
@@ -340,11 +368,22 @@ export default async function handler(request) {
     ...extracted.files,
   ];
 
+  // Photos that are no longer pointed at by anything. A data URI uploaded in this very
+  // publish is already rewritten to its path above, so it counts as referenced.
+  let prune = [];
+  if (cfg.pruneUploads) {
+    const referenced = referencedUploads(serialised);
+    const existing = await existingUploads(cfg).catch(() => null);
+    if (existing) prune = existing.filter((path) => !referenced.has(path));
+  }
+  const removals = prune.map((path) => ({ path, remove: true }));
+
   const summary = [
     `Publish catalogue from the admin`,
     '',
     `${catalogue.wines.length} wines`,
     extracted.files.length ? `${extracted.files.length} uploaded image(s) added under assets/` : null,
+    prune.length ? `${prune.length} unreferenced upload(s) removed` : null,
   ].filter(Boolean).join('\n');
 
   if (cfg.dryRun) {
@@ -353,6 +392,7 @@ export default async function handler(request) {
       dryRun: true,
       wouldCommit: { path: 'catalog.json', bytes: files[0].bytes },
       uploadedImages: extracted.files.map((file) => ({ path: file.path, bytes: file.bytes })),
+      wouldPrune: prune,
       inlined: extracted.inlined,
       repo: cfg.repo,
       branch: cfg.branch,
@@ -360,7 +400,7 @@ export default async function handler(request) {
   }
 
   try {
-    const result = await commitFiles(cfg, files, summary);
+    const result = await commitFiles(cfg, [...files, ...removals], summary);
     let sha = null;
     try {
       sha = await remoteCatalogSha(cfg);
@@ -379,6 +419,7 @@ export default async function handler(request) {
       treesUrl: `https://github.com/${cfg.repo}/tree/${result.sha}`,
       catalogueBytes: files[0].bytes,
       uploadedImages: extracted.files.map((file) => ({ path: file.path, bytes: file.bytes })),
+      pruned: prune,
       message: 'committed — Netlify is building; the site updates in about a minute',
     });
   } catch (error) {

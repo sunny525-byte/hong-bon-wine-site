@@ -1724,7 +1724,7 @@
         "en": "Mosel is Germany's most celebrated white-wine region. Its vineyards climb near-vertical slate slopes above the winding river, where the stone takes up heat by day and releases it at night — giving Riesling its unmistakable minerality and backbone of acidity. Styles run from bone-dry to gently sweet, usually at low alcohol: some of the most elegant Riesling made anywhere."
       },
       "body": [],
-      "introDraft": true,
+      "introDraft": false,
       "image": ""
     },
     {
@@ -1739,7 +1739,7 @@
         "en": "Bordeaux lies in south-west France on the banks of the Gironde estuary, and is among the best-known wine regions in the world. Famous for red blends of Cabernet Sauvignon and Merlot, it also makes dry whites from Sauvignon Blanc and Sémillon. Clay, gravel and limestone in different proportions give each plot its own character."
       },
       "body": [],
-      "introDraft": true,
+      "introDraft": false,
       "image": ""
     },
     {
@@ -1754,7 +1754,7 @@
         "en": "The Barossa Valley in South Australia is one of the country's defining regions, known for rich, full-bodied Shiraz. A warm, dry climate ripens the fruit fully, giving wines of blackberry, dark chocolate and spice. The valley also holds some of the oldest Shiraz and Grenache vines in the world, some planted in the 1840s."
       },
       "body": [],
-      "introDraft": true,
+      "introDraft": false,
       "image": ""
     }
   ],
@@ -1791,7 +1791,7 @@
           }
         }
       ],
-      "storyDraft": true
+      "storyDraft": false
     },
     {
       "slug": "chateau-de-lagarde",
@@ -1825,7 +1825,7 @@
           }
         }
       ],
-      "storyDraft": true
+      "storyDraft": false
     },
     {
       "slug": "perayne",
@@ -1859,7 +1859,7 @@
           }
         }
       ],
-      "storyDraft": true
+      "storyDraft": false
     },
     {
       "slug": "schwarz",
@@ -1893,7 +1893,7 @@
           }
         }
       ],
-      "storyDraft": true
+      "storyDraft": false
     },
     {
       "slug": "maring-prigge",
@@ -1935,7 +1935,7 @@
           }
         }
       ],
-      "storyDraft": true
+      "storyDraft": false
     }
   ],
   "heroImage": "/assets/7b7a2653-4806-4802-a83e-27b2585dbf14.webp"

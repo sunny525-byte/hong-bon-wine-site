@@ -155,6 +155,7 @@ does not go down. Check the build log, fix, push again.
 | `GITHUB_REPO` | Functions | `sunny525-byte/hong-bon-wine-site` |
 | `GITHUB_BRANCH` | Functions | Optional, defaults to `main` |
 | `DRY_RUN` | Functions | Optional. `1` makes publish validate and report without writing |
+| `PRUNE_UPLOADS` | Functions | Optional. `0` stops publish deleting unreferenced uploads |
 
 Set at **Netlify → Site configuration → Environment variables**. If `PROTECTED_PAGE_PASSWORD` is
 missing, the edge function fails closed: `/admin` returns a "setup required" page and stays
@@ -191,6 +192,15 @@ Rules for it: paste it only into Netlify's env var field — never into a chat, 
 in the repo (repo history is permanent). If it is ever exposed, **create the replacement first**,
 update Netlify, redeploy, *then* revoke the old one, so publishing never has a gap. GitHub removes
 tokens unused for a year; this one is used on every publish.
+
+**What a publish commits.** Only the source: `catalog.json`, plus one file per newly uploaded
+photo (`assets/upload-<hash>.webp`) and **deletions** for uploads nothing points at any more.
+
+The pruning matters because a photo that stops being referenced — replaced, or the wine using it
+deleted — would otherwise stay in the repository and keep being served publicly forever. Content
+addressed names make the rule exact: an `assets/upload-*` file is garbage if no path in the
+published catalogue mentions it. The deletion rides in the same commit, and is skipped (rather
+than guessed at) if GitHub truncates the file listing.
 
 Verify with:
 

@@ -149,7 +149,9 @@ Consequences worth knowing:
 - **Uploaded photos are stored as files**, not embedded in the catalogue. The editor compresses in
   the browser and hands the function a `data:` URI; the function writes the bytes to
   `assets/upload-<hash>.webp`, points the field at that path, and commits the catalogue and the
-  image together — one commit, so only one build runs.
+  image together — one commit, so only one build runs. Photos that stop being referenced are
+  deleted in that same commit, so replacing or removing a picture leaves nothing behind;
+  `PRUNE_UPLOADS=0` turns the deletion off.
 - **Two people editing at once**: publishing sends the revision it started from, and a stale
   revision is refused with a "reload first" message rather than silently overwriting the other
   change.
